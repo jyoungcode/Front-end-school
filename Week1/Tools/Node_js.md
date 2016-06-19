@@ -29,6 +29,8 @@ $ npm install --global http-server
 $ http-server -o
 ```
 > ※ 반드시 해당 `.html`파일이 있는 Directory에서 진행해야 한다. 명령어 `cd ` ( change directory )
+
 > ※  현재 Directory에 파일들을 확인 list : `ls`(mac) , `dir` (window)
+
 > ※ **http-server** 모듈 종료 시에는 `Ctrl+C`를 누름.
 
