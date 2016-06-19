@@ -11,7 +11,7 @@ $ npm --version # 2.14.12
 ```
 
 -
-> ※  윈도우(cmd or git bash) , Mac(Termianl) 에서 명령어를  사용한다.
+> ※  윈도우(cmd or git bash) , Mac(Terminal)에서 위의 명령어를 사용한다.
 
 ### http-server 모듈 설치/활용
 
