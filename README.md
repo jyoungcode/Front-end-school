@@ -10,8 +10,6 @@
 
 ###### Tools
 - [Node.js 설치/http-server 모듈설치,활용]()
-- 
-- 
 
 
 
