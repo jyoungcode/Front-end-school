@@ -1,21 +1,8 @@
 ### HTML 구조화 (기초)
 
-**HTML 문서의 루트 요소(Root Element)**는 `<html>` 요소 뿐이다.
-
-```html
-<html></html>
-```
-
-루트 요소 `<html>`은 `<head>`, `<body>` 단 2개의 자식 요소만 가질 수 있다.
-
-```html
-<html>
-  <head></head>
-  <body></body>
-</html>
-```
-
-`<head>` 요소는 내부에 `<title>` 요소를 가지며, 그 값은 웹 브라우저 탭 패널 제목으로 표시된다.
+- **HTML 문서의 루트 요소(Root Element)**는 `<html>` 요소 뿐이다.
+- 루트 요소 `<html>`은 `<head>`, `<body>` 단 2개의 자식 요소만 가질 수 있다.
+- `<head>` 요소는 내부에 `<title>` 요소를 가지며, 그 값은 웹 브라우저 탭 패널 제목으로 표시된다.
 
 ```html
 <html>
