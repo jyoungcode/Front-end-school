@@ -6,9 +6,9 @@
 <!--[if !IE]><!--><html lang="ko-KR"><!--<![endif]-->
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- HTML Entity Code -->
-    <title>2일차 공부는 재밌게! &lt; FDS 패스트 캠퍼스</title>
+    <title>2일차 공부는 재밌게! &lt; FDS 패스트 캠퍼스</title> <!-- '>' 대신 entitycode 쓰자 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="IE 조건부 주석문을 포함한 다양한 방법을 공부 중입니다.">
     <meta name="keywords" content="HTML5, Semantic, Markup, Structure, Design">
@@ -19,7 +19,7 @@
 
     <!-- BAD 브라우저 핵 대신 ??? > GOOD 필터링(Filtering) -->
     <!-- 브라우저 핵(Browser Hack) 근절 -->
-    <!-- MIME Type: https://ko.wikipedia.org/wiki/MIME -->
+    <!-- MIME Type: https://ko.wikipedia.org/wiki/MIME type생략가능-->
     <!-- <style type="text/css"> -->
     <style>
       .ie7 body { background: #db439b; }
@@ -27,6 +27,8 @@
       .lt-ie9 body { background: #62d834; }
       body {
         background: #8b5fe4;
+        /* 브라우저 핵 익스플로러 5.0 버그 쓰면 안되는 것
+        _background: red; */
       }
     </style>
   </head>
