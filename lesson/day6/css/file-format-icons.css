@@ -117,39 +117,51 @@ a[href$=".txt"]{
 }
 a[href$=".aac"]{
   background-image: url("../images/aac.png");
+  color: #01cbd3;
 }
 a[href$=".doc"]{
   background-image: url("../images/doc.png");
+  color: #2d25de;
 }
 a[href$=".flac"]{
   background-image: url("../images/flac.png");
+  color: #7342d8;
 }
 a[href$=".gif"]{
   background-image: url("../images/gif.png");
+  color: #ebc200;
 }
 a[href$=".html"]{
   background-image: url("../images/html.png");
+  color: #bbcacf;
 }
 a[href$=".jpg"]{
   background-image: url("../images/jpg.png");
+  color: #e28500;
 }
 a[href$=".js"]{
   background-image: url("../images/js.png");
+  color: #2b2b2b;
 }
 a[href$=".mp3"]{
   background-image: url("../images/mp3.png");
+  color: #2d25de;
 }
 a[href$=".mp4"]{
   background-image: url("../images/mp4.png");
+  color: #435055;
 }
 a[href$=".png"]{
   background-image: url("../images/png.png");
+  color: #d15ae3;
 }
 a[href$=".tiff"]{
   background-image: url("../images/tiff.png");
+  color: #7b0000;
 }
 a[href$=".xls"]{
   background-image: url("../images/xls.png");
+  color: #79ac00;
 }
 /*[]는 한글자도 틀리면 안됨 ^ 시작기호 $끝기호
 [target="_blank"] 타켓은 무조건 블랜크 다른거 요즘 안쓴다.*/
