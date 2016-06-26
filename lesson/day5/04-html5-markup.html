@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>(X)HTML vs HTML5 Markup</title>
+  <script>
+    // 문서에 input 요소를 생성한다.
+    // 생성한 요소를 변수 my_num_input에 참조한다.
+    var my_num_input = document.createElement('input');
+    // 변수 my_num_input에 참조된 문서 객체 input 요소 속성(Attribute)을 설정(set)한다/
+    my_num_input.setAttribute('type','number');
+    // 조건(my_num_input 요소의 type 속성 값이 'text' 인가?) 확인
+    if ( my_num_input.getAttribute('type') === 'text') {
+      // input[type="number"]를 지원하지 않는 브라우저 대응하는 코드
+      console.log('number 유형을 지원하지 않습니다.');
+    } else {
+      console.log('number 유형을 지원합니다.');
+    }
+  </script>
+</head>
+<body>
+
+<!-- a태그 안에 button 이나 a를 넣을 수 없다. 이동 시키는 영역 -->
+<div>
+  outer div
+  <div>
+    <!-- HTML5에서는 <a>요소가 블록 요소를 감쌀 수 있도록 변경되지만,
+    내부에 또 다른 클릭 가능한 컴포넌트가 존재한다면 그것은 문법 오류이다.
+    내부에 button,a 사용 x</a> -->
+    <a href="#">
+      inner <div>div</div>
+      <!-- <button type="button" name="button">button</button> -->
+    </a>
+    <span>s<em>pan</em></span>
+  </div>
+</div>
+
+<!-- 주석 생긴다 -->
+<h1>main</h1>
+<section>
+  <h2>title</h2>
+  <!-- <section> -->
+    <h3>sub title</h3>
+    <!-- <section> -->
+</section>
+
+<!-- 해결방안 -->
+<h1>main</h1>
+<section>
+  <h2>title</h2>
+  <section>
+    <h3>sub title</h3>
+  </section>
+</section>
+
+
+  <!-- HTML4.01 or XHTML 1.0 Markup -->
+  <!-- #header+#gnb+#main+#sideber+#footer -->
+  <div id="header"></div>
+  <div id="gnb"></div>
+  <div id="main"></div>
+  <div id="sidebar"></div>
+  <div id="footer"></div>
+
+  <!-- HTML5 Markup -->
+  <!-- header+nav+main+aside+footer -->
+
+  <!-- header와 footer는 section요소가 아니어서
+  nav를 넣지 않고 class로 header를 만들어서 넣는게 선생님 방법
+  아니면 nav를 따로 뺀다. -->
+  <!-- hgroup 표준이 아니다. 안쓴다. section 자동주석 생긴다. -->
+  <header class="page-header"></header>
+
+  <!-- nav 여러번 가능 -->
+  <nav></nav>
+
+  <!-- header나 footer에 section을 잘 넣지 않는다. -->
+  <!-- section(범용) vs article(독립) -->
+  <!--
+    article : 기사는 떼어서 놔도된다, 위젯
+
+  -->
+
+  <!-- <section>
+    <article>
+      <section>
+        <article></article>
+      </section>
+    </article>
+  </section> -->
+
+  <!-- <main></main> 한페이지당 1번만 가능하다.-->
+  <!-- 모든 섹션요소는 제목이 필요하다 -->
+  <!-- h1~h6 기본 디자인 바꾸지 않고 이걸 구조적으로 쓰고 숨기고 따로 class 만들어서 css 넣는다 -->
+  <!-- validator 보면 warning이 나온다. : h1을 section이든 뭐든 한번만 가급적 쓰고
+  section이 들어갈때 h2로 쓰자 -->
+  <main>
+    <h1></h1>
+  </main>
+  <aside>
+    <h1></h1>
+  </aside>
+  <footer></footer>
+
+  <!-- 오늘 날에는 id 보다 class를 쓰자 id는 우선순위가 높다
+  id는 고유한 이름 이라서 class는 다른이름 다른이름 등 복수가 가능하다.
+  id를 쓰지 말라는건 아니다.
+  -->
+</body>
+</html>

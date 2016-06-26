@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML 기타</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <h1>HTML 기타 요소들</h1>
+
+  <!-- 기타1 -->
+  <!-- 중간 선은 css로 가상요소로 처리 할 수 있다 -->
+  <p>오늘<del>내릴 것</del><ins>오지 않을 것</ins></p>
+
+  <!-- 기타2-->
+  ### 인용
+    - 긴 인용 `<blockquote></blockquote>`
+    - 짧은 인용 `<q></q>` (잘 안씀- 그냥 대신 '' , "" 로 넣자)
+
+  ### 축약
+    - NN (Standard-네스케이프) <abbr title="eXtensible Markup Language">XML</abbr>
+    - IE (Deprecated-사용X) <acronym title="eXtensible Markup Language">XML</acronym>
+
+  ### 웹 정보
+
+  ### `p` 단락 요소도 내부에 `div` 안된다!
+
+  <address>
+    <!--
+      내부에 <p>태그 쓰면안된다.
+      사람들이 <address> 잘 안쓴다. 쓸수는 있따.
+    -->
+    E-mail: <a href="mailto:yamoo@gmail.com">yamoo@gmail.com</a><br>
+    Phone: <a href="tel:010-1111-1111">010-1111-1111</a>
+  </address>
+
+  <!-- 기타3 -->
+  <!-- tip -->
+  <!-- emmet 설치 엔티티코드 쉽게 -->
+  <!-- kdb{Ctrl + alt + v}|e -->
+  <pre>
+    <p>안녕하세요.<kbd>ctrl+c</kbd>나입니다.</p>
+  </pre>
+
+
+  <script src="js/app.js">
+
+  </script>
+</body>
+</html>

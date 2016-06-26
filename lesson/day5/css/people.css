@@ -1,0 +1,53 @@
+/*@charset "utf-8";*/
+/* charset이 가장 상단에 있어야 한다.
+HTML이랑 다르게 CSS도 또 하나의 파일이라서 charset을 설정 해주는게 명시적으로 좋다
+그렇지만 회사마다 euc-kr등을 쓸 수도 있고 내부적으로 처리되기때문에 써주진 않는다.*/
+
+/* cmd palette에서 emmet update images size 로 자동 img 사이즈 넣기 */
+
+/* 스타일 모듈 파일 로드 2가지 방식*/
+/* 이건 쓰면 안되는 방법. html로 불러온다. 나중에는 병합으로 불러온다 */
+/* 직렬식으로 불러와서 느리다. */
+@import url("colors.css");
+@import "common.css";
+
+/* 이 방법이 좋다.
+  page.css
+  header.css
+  nav.css
+  main.css
+  aside.css
+  footer.css*/
+/*웹 브라우저 기본 스타일 덮어쓰기*/
+body {
+  margin: 0;
+}
+
+/* 개발자도구 - 박스모델 - 아래 Filter에서 폰트 확인 */
+
+/* 문서에서 대상을 선택 : CSS 기본 특성 */
+/* 선택자가 필요 */
+/* 선택자에 따른 우선순위 점수!! 공부하자 */
+/* 개발자도구에서 보면 h2 > article h2
+article h2에서 덮어쓴거 취소시에 h2로 다시 적용. */
+
+article {
+  /*선택된 대상을 스타일링*/
+  /*속성: 값;*/
+  /*테두리 디자인*/
+  border: 1px solid #454545;
+}
+/* 개발자도구 -> styles -> 박스모델 margin:8확인 -> user agent stylesheet 보고
++ 아이콘 클릭 후 margin:0 넣어본다.
+웹 브라우저는 테스트라서 우리코드가 바뀌지 않는데 이걸 설정으로 할 수 있다. */
+
+/* article 안에 h2를 말한다. 바깥에 h2는 적용이 안된다.*/
+article h2 { font-weight: 100;}
+
+/* img 요소는 inline-block 요소 , 개발자도구 filter 확인가능 */
+/* inline-block 요소는 margin-top 같은 값이 적용된다. */
+article img {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+article p { line-height: 30px;}

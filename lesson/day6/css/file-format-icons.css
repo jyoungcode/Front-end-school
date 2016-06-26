@@ -1,0 +1,88 @@
+body {
+  margin: 10%;
+}
+/**
+* ---------------------------
+* .lecture
+----------------------------*/
+/* 1번 방법 (초급)
+.lecture ul{
+  기본적인 리스트 스타일 초기화*/
+  /*lis0 , mt0, mb0, pl0 emmet*/
+  /*중요 자주 사용하는 코드
+   list-style-type: none;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-left: 0;
+}
+.demo ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+2번 방법
+.lecture ul, .demo ul {...}
+
+*/
+
+/*3번 방법 (모듈화 고급방법) */
+.reset-list ul,
+.reset-list ol  {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* other.
+유지보수 시에 div 등  실수로 건들지 못하게 명시적으로 ul, ol 적어주기
+안써도 되지만 명시적 표현 */
+/*ul.reset-list,
+ol.reset-list {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}*/
+
+/* 속성배치 레이아웃은 상단에 스타일은 하단에 이건 회사마다 개인취향 */
+.lecture-file-list a {
+  display: block;
+  /*font-size: 38px*/
+  font-size: 2.38em;
+  text-decoration: none;
+  text-indent: 40px; /* indent는 block화 될때만 가능하다. paddingleft도 가능 */
+  /*bgr:no - background-repeat */
+  background-repeat: no-repeat;
+}
+
+/**
+*------------------------------------------
+* 파일 포멧에 따라 자동적으로 아이콘을
+* 배경 이미지로 설정하는 스타일
+-------------------------------------------*/
+/*a[href="resources/file.ai"]
+a[href^="resources"]*/
+a[href$=".ai"]{
+  background-image: url("../images/ai.png");
+}
+a[href$=".psd"]{
+  background-image: url("../images/psd.png");
+}
+a[href$=".avi"]{
+  background-image: url("../images/avi.png");
+}
+a[href$=".mov"]{
+  background-image: url("../images/mov.png");
+}
+a[href$=".pdf"]{
+  background-image: url("../images/pdf.png");
+}
+a[href$=".txt"]{
+  background-image: url("../images/txt.png");
+}
+
+/*[]는 한글자도 틀리면 안됨 ^ 시작기호 $끝기호
+[target="_blank"] 타켓은 무조건 블랜크 다른거 요즘 안쓴다.*/

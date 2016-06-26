@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/*! filename.* yamoo.net 2016 이렇게 !붙여서 저작권 남기면 나중에 컴파일러가 이건 안 없앤다 */
+/*html에서 utf-8 못읽을걸 대비해서 써줘도 된다.*/
+
+/**
+  * ------------------------
+  * CSS 선택자
+  * ------------------------
+  * 요소 선택자 E (Element)
+  * 전체 선택자 *
+  * 자손 선택자 E(P) E(C)
+  * 그룹핑 E,E,E
+*/
+
+/*0001 선택자우선순위 점수*/
+/*----------------------------------*/
+/*취향 차이지만 읽기 좋게 하는게 우선이다.
+body{maring:0}
+body { margin: 0 }
+body { margin: 0; }*/
+
+/*margin 두개 라면 아래 것이 우선이다*/
+body {
+  /*margin: 0;아래 그룹핑 때문에 삭제*/
+  /*margin: 10px;*/
+  /*글자 크기 변경*/
+  /*font-size: 20px;  자식요소에서 2em 이면 64px 이다: 부모 값을 기준으로 저장된다! */
+  /*고정 값 px을 상대 값으로 변경하고자 한다면?*/
+  /*font-size: 20/16; emmit:evaluate ctrl shift y*/
+  /*이미지를 x4 큰 이미지 사이즈(224px)로 제작했다. 1/4 1/2 3/4 4/4 */
+  /*고정 값(기기에 따라 다르다) px을 사대 값(em equal M)으로 변경하고자 한다면?*/
+  font-size: 1.25em; /* 20px/16px = x1.25 */
+}
+
+/*--------------------------------*/
+/*h3 {
+  emmet : mt0+mb0
+  margin-top: 0;
+  margin-bottom: 0;
+}*/
+
+/*body * {
+  margin: 0;
+}*/
+
+/*그룹핑 E,E,E*/
+/*body, body * {
+  margin: 0;
+}*/
+
+/* 이 코드는 html * {} 의 축약법인데 이제는 안쓴다. 모든걸찾아서 0이라서 성능 저하다 */
+/** {
+   margin: 0
+}*/
+/*이건 좋은 방법이다.*/
+/*body, .sports * {
+  margin: 0;
+}*/
+
+/**
+* ------------------------------
+* 요소 + 그룹핑 + id + 전체 선택자
+* css선택자는 여러 유형이 조합되어 사용된다.
+* 요소(1점) ,(그룹핑 따로점수) class(10점) id(100점) inline스타일(1000점)
+* ------------------------------
+*/
+body, #shoppingGrpTab * {
+  margin: 0;
+}
+
+/**
+* -----------------------------
+* 자식 선택자 E(Parent) > E(Child)
+* > Child Combinator
+* ----------------------------- */
+/* 직계 자식을 가리키는 선택자 */
+/* 실제로 nav > ul > li 쓸수 있으나 유지보수 어렵다. 그래서 class 주고 거기서 찾는게 좋다.*/
+#shopping1 > h2 { /* 101점 */
+  color : #7045cf;
+}
+
+/**
+* ----------------------------------------------------------------------
+* 클래스 선택자
+* E.class-name  (디자인 컨셉이 명확하지 않은 경우에는 사용을 자제)
+* .class-name 10점 (대중적으로 사용되는 방법, 코드 재사용 목적)
+* .class-name1.class-name2 (멀티클래스 .name1.name2 하나로 인식)
+* .class-name1 .class-name2 (.name1 안에 .name2를 찾는다.)
+* ----------------------------------------------------------------------*/
+
+/*공통 적인 스타일 묶어주고 개별은 따로 빼주자, 초기코드 후 리펙토링 */
+/*.button -> .btn*/
+.btn {
+  border: none;
+  background-color: #000;
+  color: #fff;
+}
+/* 이렇게 네이밍을 잘 설정해야 한다. 명확하게 알 수 있게 */
+/*.button이 없어도 아래는 적용된다.*/
+
+/*html에서 class가 btn btn-buy 두가지 다 있어야 css가 적욛된다*/
+/* .class로 통해서 css 모듈화 목적, 그리고 띄어쓰기를 통한 멀티클래스 두가지 차이 */
+
+/*.btn-buy.btn { color: orange;} 이렇게 바꿔도 적용됨(ie6는 순서가 .a.b / .b.a 안먹을 수도 있다. 해결법을 고려할 필요는 없다 퍼센테이지 낮아서.)
+  바꿔서 쓰는 이유 스타일모듈이 많아지면 순서를 외울 수 없어서 모듈(클래스) 순서 상관없다.
+*/
+ /*.btn.btn-buy 하나로 .btn꺼 .btn-buy꺼 둘다 동시 적용*/
+.btn.btn-buy { color: orange;}
+.btn .btn-cancel-buy { color: lime;} /* .btn 안에 .btn-cancel-buy가 없다. */
+
+/*ul.btn( ) 이런식은 쓰지 않는다. 어차피 <ul class="btn"> 이라서
+  .btn() 앞에 * 숨겨져 있다. *.btn()
+*/
+
+
+/**
+CSS2
+* -------------------------------------------
+* 인접 형제 선택자 E + E
+* 인접 형제 선택자 사용시, 주의!
+* 절대적으로 틀(프레임)이 무너지지 않아야 한다.
+* 즉 h1, p 사이에 span 처럼 갑자기 요소가 들어가면 형제선택자 문제가 생길 수 있다.
+예를 들어 스크립트 append나 html 넣어놓고 css 수정 할 경우
+* ------------------------------------------ */
+.parent ul { border: 1px solid red; }
+/*.parent h4 + ul { border-color: blue; }*/
+.parent h4 { border-color: blue; width: 50px; height: 50px;}
+
+/*
+* ---------------------------------
+* 일반 형제 선택자 E ~ E
+* ------------------------------------*/
+ #shoppingGrpTab > div + h3 {
+d }
+ #shoppingGrpTab > div ~ h3 {
+   color: blue;
+ }
+
+ /*ie7,8 버그 있다*/
+ /**
+ *---------------------------------------
+ * [attr]
+ * [attr="value"]
+ *----------------------------------------*/
+/* ID 선택자 = 속성 선택자로 변경 */
+/*[id] { border: 4px double blue; }
+[class] { outline: 3px solid rgba(255,255,0,0.5); }*/
+
+/* 특정 ID 선택자를 찾고자 한다면? */
+/* #shopping3 {} */
+/*[id="shopping3"] { border: 4px solid #303030; }
+[id="shopping3"].screen_out { border: 4px solid #303030; }*/
+/*[id="shopping3"] [class="screen_out"] { border: 4px solid #303030; }*/
+/* 아래 적용 안됨 */
+#shopping3 [class="screen_out"] {
+  border: 4px solid #303030;
+}

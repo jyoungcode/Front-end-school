@@ -6,7 +6,12 @@
   <title>HTML Form 디자인</title>
 </head>
 <body>
-
+<!--
+   예전에는 css가 잘 안되서 input 안쓰고 button에 img를 넣어서 사용했고
+   지금은 css가 발달되서 input, button 둘다 사용해도 되지만 가급적 버튼을 쓰고
+   input은 form 전송 위주로 쓰자.
+ -->
+<!-- '_','-'를 쓰는 이유는 js에서 document.register_form은 가능 , document.['register-form'] 차이 -->
   <form name="register_form" action="#" method="GET">
 
     <fieldset>
@@ -30,6 +35,7 @@
     <div>
       <h3>Gender</h3>
 
+      <!-- radio는 name이 같아야 둘 중 하나 체크로 바뀜 -->
       <!-- 명시적 label 사용법 -->
       <!-- <div>
         <input id="register-male" name="gender-a-type" type="radio"> <label for="register-male">Male</label>
@@ -38,8 +44,8 @@
 
       <!-- <hr> -->
 
-      <!-- 암묵적 label 사용법 -->
-      <div>
+      <!-- 암묵적 label 사용법 , 국내 스크린리더 안읽히는 경우 있다.-->
+      <div><!-- html5 = checked 만 기입, xhtml = checked="checked" -->
         <label> <input checked name="gender" value="1" type="radio"> Male </label>
         <label> <input name="gender" value="2" type="radio"> Female </label>
       </div>
@@ -70,7 +76,9 @@
     <hr>
 
     <textarea name="register-message" cols="30" rows="10"></textarea>
+<script type="text/javascript">
 
+</script>
     <hr>
 
     <div>

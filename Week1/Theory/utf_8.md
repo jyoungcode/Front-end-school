@@ -63,7 +63,7 @@
 
 > 초기 컴퓨터는 오늘 날의 피씨처럼 공통된 표준이 정립되어 있지 않았다. 그래서 컴퓨터 간에 호환이 불가능.
 > - ANSI 라는 표준기구에서 ASCII로 통합하자!.
-> - 컴퓨터는 0 ~ 255 (최대 11111111) 까지 근데 ASCII로 표현 할 수 있는게 127개 면 충분하다. 
+> - 컴퓨터는 0 ~ 255 (최대 11111111) 까지 근데 ASCII로 표현 할 수 있는게 127개 면 충분하다.
 > - 95개 공백포함, 출력 가능문자. ( 우리가 쓰는 것 )
 > - 알파벳대소문자 52개, 숫자10개, 특수문자 32개, 공백 1개
 = (기초가 되는) 아스키 기반으로 여러가지 생겨남
@@ -107,7 +107,7 @@ UTF-8 (Universal Coded Character Set+Transformation Format)
 EX.) Compared to UTF-8, GB2312 (whether native or encoded in EUC-CN) is more storage efficient, this because no bits are reserved to indicate three or four byte sequences, and no bit is reserved for detecting tailing bytes.
 ( .NET이냐 , Python, java, ruby 냐에 따라서 조금씩 차이가 생긴다. )
 
-
+http://www.emh.co.kr/content.pl?mime
 
 
 
