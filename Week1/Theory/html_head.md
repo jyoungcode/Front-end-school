@@ -19,6 +19,27 @@
 ```html
 <meta http-equiv="name" content="content">
 ```
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+```
+- 비표준모드
+- http-equiv : <meta> 요소에서 정의된 명령을 먼저 실행 후 페이지로딩. 프라그마 디렉티브
+- "X-UA-Compatible" : -호환되는 ( 여기서 X 약어가 아니라 비표준의 표시이다. )
+- IE=Edge : 최신버전(Edge)으로~ 익스플로러에 대응하기 위해서 쓰이는 meta 요소다. ( Edge가 익스플로러 버전이 아니다. )
+- 위 코드 자체가 없으면 익스플로러 7 대응한다. 표준은 아니다.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+```
+- 초기 화면 배율, 최대, 최소 축소가 같으면 손가락으로 drag를 할 수 없다.
+- user-scalable=no: 확대, 축소 금지
+- 그래서 사이트 마다 모바일 환경에서 이걸 적용 할 건지에 따라 기입하고 안하고 한다.
+width=device-width 는 디바이스에 따라 width를 잡아 준다는 의미.
+
+
+
+
 ### base
 - `<base href="http://myDomain.com" target="_blank">`
 - 웹문서 내에 사용되는 링크의 기본 도메인 경로 및 열리는 상태를 설정
@@ -40,3 +61,9 @@
   <p>클라이언트 user-agent(브라우저)는 JS를 지원하지 않습니다. JS를 지원하는 브라우저로 접속해주세요.</p>
 </noscript>
 ```
+
+### lang
+- 스크린리더의 음성엔진이 달라진다.
+- 접근성이 향상된다.
+
+###

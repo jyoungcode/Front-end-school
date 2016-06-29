@@ -1,0 +1,318 @@
+/*@import url("common.css");*/
+
+body {
+  line-height: 1.6;
+  margin: 5% 20%;
+}
+
+/**
+ * --------------------------------
+ * 속성 선택자
+ * [attr]
+ * [attr="value"]
+ * [attr|="value"] : 요소에 '-'가 있으면 찾는다. (국내에서 거의모름)
+ * [attr~="value"] : 공백으로 구분되는 단어 일치 할 때.
+ * [attr*="value"]
+ * ----------------------------- */
+
+/*성능을 느리게 만든이 선택자를 간결하게 하는게 중요하다*/
+
+/*속성 선택자는 클래스 순서를바꾸면 안되고 일반은 된다.*/
+/*[class="america container"] */
+[class="container america"] {
+  background-color: yellow;
+}
+
+/* 공백으로 구분되는 단어가 일치할 때 선택 */
+[class~="container"] {
+  /*border: 1px dashed #cacaca;*/
+  /*padding: 1em;*/
+}
+
+/* 하이픈(-)으로 구분되는 단어가 일치할 때 선택 */
+[lang|="en"] {
+  /*text-decoration: underline;*/
+  color: #4d4840;
+}
+
+/**
+ * --------------------------------
+ * 상태 디자인(State Design) 선택자
+ * 기본 상태(Normal)
+ * 커서가 올라간 상태(Hover)
+ * 커서로 누른 상태(Active)
+ * ----------------------------- */
+
+/* 기본 상태(Normal) */
+.container p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.88em;
+  color: #84888a;
+  background: #fff;
+}
+
+/* 커서가 올라간 상태(Hover) */
+/* Pseudo Class: 가상(유사, 의사) 클래스 */
+.container p:hover {
+  color: #0c0d0d;
+  background: #bfbfbf;
+}
+/* ※ 실제 class 속성을 적용한 예 */
+/*.container p.hover {
+  color: #0c0d0d;
+}*/
+
+/* 커서로 누른 상태(Active) */
+.container p:active {
+  background-color: #000;
+  color: #fff;
+}
+
+/**
+ * --------------------------------
+ * 하이퍼링크 (<a href>)
+ * 상태 디자인(State Design)
+ * 가상(유사, 의사) 클래스
+ * Pseudo Class
+ * --------------------------------
+ * :link    | 기본 상태
+ * :visited | 방문한 상태
+ * :hover   | 커서 올라간 상태
+ * :active  | 커서로 누르고 있는 상태
+ * :focus   | 키보드 포커싱 상태 : Tab 키
+ * ----------------------------- */
+ /*:link 기본상태지만 그냥 일반으로 쓴다*/
+ /*사용자에게 맞춰서 좀 더 유동적인 상태를 만들기 위해 px보다 em으로 처리*/
+
+/* 기본 상태 */
+/*a:link {}*/
+a {
+  padding-left: 0.25em; /* 4px === 0.25em */ /* ctrl + shift + y emmet 연산 */
+  padding-right: 4px;
+  text-decoration: none;
+  color: #363636;
+}
+/* 방문한 상태 */
+/* 가능한 상태 속성
+- color
+- background-color
+- border-color (and border-color for separate sides)
+- outline color
+- column-rule-color
+- the color parts of fill and stroke
+ */
+a:visited {
+  color: #fc414b;
+}
+/* 커서 올라간 상태 */
+/*margin-top은 가능 음수는 안됨*/
+a:hover {
+  /*text-decoration: underline;*/
+  padding-bottom: 1px;
+  border-bottom: 2px dotted;
+}
+/* 커서로 누른 상태 */
+a:active {
+  background: #ff0;
+}
+/* 키보드 포커싱 상태 */
+/*아웃라인을 쓰면 자간에 붙는다.*/
+a:focus {
+  outline: 3px solid #fc414b; /* outline 두께 */
+}
+
+/*border margin은 주변에 영향을 준다 (ipsum까지 넘어가서 침범하면 안되니..)
+outline은 그 자리에서 생성 된다. */
+/*네이버 스포츠면 작은 사진 주변 outline 처리 또는 이미지 (outlineoffset 같은ㄷ=것) */
+
+a:focus:hover {
+  outline-offset: 10px; /* 아웃라인 안쪽 여백 */
+}
+
+/**
+ * --------------------------------
+ * .box
+ * ----------------------------- */
+.box {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 200px;
+  height: 200px;
+  outline: none;
+  background: #efefef;
+}
+
+.box:hover {
+  outline: 10px solid #fe4940;
+}
+
+/**
+ * --------------------------------
+ * .rounded-box
+ * ----------------------------- */
+.rounded-box {
+  width: 200px;
+  background: #eee;
+}
+
+.rounded-box > *:first-child {
+  background: #aea28f;
+  color: #fff;
+}
+.rounded-box :last-child {
+  border: 3px solid #e0cba9;
+  padding: 10px;
+}
+
+.wrapper:last-child {
+
+}
+
+:lang(ja) {
+  /* 일본어 사용 */
+}
+
+[lang|="en"] {
+
+}
+
+:lang(es) {
+  /* 스페인어 사용 */
+}
+
+/**
+ * --------------------------------
+ * 가상(유사, 의사) 요소
+ * Pseudo Element
+ * 가상으로 요소(콘텐츠)를 만들어 줍니다.
+ * 가상요소가 스크린리더 안읽힌다. 접근성 저하
+ * CSS 2/2.1     | CSS 3+
+ * :first-line   | ::first-line
+ * :first-letter | ::first-letter
+ * :before       | ::before
+ * :after        | ::after
+ * ----------------------------- */
+
+/* 잡지 디자인 드롭캡(Dropcap) */
+.dropcap-demo {
+  color: #ec0904;
+}
+
+/* 가상으로 요소를 생성한다. */
+.dropcap::first-letter {
+/*.dropcap::first-line {*/
+  font-size: 300%;
+  color: #ec0904;
+  line-height: 1;
+}
+
+.dropcap {
+  margin: 0;
+}
+
+/*after, before는 해당 요소 자식을 들어간다*/
+/*속성으로 content:'' 를 반드시 넣어서 내용을 기입해야 */
+abbr {
+  cursor: help; /* 마우스 대면 물음표 */
+}
+
+.msg .before,
+.msg::before {
+  content: 'hey!';
+  color: #3a0099;
+}
+
+.msg p::before {
+  content: 'designer!';
+  color: #25a04d;
+}
+
+.msg .after,
+.msg::after {
+  content: 'Hand up!';
+  color: #604887;
+}
+
+@media print {
+  /**
+   * --------------------------------
+   * 접근성 관점에서 링크의 주소를 출력하는 스타일
+   * ----------------------------- */
+  a::after {
+  /* 함수: () 안에 전달하는 무엇을 통해 뭔가를 처리해서 결과를 보여준다. */
+    content: '(' attr(href) ')';
+    color: #fc4a54;
+  }
+
+  abbr::after {
+    content: '(' attr(title) ')';
+  }
+}
+
+/* HTML <html>, XML <cook>, <book>, .. */
+:root {}
+
+:target {
+  background: #ff0;
+}
+
+/**
+ * --------------------------------
+ * :not(selector)
+ * ----------------------------- */
+
+.parent {
+  background: #ff0;
+}
+
+/*.parent * {
+  border: 1px solid #b64926;
+}
+.parent a {
+  border: none;
+}*/
+
+.parent :not(a):not(li):not(.child) {
+  border: 1px solid #b64926;
+}
+
+/**
+ * --------------------------------
+ * 사용자가 커서로 클릭 후, 텍스트 블록을
+ * 선택할 경우 가상으로 요소를 만들어 디자인
+ *
+ * color
+ * background-color
+ * cursor
+ * outline
+ * text-decoration
+ * text-emphasis-color
+ * text-shadow
+ * ----------------------------- */
+::-moz-selection {
+  cursor: move;
+  background: #fc4b55;
+  color: #fff;
+}
+::selection {
+  cursor: move;
+  background: #fc4b55;
+  color: #fff;
+  text-shadow: -2px 0px 1px #6300b5, 2px 0px 1px #e4ee09;
+}
+
+/*css만으로 탭메뉴 사용은 좋지 않다. css only tab menu */
+
+/*E:not(s) 선택자 유용 */
+
+/*charset 어떨때 넣는가?*/
+/*한글이 깨지면 넣어주는게?*/
+
+/*드래그 톤앤매너 맞추기 커스텀*/
+/*caniuse selection 브라우저지원버전 확인*/
+
+/* 하위속성은 상위 속성으로 부터 상속 받는다 */
+/*reset.css 대신 normalize를 쓴다*/
+/*oocss 스타일 문서를 세부역할로 쪼개어 관리하는 시스템 css 기법-국내에서 잘안씀*/

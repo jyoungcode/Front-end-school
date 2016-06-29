@@ -1,0 +1,33 @@
+/*! box-model.css jyoungcode, 2016 */
+
+/**
+* --------------------------------------------
+* 마진이 상하 방향으로 접혀지는 현상
+* --------------------------------------------*/
+h1 {
+  font-weight: bolder; /* 하위 호환 고려 */
+  font-weight: 900; /*100 ~ 400(normal) - 700(bold) - 900(border) */
+  /*font-size: 32px;
+  font-size: 2rem;  하위 호환 위해서*/
+  /* 그냥 32.5px로 하면 어떤 브라우저는 35px로 만들어 버림 그래서
+  상대사이즈 필요 한데 */
+  font-size: 2.2em; /* 이렇게 하면 개발자 도구에서 보면 35.2px로 나온다 */
+  /*em을 보완하기 위해서 rem 등장 우리는 rem 쓰자*/
+  margin-bottom: 30px; /* 1.88em; */
+}
+p {
+  margin-top: 20px;
+  color: #323130;
+  font-size : 0.875em; /* =14/16 ctrl + shift + y 14px */
+}
+
+p a {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fffc;
+  background: #000;
+}
+p span {
+  background: #f00;
+  color: #ff0;
+}
