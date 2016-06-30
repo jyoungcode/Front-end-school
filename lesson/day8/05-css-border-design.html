@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="utf-8">
+  <title>CSS 테두리 디자인</title>
+  <style>
+    .box {
+      /* div를 수평하게 */
+      display: table-cell;
+      /*display: inline-block;*/
+      width: 200px;
+      height: 200px;
+      /* 무조건 가운데 정렬 인데 전체 높이 200px 중에 font-size 제외하고 위아래 양분이다.*/
+      /* line-height는 블록을 유지 할 수 있지만 두줄 이면 */
+      line-height: 200px;
+      /*border short properties*/
+      border: 1px solid;
+      text-align: center;
+      /* vertical-align: middle; /* 원래 block에 적용 안된다, inline, table 요소에만 적용가능 */
+      background: #fff;
+      color: #50c0fd;
+    }
+
+    .border-solid {border-right-style: solid;}
+    .border-dashed {border-right-style: dashed;}
+    .border-dotted {border-right-style: dotted;}
+
+    .nanum {
+      font-family: "Apple SD Gothic Neo", "Nanum Gothic", "나눔 고딕", 돋움, Dotum, sans-serif;
+    }
+
+  </style>
+</head>
+<body class="nanum">
+  안녕하세요.
+
+
+  <div class="box border-solid">SOLID</div>
+  <div class="box border-dashed">DASHED</div>
+  <div class="box border-dotted">DOTTED</div>
+
+
+</body>
+</html>

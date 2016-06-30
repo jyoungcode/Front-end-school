@@ -1,0 +1,87 @@
+/*! 03-page-align-center.css © yamoo9.net, 2016 */
+
+/**
+* ------------------------------------
+* page
+* ------------------------------------- */
+.page {
+  /*width: 50vw;*/ /* viewport width */
+  /*width: auto;*/
+  /*height: 100vh;*/ /* vh? = viewport height */
+  /*width: 50%;*/
+  /*width: 50%;*/
+  width: 90%;
+  max-width: 900px;
+  min-width: 600px;
+  height: 333px;
+  line-height: 333px;
+  /*화면 중간에 잡을 때 */
+  /*height: 50vh;
+  margin: 25vh auto;*/
+  margin: 100px auto;
+  padding-top: 1.25rem;
+  padding-left: 1.25rem;
+  background: #7045cf;
+  /*width: auto; block 요소는 기본 auto다*/
+  /* height: 100vh; /*vh? = viewport height */
+}
+
+/*.page::before,*/
+/*.inner-page::before*/
+.print-class-attr::before {
+  display: block;
+  /*content: attr(class); class="page"라서 page 라는 텍스틀르 보여준다 */
+  content: attr(data-name);
+  color: #fff;
+  /*데스크탑에서는 vw 쓰지 말고 rem*/
+  /*font-size: 12vw;*/
+  font-size: 1.375rem;
+}
+
+/*비표준 모드의 IE에서는 margin: auto 설정 안되서 text-align: center로 한다
+그러나 IE 작업은 지금 시대 해당 안한다. 공공기관 아닌 이상 */
+
+/*line-height는 내용을 가운데 정렬하고 위 아래로 양분해서 나눈다. */
+
+
+/**
+ * --------------------------------
+ * .inner-page
+ * ----------------------------- */
+.inner-page {
+  width: 250px;
+  height: 111px;
+  padding-top: inherit;
+  padding-left: inherit;
+  background: #f3a647;
+}
+
+.change-display-inline-block li {
+  display: inline-block;
+}
+
+.change-display-inline-block img {
+  vertical-align: middle;
+}
+
+
+/**
+* -------------------------
+* margin 속기형 (Short Properties)
+* ------------------------- */
+
+p {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+
+  /*margin: top right bottom left;
+  margin: top right bottom;
+  margin: top right ????(top) ????(right);
+  margin: top ????(top) ????(top) ????(right);*/
+  /*margin이 결과적으로 하나의 값으로 통일되는 이유? 물려받기때문에 */
+
+  margin: 1em 1em 1em 1em;
+  margin: 1em;
+}

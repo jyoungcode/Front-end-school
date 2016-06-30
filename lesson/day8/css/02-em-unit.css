@@ -1,0 +1,104 @@
+/*! em-unit.css jyoungcode, 2016 */
+
+/**
+* -------------------------------------
+* em 단위 사용의 어려움
+* ------------------------------------*/
+html {
+  font-size: 100%; /* 16px */
+}
+
+/**
+* -------------------------------------
+* 미디어 기술 사용 @media
+* CSS3 미디어쿼리 @media 환경 and (조건1) and (조건2)
+* 중단점 (Breakpoint) 설계(Design)
+* --1-- 600 --2-- 1000 --3--
+*/
+/*사용자 관점에서 데스크탑보다 모바일 우선으로 가는게 좋을것같다.*/
+
+
+/* CSS2에 media가 있었고 미디어쿼리는 CSS3 등장. */
+/*IE 6-8 : */
+/*이건 media 타입*/
+@media screen {}
+
+/* IE 6-8이 only가 없으면 인식 할 수도 있다. 이때 문제 발생 가능성 있다.
+그래서 only를 붙여야 한다. 미리 차단 상위버전만 가능하게 */
+/* IE 6-8 (X) only는 ie9부터 최신기기만 지원 */
+/*media를 반응형으로 될때 미디어 쿼리라고 함 */
+/* 특이점 - 미디어쿼리 안에서는 em써도 16px기준으로 된다. */
+
+@media only screen and (max-width: 600px) {
+  body::before {
+    content: 'screen의 폭이 600px보다 작습니다.';
+  }
+  body {background: #000;}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px){
+  body::before {
+    content: 'screen의 폭이 600px보다 크고 1000px보다 작습니다.';
+  }
+  body {background: #888;}
+}
+
+@media only screen and (min-width: 1001px) {
+  body::before {
+    content: 'screen의 폭이 1001px 보다 큽니다.';
+  }
+  body {background: #fff;}
+}
+
+
+body {
+  font-size: 87.5%; /* 16 * 0.875 = 14px */
+}
+
+/**
+* -------------------------------------
+* 박스 스타일
+* ------------------------------------*/
+
+div {
+  width: 60%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px dashed #fff;
+  padding: 5%;
+  color: #fff;
+}
+
+.wrapper-parent {
+  font-size: 40px;
+  /* 1em === 14px */
+  font-size: 2.5em; /* 14 * 2.5 = 35px */
+  font-size: 2.5rem;
+  background: #7045cf;
+}
+.parent {
+  font-size: 30px;
+  /*  1em === 35px 위에 상속 !!! */
+  font-size: 1.88em; /* 35 * 1.88 = 65.8px */
+  font-size: 1.88rem;
+  background: #e85018;
+}
+.child {
+  font-size: 20px;
+  /* 1em === 65.8px */
+  font-size: 1.25em; /* 65.8 * 1.25 = 82.25px */
+  font-size: 1.25rem;
+  background: #4bd711;
+}
+.inner-child {
+  font-size: 10px;
+  /* 1em === 82.25px */
+  font-size: 0.63em; /* 82.25 * 0.63 = 51.82px */
+  font-size: 0.63rem;
+  background: #1b1dd7;
+}
+/*개발자 도구 font-size 상속 받는다 */
+/*rem은 하이브리드앱 만드는데 필수다!
+root em root는 html font-size다. 바꿔서 처리 상속되는 개념이다.
+rem을 사용하면 통제가 가능하다 */

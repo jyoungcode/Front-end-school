@@ -87,7 +87,7 @@ body, #shoppingGrpTab * {
 * .class-name1.class-name2 (멀티클래스 .name1.name2 하나로 인식)
 * .class-name1 .class-name2 (.name1 안에 .name2를 찾는다.)
 * ----------------------------------------------------------------------*/
-
+/* 멀티클래스란
 /*공통 적인 스타일 묶어주고 개별은 따로 빼주자, 초기코드 후 리펙토링 */
 /*.button -> .btn*/
 .btn {
