@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>CSS 넘쳐나는 흐름을 제어</title>
+  <link rel="stylesheet" href="../Resources/reset.css">
+  <link rel="stylesheet" href="../Resources/common.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="float.css">
+
+</head>
+<body>
+  <!--
+    1. float는 요소를 띄우는 것이다.
+    2. float는 상위 요소에 영향을 주지 않는다.
+    3. 컨텐츠가 왼쪽에 있을때 float:right를 하면 띄어졌지만 그렇지 않은것같이 보임
+    4. 가운데 컨텐츠만 float되면 하위요소는 뒤로 들어오면서 텍스트컨텐츠만 보여준다.
+    5. 1,3 박스가 200px이고 2번박스가 230px일때 2번박스의 텍스트콘텐트가 30px안에 다 들어간다면
+    그 부분에 나올 것이고 텍스트콘텐트가 다 못들어가면 밑으로 떨어질 것이다
+  -->
+
+  <!-- 박스 w:100 h:100 / 좌우 28 / 상하 30 /
+  폰트와박스 11px / 박스와 hr 41px / hr h1 21px
+    Helvetica light 12px #2C2C2C
+    letter-spacing 1.2px line-height 14px-->
+  <div class="wrap">
+  <h1>COLOR</h1>
+  <span class="madeby">madeby JyoungCode</span>
+  <hr>
+    <div class="box1_wrap">
+      <div class="box1 box">#FCB409</div>
+      <span>WARNING</span>
+    </div>
+    <div class="box2_wrap">
+      <div class="box2 box">#FCB409</div>
+      <span>INFO</span>
+    </div>
+    <div class="box3_wrap">
+      <div class="box3 box">#FCB409</div>
+      <span>SUCCESS</span>
+    </div>
+    <div class="box4_wrap">
+      <div class="box4 box">#FCB409</div>
+      <span>PRIMARY</span>
+    </div>
+    <div class="box5_wrap">
+      <div class="box5 box">#FCB409</div>
+      <span>DANGER</span>
+    </div>
+    <div class="box6_wrap">
+      <div class="box6 box">#FCB409</div>
+      <span>DEFAULT</span>
+    </div>
+    <!-- notitle box -->
+    <div class="box7_wrap">
+      <div class="box7 box"></div>
+    </div>
+    <div class="box8_wrap">
+      <div class="box8 box"></div>
+    </div>
+    <div class="box9_wrap">
+      <div class="box9 box"></div>
+    </div>
+    <div class="box10_wrap">
+      <div class="box10 box"></div>
+    </div>
+    <div class="box11_wrap">
+      <div class="box11 box"></div>
+    </div>
+  </div><!-- wrap -->
+</body>
+</html>

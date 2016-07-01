@@ -1,0 +1,26 @@
+/**
+ * display: [none, block, inline, inline-block];
+ * overflow: [visible, hidden, auto, scroll];
+ * - visible : 그대로 다 보여준다.
+ * - hidden : 넘치는 컨텐츠를 가려준다.
+ * - auto : 스크롤이 생기고 컨텐츠가 넘치치 않으면 생기지 않는다.
+ * - scroll : 상하, 좌우 모두 스크롤이 무조건 생긴다.
+ */
+.parent-box {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 200px;
+  height: 80px;
+  border: 3px solid #aea28f;
+}
+.ovh {
+  overflow: hidden;
+}
+
+.ovs {
+  overflow: scroll;
+}
+
+.ova {
+  overflow: auto;
+}

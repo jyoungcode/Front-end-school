@@ -1,0 +1,100 @@
+/*! type.css ⓒ jyoungcode, 2016 */
+
+html {
+  font-size: 100%; /* 12.8px */
+}
+
+body {
+  /*width: 80vmax; vmax는 긴쪽 기준 가로가 길때는 가로 중심이다가 세로가 길어지면 세로기준. */
+  /*font-size: 0.875em; /* 14px 플러그인설치 */
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  /*font-size: 0.875rem;*/ /* 14px */
+  font-size: 1rem; /* 12.8px */
+  /* 행간 설정 */
+  line-height: 1.5rem; /* 19.2px */ /* 1rem * 1.5 = 16 * 1.5 = 24px */
+  /* 배경 이미지 삽입 */
+  background-image: url("../images/guide/leading-24px.png");
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/*img 아래에 알 수 없는 공간이 생겨서 처리방법*/
+img {
+  vertical-align: middle;
+}
+
+img + p {
+  margin-top: 1.5rem;
+}
+
+.small-caps {
+  font-variant: small-caps;;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+/**
+ * --------------------------------
+ * font 속기형 작성법
+ * 기본 작성법
+ * font: size/line-height family; [필수]
+ * font: style weight size/line-height family; [선택]
+ * ----------------------------- */
+.font-short-properties {
+ /* font: 1.2rem/2rem Helvetica, Sans-Serif;
+  font: italic 1.2rem/2rem Helvetica, Sans-Serif;
+  font: bold 1.2rem/2rem Helvetica, Sans-Serif;
+  font: bold italic 1.2rem/2rem Helvetica, Sans-Serif;
+  font: italic bold 1.2rem/2rem Helvetica, Sans-Serif;
+  font: italic bold small-caps 1.2rem/2rem Helvetica, Sans-Serif;*/
+}
+
+.spoqa {
+  font-family: "Spoqa Han Sans";
+  font-weight: 200;
+  letter-spacing: -0.01em;
+  word-spacing: 0.05em;
+}
+
+table, th, td {
+  border: 1px solid #f00
+}
+
+td {
+  padding: 2em;
+}
+
+/*들여쓰끼 기능*/
+/*white-space */
+
+/**
+ * --------------------------------
+ * IR 테크닉 (Image Replcement 이미지 대체 기법)
+ * ----------------------------- */
+/*이 방법은 문제를 수반하고 JS로 처리 가능하니.*/
+.brand-tweetle {
+  /*자식이 부모를 넘쳐날때 그 상태를 말함. 속성값으로 처리 */
+  overflow: hidden; /* box 32px 안에 web만 들어오게 design 숨긴다 */
+  display: block; /* width, height 주기 위해서*/
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/tweetle/rest_in_tweetle_peace.png");
+  background-repeat: no-repeat;
+  text-indent: -9999em; /* display:none하면 screen reader 못읽어서 */
+}
+
+.brand-tweetle a {
+  display: block;
+}

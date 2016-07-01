@@ -1,0 +1,58 @@
+.wrap {
+  width: 800px; /* ? */
+  height: 316px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  display: inline-block;
+  margin-bottom: 21px;
+  font-size: 24px;
+  color: #966995;
+}
+hr {
+  margin-bottom: 41px;
+}
+span { line-height: 14px; }
+.madeby {
+  margin-left: 550px;
+  color: #7171EF;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.box1_wrap, .box2_wrap, .box3_wrap, .box4_wrap, .box5_wrap, .box6_wrap,
+.box7_wrap, .box8_wrap, .box9_wrap, .box10_wrap, .box11_wrap {
+  width: 100px;
+  height: 111px;
+  margin-right: 28px;
+  margin-bottom: 30px;
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #2C2C2C;
+  letter-spacing: 1.2px;
+  float: left;
+}
+
+/* common module */
+.box {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 11px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+/* box background-color */
+.box1 { background: #FCB409; }
+.box2 { background: #63A2FC; }
+.box3 { background: #44CB83; }
+.box4 { background: #7171EF; }
+.box5 { background: #FF5448; }
+.box6 { background: #787F94; }
+.box7 { background: #666473; }
+.box8 { background: #8F9199; }
+.box9 { background: #B1B4C0; }
+.box10 { background: #D6D9DC; }
+.box11 { background: #F3F6FA; }
