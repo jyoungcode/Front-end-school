@@ -57,7 +57,8 @@ img + p {
   font: bold 1.2rem/2rem Helvetica, Sans-Serif;
   font: bold italic 1.2rem/2rem Helvetica, Sans-Serif;
   font: italic bold 1.2rem/2rem Helvetica, Sans-Serif;
-  font: italic bold small-caps 1.2rem/2rem Helvetica, Sans-Serif;*/
+  font: italic bold small-caps 1.2rem/2rem Helvetica, Sans-Serif;
+  font: large/1 serif;*/
 }
 
 .spoqa {

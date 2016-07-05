@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSS 박스모델 크기 설정</title>
+  <style>
+    body {
+      margin: 5% 15%;
+      font: 1rem/1.5 Verdana;
+      color: #494949;
+      /*Box Design*/
+    }
+    [class$="-box"] {
+      width: 240px;
+      margin-bottom: 1rem;
+      padding-top: 0.45rem;
+      padding-bottom: 0.45rem;
+      outline: 1px dotted #484848;
+      text-align: center;
+
+      /*box-sizing 비교*/
+      border: 5px solid #b9121b;
+      padding-left: 20px;
+    }
+
+    .content-box { background: #f6e497;}
+    .border-box { box-sizing: border-box; background: #cab34e;}
+
+    /*container*/
+    .container {
+      background: #eee;
+    }
+    .row::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .col {
+      float: left;
+      width: 33.3333%; /* 완벽한 3등분이 안되서 소수점은 개인이 설정한다 육안으로 확인 힘들다 */
+      text-align: center;
+      color: #fff;
+    }
+    .col:nth-child(1) {background: #ec121e;}
+    .col:nth-child(2) {background: #820e14;}
+    .col:nth-child(3) {background: #8f373c;}
+
+  </style>
+</head>
+<body>
+  <div class="content-box">content-box</div>
+  <div class="border-box">border-box</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">column</div>
+      <div class="col">column</div>
+      <div class="col">column</div>
+    </div>
+  </div>
+</body>
+</html>

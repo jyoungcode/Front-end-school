@@ -1,0 +1,45 @@
+/**
+* page 구조
+* CSS 플로트 레이아웃 디자인
+* 플로트 영향을 받는 요소에서 해제를 하지 않을 경우 발생하는 문제.
+*/
+
+/*공통 모듈*/
+[class*="page-"] {
+  height: 20vh;
+}
+[class*="page-"]::before {
+  display: block;
+  line-height: 20vh;
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center; /* display: block 해야 가능 */
+}
+
+/*개별 모듈*/
+.page-header {
+  background: #7045cf;
+}
+.page-navigation {
+  background: #388dc4;
+}
+.page-main {
+  background: #3cc880;
+  /*width: 80;*/
+  /*height: 50vh;*/
+  float: right;
+}
+.page-sidebar {
+  background: #78c935;
+  float: left;
+}
+.page-footer {
+  background: #c38b36;
+  float: right;
+  /*clear: both;*/
+}
+.page-header::before {content: 'page-header';}
+.page-navigation::before {content: 'page-navigation';}
+.page-main::before {content: 'page-main';}
+.page-sidebar::before {content: 'page-sidebar';}
+.page-footer::before {content: 'page-footer';}
