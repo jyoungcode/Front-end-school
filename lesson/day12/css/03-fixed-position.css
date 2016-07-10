@@ -1,0 +1,32 @@
+::-moz-selection {
+  background: hsla(197, 79%, 13%, 0.7);
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: hsla(197, 79%, 13%, 0.7);
+  color: #fff;
+  text-shadow: none;
+}
+
+body {
+  font-family: "Spoqa Han Sans";
+  font-weight: 200;
+  /*이미지가 앞에서 부터 쌓인다*/
+  /*background : 앞에값, 뒤에값*/
+  /*background-size: 앞에값에 적용, 뒤에값 적용 */
+
+  /*linear-gradient(0deg, hsla(0,50%,0%,0.3) 51%, transparent 52%),*/
+  /*linear-gradient(0deg, hsla(0,50%,0%,0.3) 51%, transparent 52%),*/
+  background:
+    linear-gradient(-45deg, transparent 50%, hsla(0,50%,0%,0.3) 51%, transparent 52%),
+    linear-gradient(45deg, transparent 50%, hsla(0,50%,0%,0.3) 51%, transparent 52%),
+    url('../images/halfton.png'),
+    url('../images/Rain-City.jpg') no-repeat center;
+  background-size:
+    30px 30px,
+    30px 30px,
+    100%
+    cover;
+  color: #fff;
+}

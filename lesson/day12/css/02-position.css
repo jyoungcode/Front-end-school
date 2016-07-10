@@ -1,0 +1,45 @@
+.buttonset-moive-control {
+  width: 70%;
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+}
+[class*="button-"]{
+  width: 100px;
+  height: 40px;
+  display: block;
+  float: left;
+  border-right: 1px solid black;
+}
+[class*="button-"]:last-child{
+  border-right: 0;
+}
+
+[class*="button-"]:hover {
+  background: #000;
+  color: #fff;
+}
+[class*="button-"]:active {
+  background: #2956de;
+  color: #fff;
+}
+[class*="button-"]:visited {
+  background: #2956de;
+  color: #fff;
+}
+span {
+  line-height: 30px;
+}
+
+[class*="button-"]:first-child {
+  margin: 0;
+  border-radius: 8px 0px 0px 8px;
+}
+[class*="button-"]:last-child {
+  margin: 0;
+  border-radius: 0px 8px 8px 0px;
+}

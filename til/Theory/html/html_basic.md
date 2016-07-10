@@ -2,6 +2,21 @@
 
 ## Basic, Text Format
 
+
+### DOCumnet TYPE definition : <!DOCTYPE>
+- 반드시 문서의 가장 첫 번째 줄에 있어야 합니다.
+- 문서가 표준을 준수하는지, 준수한다면 어떤 버전의 표준인지 브라우저가 이해할 수 있도록 표시하는 식별코드
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+```
+
 # block 요소
 ### heading : h1 ~ h6
 - 사이트 로고, 제목은 가장 중요한 정보영역
@@ -15,19 +30,6 @@
 # inline 요소
 ### comment : <!-- -->
 - 메모, 브라우저가 읽을 수 없다.
-
-### DOCumnet TYPE definition : <!DOCTYPE>
-- 문서가 표준을 준수하는지, 준수한다면 어떤 버전의 표준인지 브라우저가 이해할 수 있도록 표시하는 식별코드
-```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
-"http://www.w3.org/TR/html4/frameset.dtd">
-```
 
 ### Bold : b
 - text 두껍게 표현
@@ -44,6 +46,7 @@
 
 ### Anchor: a
 - 문서 내,외부 href 속성을 이용하여 연결
+- a 태그는 하이퍼링크 기능을 제거하고 사용하는 경우도 있다. href 속성값 반드시 입력. 그래서 # 사용.
 ### resource reference : link
 - 외부 스타일 자원(CSS, images)을 문서로 가져온다.
 
@@ -95,9 +98,13 @@
 </colgroup>
 <!-- summary(내용요약), caption(제목)은 접근성을 위해서 반드시 필요 -->
 <!-- `<caption>`은 접근성 준수를 위해서 필요하나, 제목을 의미하는 구조화된 요소가 존재할 경우 생략 가능하다 -->
-<table summary="테이블 요약내용">
+<table border="1" summary="테이블 요약내용">
   <caption>테이블제목</caption>
-  <thead>
+  <colgroup>
+    <col span="2" style="background: red;" />
+    <col style="background: blue;" />
+  </colgroup>
+  <thead style="background: green;">
     <tr>
       <th scope="영역 지정">제목</th>
     </tr>

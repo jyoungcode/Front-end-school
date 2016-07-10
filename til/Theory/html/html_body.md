@@ -18,6 +18,8 @@
 - `<label>`: `<input>`요소의 꼬리표 역할로 접근성을 높여준다. `<label for="input id와 연결">`
 - `<fieldset>`: form 요소 내에서 그룹을 만들 경우
 - `<legend>`: fieldset 그룹의 제목
+- `<input>` 속성
+- button / checkbox / file / hidden / image / password / radio / reset / submit / text
 
 ```html
 <label for="u_id">사용자 아이디</label>
@@ -45,6 +47,7 @@
 
 ### select
 - 드롭 다운 메뉴를 만들 경우 사용하는 선택 양식을 말한다.
+- select 요소는 최근에 일반적인 경우 디자인상
 ```html
 <select name="">
   <optgroup label="프론트엔드" />
