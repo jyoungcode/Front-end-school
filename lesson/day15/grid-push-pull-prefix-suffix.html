@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Grid System : Push, Pull</title>
+  <link rel="stylesheet" href="../Resources/webfonts/SpoqaHanSans-kr.css">
+  <link rel="stylesheet" href="../Resources/initialization/normalize.css">
+  <link rel="stylesheet" href="../Resources/common.css">
+  <link rel="stylesheet" href="../Resources/grid-system/grid-static-1280-8.css">
+  <link rel="stylesheet" href="css/grid-push-pull-exam.css">
+</head>
+<body>
+  <!--
+    push, pull : unit-2 column을 옆으로 자동으로 미는 클래스
+    거터 2개 + 유닛 2개 위드값 이걸 push 1 , 2로 미는 정도를 클래스 나눈다.
+    margin-left는 전체가 이동, position:relative는 박스만 이동
+  -->
+  <div class="grid-container show-grid">
+    <div class="grid">
+      <div class="unit-2 push-3">
+        <img class="flex-img" src="http://placehold.it/800x340/34c0ff/fff/?text=1" alt="">
+      </div>
+      <div class="unit-2 push-5">
+        <img class="flex-img" src="http://placehold.it/800x340/000/fff/?text=2" alt="">
+      </div>
+      <div class="unit-2">
+        <img class="flex-img" src="http://placehold.it/800x340/ffd219/fff/?text=3" alt="">
+      </div>
+      <div class="unit-2 last">
+        <img class="flex-img" src="http://placehold.it/800x340/f00/101010/?text=4" alt="">
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="unit-2 push-2">
+        <img class="flex-img" src="http://placehold.it/800x340/34c0ff/fff/?text=1" alt="">
+      </div>
+      <div class="unit-2 push-1">
+        <img class="flex-img" src="http://placehold.it/800x340/000/fff/?text=2" alt="">
+      </div>
+      <div class="unit-2 ">
+        <img class="flex-img" src="http://placehold.it/800x340/ffd219/fff/?text=3" alt="">
+      </div>
+      <div class="unit-2 last">
+        <img class="flex-img" src="http://placehold.it/800x340/f00/101010/?text=4" alt="">
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="unit-2 prefix-1">
+        <img class="flex-img" src="http://placehold.it/800x340/34c0ff/fff/?text=1" alt="">
+      </div>
+      <div class="unit-2">
+        <img class="flex-img" src="http://placehold.it/800x340/000/fff/?text=2" alt="">
+      </div>
+      <div class="unit-2">
+        <img class="flex-img" src="http://placehold.it/800x340/ffd219/fff/?text=3" alt="">
+      </div>
+      <div class="unit-2 last">
+        <img class="flex-img" src="http://placehold.it/800x340/f00/101010/?text=4" alt="">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

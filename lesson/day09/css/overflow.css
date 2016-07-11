@@ -6,13 +6,27 @@
  * - auto : 스크롤이 생기고 컨텐츠가 넘치치 않으면 생기지 않는다.
  * - scroll : 상하, 좌우 모두 스크롤이 무조건 생긴다.
  */
-.parent-box {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 200px;
-  height: 80px;
-  border: 3px solid #aea28f;
+ html {
+  overflow-y: scroll; /* 스크롤바가 생기지 않을 걸 대비해서 */
 }
+ h2 {
+   text-indent: 3em;
+   margin-top: 2em;
+   font-weight: 900;
+   color: #635d52;
+   padding-top: 1em;
+   border-top: 1px solid #ddd;
+ }
+
+ .parent-box {
+   margin-left: 20%;
+   margin-right: 20%;
+   margin-bottom: 300px;
+   padding: 1em;
+   height: 80px;
+   border: 3px solid #aea28f;
+   line-height: 1.5;
+ }
 .ovh {
   overflow: hidden;
 }

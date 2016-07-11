@@ -90,7 +90,6 @@ td {
   display: block; /* width, height 주기 위해서*/
   width: 32px;
   height: 32px;
-  border: 1px solid black;
   background-image: url("https://cdn4.iconfinder.com/data/icons/tweetle/rest_in_tweetle_peace.png");
   background-repeat: no-repeat;
   text-indent: -9999em; /* display:none하면 screen reader 못읽어서 */
