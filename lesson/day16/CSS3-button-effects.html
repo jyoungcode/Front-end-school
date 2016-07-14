@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>CSS3 버튼 이펙트</title>
+  <link rel="stylesheet" href="../Resources/effects/button-effects.css">
+  <style>
+    .wrapper {
+    margin: 4rem;
+    text-align: center;
+    }
+    button {
+      margin: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <button type="button" class="button button-round slide-from-left">
+    <span>SLIDE FROM LEFT</span>
+  </button>
+
+  <hr>
+  <div class="wrapper">
+   <div class="slide-button-set">
+      <!-- slide from left -->
+      <button type="button" class="button button-round slide-from-left">
+        SLIDE FROM LEFT
+        <!-- <span>SLIDE FROM LEFT</span> -->
+      </button>
+      <!-- slide from right -->
+      <button type="button" class="button button-round slide-from-right">
+        SLIDE FROM RIGHT
+      </button>
+      <!-- slide from top -->
+      <button type="button" class="button button-round slide-from-top">
+        SLIDE FROM TOP
+      </button>
+      <!-- slide from bottom -->
+      <button type="button" class="button button-round slide-from-bottom">
+        SLIDE FROM BOTTOM
+      </button>
+    </div><!--slide-button-set-->
+
+    <div class="grow-button-set">
+      <div>
+      <!-- grow rectangle -->
+        <button type="button" class="button button-round grow-rectangle">GROW RECTANGLE</button>
+        <!-- grow ellipse -->
+        <button type="button" class="button grow-ellipse">GROW ELLIPSE</button>
+        <!-- grow circle -->
+        <button type="button" class="button grow-circle">GROW CIRCLE</button>
+      </div>
+      <div>
+        <!-- grow skew 45deg -->
+        <button type="button" class="button grow-skew">GROW SKEW</button>
+        <!-- grow skew -45deg -->
+        <button type="button" class="button grow-skew-45">GROW SKEW-45</button>
+        <!-- grow spin cw -->
+        <button type="button" class="button grow-spin">GROW SPIN</button>
+        <!-- grow spin ccw -->
+        <button type="button" class="button grow-spin-ccw">GROW SPIN-CCW</button>
+      </div>
+    </div><!--grow-button-set-->
+  </div><!--wrapper-->
+
+  <div class="chr_img">
+    <img src="images/dora.png" alt="도라에몽" width="300" height="300" />
+  </div>
+</body>
+</html>

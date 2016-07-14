@@ -22,6 +22,8 @@
   top: 0;
   left: 0;
   width: 100%;
+}
+.grid-container[class*="show-grid"]::before {
   height: 500vh;
 }
 
@@ -63,8 +65,8 @@
 /* first, last / alpha, omega = grid 시스템을 처음 만든 사람이 썼기때문에
 다들 그것을 따라씀(해외에서) 그래서 혹시 모르니 클래스명 넣어둠 */
 
-.grid [class*="unit-"]:last-child, .last, .omega { margin-right: 0; }
-/* .grid .last, .grid .omega { margin-right: 0; } */
+/*.grid [class*="unit-"]:last-child, .last, .omega { margin-right: 0; }*/
+ .grid .last, .grid .omega { margin-right: 0; } 
 .grid .unit-1 { width: 130px; }
 .grid .unit-2 { width: 290px; } /* 130*2 + margin-left:30 */
 .grid .unit-3 { width: 450px; }
@@ -79,7 +81,7 @@
  * Push, Pull Module
  * ----------------------------- */
  /* normal-flow가 깨진것 처럼 보이지만 그렇지않다.
- relative 적용박스들끼리 z-index로 맞춰주다 */ 
+ relative 적용박스들끼리 z-index로 맞춰주다 */
 .grid [class*="push-"],
 .grid [class*="pull-"] {
   position: relative;

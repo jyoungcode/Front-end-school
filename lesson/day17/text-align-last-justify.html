@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+  <style>
+    .align-last-justify {
+      width: 23rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      -moz-text-align-last: justify;
+      text-align-last: justify;
+      font-weight: 900;
+      font-size: 6rem;
+    }
+    .sprite-anim-penguin {
+      margin-left: auto;
+      margin-right: auto;
+      width: 102px;
+      height: 102px;
+      background: url(./images/css-sprite-animation-steps-penguin.png) no-repeat;
+      animation: penguin steps(10) 1s infinite;
+    }
+    @keyframes penguin {
+      0% { background-position-x: 0; }
+      /*30% { background-position-x: 600px; }*/
+      100% { background-position-x: -1024px; }
+    }
+    .sprite-anim-mario {
+      margin-left: auto;
+      margin-right: auto;
+      width: 40px;
+      height: 57px;
+      background: url(./images/css-sprite-animation-steps-mario.png) no-repeat;
+      animation: mario steps(27) 1.5s infinite;
+    }
+    @keyframes mario {
+      0% { background-position-x: 0; }
+      /*20% { background-position-x: 160px; }*/
+      /*50% { background-position-x: 100px; }*/
+      100% { background-position-x: -1080px; }
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- 애니메이션은 gpu사용때문에 css를 이용하자
+  js 성능저하 -->
+  <p class="align-last-justify">잘 먹 고 잘 살 자</p>
+
+  <div class="sprite-anim-penguin"></div>
+  <div class="sprite-anim-mario"></div>
+</body>
+</html>

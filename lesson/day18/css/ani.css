@@ -1,0 +1,37 @@
+/* 잘못 한 부분 표시 : @ */
+
+header {
+  /* @ width: 100%;*/
+  height: calc(100vh - 100px);
+  background: url('../images/sq_bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.header_contents {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+/* logo */
+.logo {
+  /*padding-top: 10px;*/
+  /*padding-bottom: 20px;*/
+  /*padding-left: 40px;*/
+  /*padding-right: 40px;*/
+  float: left;
+  /*border: 1px solid black;*/
+}
+.logo a { text-decoration: none; }
+
+/* nav */
+.nav {
+  float: left;
+}
+.nav ul {}
+.nav ul li {
+  float: left;
+
+}
+.nav ul li a { text-decoration: none; }

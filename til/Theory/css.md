@@ -33,3 +33,21 @@
 2. overflow는 높이 0 이어도
 overflow hidden 쓰면
 float 자식은 hidden 본연의 기능의 반대.
+
+clearfix는 꼭 after 가상요소
+micro clearfix는 before다
+
+<!-- 족구왕 -->
+a[class*="underline-"] {
+  position: relative;
+  border-bottom: none;
+}
+a[class*="underline-"]::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  border-bottom: 2px solid currentColor;
+}
+여기서 before ,after 상관없음
+그리고 부모에 relative 안주면 화면까지 부모를 찾아감..블로그하자

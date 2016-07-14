@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/*! letter_effects.css @jyoungcode.com, 2016 */
+
+/*body { background: url(../images/food.png);}*/
+.wrap {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 459px; /* 한칸 153px*3 */
+  /*border: 1px solid black;*/
+}
+
+.letter_style {
+  font-family: sans-serif;
+  font-size: 110px;
+  font-weight: bolder;
+  letter-spacing: 50px;
+  line-height: 153px; /* height 153px */
+  /*text-align: center;*/
+  /*border: 1px solid black;*/
+  /* 텍스트 중앙정렬 */
+}
+
+span[class*="letter_"] {
+  cursor: pointer;
+  display: block;
+  float: left;
+  position: relative;
+  z-index: 1;
+  width: 153px;
+  height: 153px;
+}
+/*[class*="letter_"]::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: url(../images/food.png);
+}*/
+
+[class*="letter_"]:hover::after,
+[class*="letter_"]:focus::after {
+
+}
+
+.letter_1::after {
+  text-indent: -9999px;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 153px;
+  height: 153px;
+  background: url(../images/food.png);
+  background-position: -100px 100px;}
+.letter_1:hover::after {
+}
+.letter_2 {
+
+}
+.letter_3 {}
+.letter_4 {}
+.letter_5 {}
+.letter_6 {}
+
+
+
+  /*transform: scale(1.5) rotate(45deg);
+  animation: letter 4s infinite alternate cubic-bezier(0.68, 0.18, 0.13, 0.73);
+}
+@keyframes letter {
+  0% {
+    transform: translateY(-113px) scale(0.5) rotate(20deg);
+  }
+  50% {
+    transform: translateY(-113px) scale(0.5) rotate(80deg);
+  }
+  100% {
+    transform: translateY(-113px) scale(0.5) rotate(20deg);
+  }*/
