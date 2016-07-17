@@ -1,0 +1,46 @@
+/* 1. px단위를 쓰는데 정확한 계산없이 눈떼중의 픽셀부여가 옳은가?
+2. id에 공백을 줬을때 하얀 배경이 생기는데 이건 absolute를 잃어버리고 block 요소만 남는것일까?
+3. padding을 줬는데 벌어지지 않는이유? width를 줘야할까? */
+
+#holzweiler-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  color: #fff;
+  /*background: rgba(255,255,255,0.4);*/
+}
+.header_contents_wrap {
+  /* 이걸 쓰는게 좋을까? 아님 그냥 header padding을 줄까?*/
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+/*.left_nav_wrap, .right_nav_wrap { widt}*/
+.left_nav_wrap { margin-right: 250px; }
+.right_nav_wrap { margin-left: 250px; }
+.left_nav_wrap, .logo, .right_nav_wrap {
+  /*border: 1px solid black;*/
+  float: left;
+}
+.left_nav, .right_nav { padding: 20px 50px;}
+[class$="nav"] a { text-decoration: none; }
+.left_nav li, .right_nav li, .logo h1 {
+  float: left;
+  display: block;
+}
+.logo h1 { font-family: 'Bitter', serif; letter-spacing: 4px; margin: 0; /* normalize에 margin 없애자 */}
+
+#holzweiler-go-shop {
+
+}
+
+#holzweiler-go-shop a {
+  display: block;
+}
+#holzweiler-go-shop video {
+  width: 100%;
+  /*height: calc(100vh - 100px);*/
+}

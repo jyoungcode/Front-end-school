@@ -1,55 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Holzweiler</title>
-  <link rel="stylesheet" href="../../Resources/webfonts/SpoqaHanSans-kr.css">
-  <link rel="stylesheet" href="../../Resources/common.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Unique items with wonderful qualities | Holzweiler</title>
   <link rel="stylesheet" href="../../Resources/initialization/normalize.css">
+  <link rel="stylesheet" href="../../Resources/common.css">
   <link rel="stylesheet" href="css/holzweiler.css">
-  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <!-- id에 공백을 주면 스타일을 먹지 않는다. 블로그 남기자 -->
-  <section id="holzweiler-header">
-    <!-- Logo, Global Navigation Bar -->
-    <div class="header_contents_wrap clearfix">
-      <div class="left_nav_wrap">
-        <div class="left_nav reset-list">
-          <ul class="clearfix">
-            <li><a href="">Shop</a></li>
-            <li><a href="">Collections</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">About</a></li>
+
+  <!-- LOGO, GLOBAL NAVIGATION BAR -->
+  <section id="holzweiler-header" class="reset-list-group">
+    <h1 class="holzweiler-brand">
+      <a href="#"><img class="flex-img" src="media/logo.svg" alt="HOLZWEILER"></a>
+    </h1>
+    <nav class="holzweiler-gnb">
+      <ul class="depth-1 clearfix">
+        <li>
+          <a href="#">Shop</a>
+          <ul class="depth-2">
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Lambswool scarves</a></li>
+            <li><a href="#">Fine scarves</a></li>
+            <li><a href="#">Accessories</a></li>
           </ul>
-        </div><!-- left_nav -->
-      </div><!-- left_nav_wrap -->
-
-      <div class="logo">
-        <h1>HOLZWEILER</h1>
-      </div>
-
-      <div class="right_nav_wrap">
-        <div class="right_nav reset-list">
-          <ul>
-            <li><a href="">Search</a></li>
-            <li><a href="">Sign in</a></li>
-            <li><a href="">NOK</a></li>
-            <li><a href="">Bag<span>(0)</span></a></li>
+        </li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <nav class="holzweiler-unb">
+      <ul class="depth-1">
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Sign in</a></li>
+        <li>
+          <a href="#">NOK</a>
+          <ul class="depth-2">
+            <li><a href="#">NOK</a></li>
+            <li><a href="#">EUR</a></li>
           </ul>
-        </div><!-- right_nav -->
-      </div><!--right_nav_wrap -->
-    </div><!-- contents_wrap-->
-  </section><!-- header -->
+        </li>
+        <li><a class="shopping-cart" href="#">Bag (0)</a></li>
+      </ul>
+    </nav>
+  </section>
 
+  <!-- A > SLOGAN TEXT +  VIDEO BG -->
   <section id="holzweiler-go-shop">
-    <!-- a > Slogan Text + Video BG -->
+    <h2 class="readable-hidden">Go Shop</h2>
     <a href="#">
-      <video autoplay loop src="media/holzweiler_new.mp4">
-        <!-- IE8-이하 에서는 대체할 수 있는 기술 또는 문구를 삽입 -->
-        <!-- 속성: poster, controls 도 있다.  -->
-      </video>
+      <div class="wrapper">
+        <h3>Latest<br>Essentials</h3>
+        <span>Shop now</span> <span class="go-arrow">→</span>
+      </div>
+      <video autoplay loop src="media/holzweiler_new.mp4"></video>
     </a>
   </section>
+
+  <!-- NOTICE -->
+  <section id="holzweiler-notice" class="fixed-sticky-bottom">
+    <h2 class="readable-hidden">Notice</h2>
+    <a href="">New styles have arrived - take a look at our lambswool scarves here!</a>
+    <button type="button" class="holzweiler-close-button">
+      <span class="readable-hidden">Close</span>
+    </button>
+  </section>
+
 </body>
 </html>
