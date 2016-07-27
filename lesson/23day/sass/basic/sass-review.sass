@@ -1,0 +1,101 @@
+/* CSS Comment */
+/* CSS 파일은 건드는게 아니다. SASS로 컴파일 되는 순간 CSS가 사라진다. */
+// Singleline Comment
+// Not Complile
+// Sass Comment
+/* 
+ 여러
+ 줄
+ 라인
+ 출력
+ 가능
+
+body
+	margin: 0
+
+//
+ * ------------------------------------------
+ * 중첩 규칙/속성
+ * Nested Rules/Properties
+
+$page-width: 1280px
+$columns: 16
+$column-width: $page-width / $columns
+.container
+	max-width: $page-width
+	margin: 
+		left: auto
+		right: auto
+
+/* ie 조건부 주석을 부모에 참조하는 방식 */
+.row
+	&::before,
+	&::after
+		content: ' '
+		display: table
+	&::after
+		clear: both
+	.lt-ie8 &
+		zoom: 1
+
+// col의 공통 모듈
+// 대체 선택자를 활용하여 재사용 가능한 모듈 코드를 정의
+// %col-module
+// [class*="col-"]
+%col-module
+	float: left
+	padding: 
+		left: 1rem
+		right: 1rem
+
+// 컴럼 모듈
+// .col-1
+// 	float: left
+// 	width: $column-width
+// .col-2
+// 	float: left
+// 	width: $column-width * 2
+
+// %col-module을 사용하지 않으면 문법오류가 생기지만
+// !optional을 통해서 아래 코드를 쓰고자 할때. 
+.col-1
+	@extend [class*="col-"] !optional
+	width: $column-width
+.col-2
+	@extend [class*="col-"] !optional
+	width: $column-width * 2
+
+// 컬럼모듈
+// .col-1
+// 	@extend %col-module
+// 	width: $column-width
+// .col-2
+// 	@extend %col-module
+// 	width: $column-width * 2
+
+
+// 방법론 중 하나지 절대적이지 않다.
+// 웹브라우저 상에서 고쳐야 할걸 찾았는데 그게 gnb 부분이라면 
+// 내가 분류해높은 gnb 파일만 찾아서 수정하면 되는것이다.
+// 변수 선언 파일을 configuration 파일을 가장 먼저 불러 온다. 그 이유는 변수 선언이 먼저 되어있어야 하기 때문에. 
+// Sass는 js처럼 지역,전역 변수는 존재하지 않는다. 
+// 그렇지만 Sass에서 _를 통해 지역변수 개념을 명시적으로 도입할 수는 있다.
+
+/*
+ header
+ ┗ logo
+ ┗ search
+ ┗ banner 
+ @import header
+ naviigation
+ ┗ gnb
+ ┗ lnb
+ ┗ unb 
+ @import navigation 
+ main
+ ┗ primary
+ ┗ secondary
+ ┗ etc
+ @import main
+ @import aside
+ @import footer

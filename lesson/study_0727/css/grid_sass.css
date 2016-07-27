@@ -1,0 +1,73 @@
+/* grid_sass.sass @jyoungcode */
+.clearfix::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.overlay_grid {
+  position: relative;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay_grid:before {
+  content: ' ';
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 200vh;
+  background: linear-gradient(to bottom, transparent 95%, rgba(0, 0, 0, 0.5) 95%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 90%, transparent 90%);
+  background-size: 1px 24px, 100px 1px;
+}
+
+.unit-1 {
+  width: 80px;
+}
+
+.unit-2 {
+  width: 180px;
+}
+
+.unit-3 {
+  width: 280px;
+}
+
+.unit-4 {
+  width: 380px;
+}
+
+.unit-5 {
+  width: 480px;
+}
+
+.unit-6 {
+  width: 580px;
+}
+
+.unit-7 {
+  width: 680px;
+}
+
+.unit-8 {
+  width: 780px;
+}
+
+.unit-9 {
+  width: 880px;
+}
+
+.unit-10 {
+  width: 980px;
+}
+
+.unit-11 {
+  width: 1080px;
+}
+
+.unit-12 {
+  width: 1180px;
+}
+
+/*# sourceMappingURL=../map/grid_sass.css.map */

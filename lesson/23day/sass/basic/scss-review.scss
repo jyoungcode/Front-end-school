@@ -1,0 +1,25 @@
+// SCSS 한 줄 주석
+/* SCSS 여러 줄 주석 */
+
+/* 선생님은 SCSS가 대중적이나 Coffeescript 같은 sass를 사용한다. 단 문법에 대한 차이를 알아야한다.*/
+/*
+ SCSS 주석을
+ Sass 주석처럼 사용이
+ 가능
+ 하지 않다.
+*/
+
+html {
+	overflow-y: scroll;
+}
+
+$space: 22px;
+$snow-white: #efecca;
+
+@import "button";
+
+.buldack {
+	$space: null;
+	width: 55%;
+	@import "button";
+}

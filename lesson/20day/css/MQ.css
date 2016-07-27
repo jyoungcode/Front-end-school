@@ -1,0 +1,39 @@
+@charset "utf-8";
+/*! MQ.css yamoo.net, 2016 */
+body {
+	height: 100vh;
+	min-width: 30rem;
+	background: #fe4940;
+	font: 1rem/100vh "Spoqa Han Sans", sans-serif;
+	text-align: center;
+}
+
+body::before {
+	content: 'Mobile View';
+	font-size: 3rem;
+	color: #fff;
+}
+
+/* 세로 300부터 , 가로 600 이하까지 */ 
+@media (min-height: 300px) and (max-width:600px) and (orientation: landscape) {
+	body {
+		background: #7045cf;
+	}
+}
+@media (min-width: 600px) {
+	body {
+		background: #34c0ff;
+	}
+	body::before {
+		content: 'Tablet View';
+	}
+}
+@media (min-width: 1000px) {
+	body {
+		background: #ffd219;
+	}
+	body::before {
+		content: 'Desktop View';
+	}
+}
+

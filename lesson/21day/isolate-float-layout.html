@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>격리된 플로팅 레이아웃</title>
+	<link rel="stylesheet" href="../Resources/initialization/normalize.css">
+	<link rel="stylesheet" href="../Resources/common.css">
+	<link rel="stylesheet" href="../Resources/grid-system/grid-fluid-1280-8.css">
+	<style>
+		.box {
+			/*width: 12.8% * 0.81(81%);*/
+			/*width: 10.368%;*/
+			/*IE 10 이상 지원*/
+			width: calc( 12.8% * 0.81 );
+			height: calc( 27px * 2 );
+			float: left;
+			text-align: center;
+			line-height: calc( 27px * 2 );	
+			background: #313133;
+			color: #fff;
+		}
+
+		/*본래 사용하는 float 방식*/
+		/*%구하는 공식 컬럼px수치/전체width값*100*0.81( 유닛:거터=0.81:0.19) 식으로 한다.*/
+		.box-float {
+			margin-right: calc( 12.8% * 0.19);
+		}
+
+		/* 격리된 float 레이아웃 방식 : isolate float layout technique */
+		[class*="box-isolate"] {
+			/* keypoint */
+			margin-right: -100%; 
+		}
+
+		.isolate-order-1 {margin-left: calc( 12.8% * 0); }
+		.isolate-order-2 {margin-left: calc( 12.8% * 1); }
+		.isolate-order-3 {margin-left: calc( 12.8% * 2); }
+		.isolate-order-4 {margin-left: calc( 12.8% * 3); }
+
+		.grid {
+			margin-bottom: calc(27px * 1);
+		}
+		.grid *:nth-child(1) { background: #ffb03b; }
+		.grid *:nth-child(2) { background: #34c3ff; }
+		.grid *:nth-child(3) { background: #fc1f3d; }
+		.grid *:nth-child(4) { background: #5dff2d; }
+
+	</style>
+</head>
+<body>
+	<div class="grid-container show-grid">
+		<div class="grid">
+			<div class="box box-float">1</div>
+			<div class="box box-float">2</div>
+			<div class="box box-float">3</div>
+			<div class="box box-float">4</div>
+		</div>
+		<div class="grid">
+			<div class="box box-isolate isolate-order-2">A</div>
+			<div class="box box-isolate isolate-order-3">B</div>
+			<div class="box box-isolate isolate-order-1	">C</div>
+			<div class="box box-isolate isolate-order-4">D</div>
+		</div>
+	</div>
+</body>
+</html>

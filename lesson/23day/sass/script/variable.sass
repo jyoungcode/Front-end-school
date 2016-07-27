@@ -1,0 +1,52 @@
+// Sass 변수는 변수 이름 앞에 $ 기호를 붙인다.
+// Sass 변수이름 작성 규칙
+// 변수 이름 사이엥 공백을 사용하지 않는다.
+// 변수 이름의 음절 사이엥 _, - 등을 사용한다.
+// Sass만 _ , - 를 갖게 취급한다. 그래서 덮어쓴다.
+// 만약 프로그래밍에 익숙해서 camelCase 방식이 익숙하다며? camelCase 방식의 이름을 사용할 수도 있다. 다만, camelCase 표기식은 일반적으로 함수 이름에 사용되기 때문에 권장하지는 않는다.
+
+$my-nickname: 'yamoo9'
+$my_nickname: 'yamoo8'
+
+body
+	&::before,
+	&::after
+		content: $my_nickname
+
+// 가운데로 정렬되는 코드를 작성하는데
+%center-pos
+	display: flex
+	justify-content: center
+	align-items: center
+%align-center-margin
+	margin: 
+		left: auto
+		right: auto
+
+// 16px/1px 하면 px단위가 빠진다.
+// @function strip-unit($unit)
+// 	@return $px/(1px) 
+
+// @function px2em($unit, $base: 16)
+// 	@return strip-unit($unit/16 * 1)
+
+$container-width: 1263px
+$dark-gray: #3d3c31
+$breakpoint-md: px2em(720)
+
+.container
+	// $_dark-gray: #3d3c31 !global ( 지역변수 _로 습관은 좋다.)
+	// 웬만해서 쓸일이 없으나 꼭 지역변수인데 전역변수처럼 다른 곳에 써야 할 때.
+	@extend %align-center-margin
+	max-width: $container-width
+	min-height: ceil($container-width/2)
+// ceil, round 함수 등 사용가능
+
+.page-footer
+	@extend %align-center-margin
+	width: 100vh - 20vh
+	@media screen and (min-width: $breakpoint-md)
+		width: 90%
+	background: $dark-gray
+	color: rgba(lighten($dark-gray, 40%), 0.45)
+

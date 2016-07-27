@@ -1,0 +1,48 @@
+/* nav.sass */
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One|Indie+Flower);
+.clearfix::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.nav-wrap {
+  width: 100%;
+  background: #555;
+}
+
+.nav {
+  width: 500px;
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  padding: 15px 30px 15px 30px;
+  cursor: pointer;
+  font-family: "Indie Flower", cursive;
+  text-decoration: none;
+}
+
+.nav li a:hover:not(.active) {
+  background-color: #111;
+  font-weight: 900;
+  transition: all 0.25s;
+}
+
+.white-font, .nav li a {
+  color: #fff;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+/*# sourceMappingURL=../map/nav.css.map */

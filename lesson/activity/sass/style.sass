@@ -1,0 +1,36 @@
+/* pizza style.sass
+
+@import "_common";
+
+$font: Arial, sans-serif
+$width: 100% !default
+$ml: auto
+$mr: auto
+$basic_font_size: 16px !default
+
+body
+	width: $width
+	background-image: url('../images/bg.png')
+	background-position: center, center
+	background-size: cover
+
+.header
+	width: $width
+	height: 47px
+	background: linear-gradient(to right, #ed1c24 10px, #c30007 10px, #c30007 50px, #ed1c24 50px, #ed1c24 100px);
+	background-size: 100px 1px
+
+// &에서 한칸 띄어야 함.
+.header_content_wrap
+	width: 1218px
+	margin-left: $ml
+	margin-right: $mr
+	.logo_top
+		font-size: $basic_font_size
+		padding: 12px 30px 12px 30px
+		color: #fff
+		float: left
+	@import "_gnb"
+
+
+

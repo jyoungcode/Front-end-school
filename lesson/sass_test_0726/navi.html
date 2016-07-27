@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+
+<!-- 
+    [내가 만든 순서를 적어보자.]
+    * cli명령어에서 대쉬(-) 두번은 html 주석 방식때문에 안쓰겠습니다. 
+    1. navi.html이 들어 있는 test 폴더를 들어갔다.
+    2. git-bash에 $ cd /c/sublime_dir/test 를 입력하였다.
+    3. $ node-sass sass/ -wo css/ source-map map output-style expanded
+    를 사용. 이 뜻은
+    = node-sass를 사용하고 sass/ 폴더에 모든 것을 watch하면서 output을 css/ 폴더에 컴파일 하고 이때 source-map을 만들거다! 그리고 css/ 폴더에 .css 파일은
+    expanded 방식으로 컴파일 시킬꺼야!!!!!
+    
+    4. 먼저 nav.sass 파일을 만들고 코드를 넣었더니 
+    우왓~ nav.css 파일이 생성되었네~~
+    5. 그리고 link로 컴파일된 nav.css를 적용시키자~!
+    6. 난 이제 nav.sass를 코딩할거야~
+    7. 자주 사용하는걸 sass 문법에 맞게 $set-width 처럼
+    변수 선언하고 !default로 초기값을 지정할거야~!
+    8. SASS 문법에 맞게 작성하고
+    9. & 부모 참조를 활용하여 코드를 간소화한다.
+    10. @extend를 적용해본다.
+    11. @extend와 중첩@import의 차이는
+    @extend: .nav , .active 이런 식이고
+    @import는 .nav .active이런식이다.
+    12. %도 적용 시켜보자. 모듈
+    13. !default로 초기값을 지정해보자
+-->
+
+<div class="nav-wrap clearfix">
+    <ul class="nav clearfix">
+      <li><a class="active white-font" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+// 의존 function 모듈
+@import "functions/percent";
+
+%reset-list-group ul,
+%reset-list-group ol,
+%reset-list,
+%reset-list {
+  margin-top:    0;
+  margin-bottom: 0;
+  padding-left:  0;
+  list-style: none;
+}
+
+// rm : remove 
+%rm-img-blank {
+	vertical-align: bottom;
+}
+%align-img-bottom img + * {
+  overflow: hidden;
+}
+
+%rwd-media {
+	width: 100%;
+	height: auto;
+}
+
+// _를 붙이는 이유는 내가 _common.scss 처럼 내부적으로 쓰겠다는 의미다.
+%_rwd-media-ratio {
+	height: 0;
+	padding-bottom: 75%;
+	background-size: cover;
+	background-position: center center;
+}
+
+%rwd-media-4-3 {
+	@extend %_rwd-media-ratio;
+	padding-bottom: 75%;
+}
+%rwd-media-16-9 {
+	@extend %_rwd-media-ratio;
+	padding-bottom: 56.25%;
+}
+%rwd-media-21-9 {
+	@extend %_rwd-media-ratio;
+	padding-bottom: 42.857142857%;
+}
+
+// Sass Function
+@function getMediaRatio($target, $context) {
+	@return $target/$context*100%;
+}
+
+

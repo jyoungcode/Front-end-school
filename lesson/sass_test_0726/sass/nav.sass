@@ -1,0 +1,59 @@
+/* nav.sass
+// 의존 모듈 활용 common에 clearfix가 있다.
+// 의존 모듈 import 위치 따라 들어간다.
+
+// google font + sass 사용 
+// http://www.developerdrive.com/2014/05/how-to-easily-use-google-fonts-with-sass/
+
+@import "common";
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One|Indie+Flower);
+
+$font-stack: 'Fjalla One', sans-serif;
+$font-flower: 'Indie Flower', cursive;
+$set-width: 100% !default 
+$float_layout: left
+$color: #fff !default
+$bold: 900
+
+.nav-wrap 
+	width: $set-width 
+	background: #555;
+.nav
+	// 중첩
+	$_list-none: none
+	width: 500px
+	list-style-type: $_list-none
+	margin-left: auto
+	margin-right: auto
+
+.nav li
+	float: $float_layout
+
+.nav li a
+	display: block
+	//속기형
+	padding: 15px 30px 15px 30px
+	cursor: pointer
+	font-family: $font-flower
+	text-decoration: none
+	@extend .white-font
+
+.nav li a
+	&:hover
+		&:not(.active)
+			background-color: #111
+			font-weight: $bold
+			transition: all 0.25s
+
+.white-font
+	color: $color
+
+.active
+	background-color: #4CAF50
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+.button, #article-container header {
+  padding: 10px;
+  border: none;
+  background: #efefef;
+}
+
+#article-container header {
+  height: 100px;
+}
+
+#article-container header .button, #article-container header header {
+  padding: 10px;
+  border: none;
+  background: #efefef;
+}
+
+/*# sourceMappingURL=../map/style.css.map */

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Pizza</title>
+	<link rel="stylesheet" href="Resources/initialization/ress.min.css">
+	<link rel="stylesheet" href="css/pizza_grid_responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- 전체wrap으로 감쌀거냐 아니면 header main 마다 wrap을 넣어서 중앙정렬 할꺼냐? -->
+	<!-- 클래스명은 전체를 기본이름을 쓰되, 세부 컨텐츠를 btn_grid 처럼 뒤에는 해당 이름을 쓴다. -->
+	<div class="header">
+		<div class="header_content_wrap">
+			<h1 class="logo_top">Pizzeria&amp;Trattoria SUD</h1>
+			<ul class="gnb">
+				<li><a href="#">LOGIN</a></li>
+				<li><a href="#">JOIN US</a></li>
+				<li><a href="#">SITEMAP</a></li>
+			</ul><!-- gnb -->
+			<div class="btn_wrap">
+				<button></button>
+				<div class="btn_grid"></div>
+			</div><!-- btn_wrap -->
+			<div class="logo_img"><img src="images/main_logo.png" alt="pizzeria&amp;trattoria"></div>
+			<ul class="unb">
+				<!-- a 안에서 읽어주고 li에 포인터 포커스를 줄 수 없냐? -->
+				<li><a href="#"></a><span>ABOUT</span></li>
+				<li><a href="#"></a><span>MENU</span></li>
+				<li><a href="#"></a><span>EVENT</span></li>
+				<li><a href="#"></a><span>COMUNITY</span></li>
+			</ul><!-- unb -->
+		</div><!-- header_content_wrap -->
+	</div><!-- header -->
+
+	<main>
+		<div class="main_img">
+			<!-- h2 hidden 처리 -->
+			<h2>dselicious! pizzeria</h2>
+			<!-- 배경 이미지라서 딱히 img 안써도 될듯 -->
+			<!-- a, button의 구분을  -->
+			<!-- 컨텐츠 내용이 있는거는 a로 / 그냥 nav에 어떤 기능이 나오는건 button으로 난 쓸꺼다.  -->
+			<!-- html5에서 a요소 download 속성 있다. -->
+			<a href="#" class="btn_prev"></a>
+			<a href="#" class="btn_next"></a>
+		</div><!-- main_img -->
+
+		<!-- 셀렉터를 줄이기 위해서 class 명을 명확하게 써준다. -->
+		<div class="main_contents_wrap">
+			<section class="main_contents">
+				<article>
+					<h3>Special mennu open</h3>
+					<div class="main_content_img_wrap">
+						<img src="" alt="">
+						<img src="" alt="">
+						<img src="" alt="">
+					</div><!-- main_content_img_wrap -->
+				</article>
+				<article>
+					<h3>This week event news</h3>
+					<p>
+						요리에 기교보단 재료 본연의 맛을 살리는 레스토랑입니다.<br>
+						항상 신성하고 살아 있는 제철재료롤 어떠한 인공조미료를<br>
+						넣지 않은 건강한 음식을 만들겠습니다. 저희 수드를 방문<br>
+						해 주셔서 진심으로 감사드립니다.
+					</p>
+					<span>Owner Chef: 최주영</span>
+				</article>
+				<article>
+					<h3>Welcome to our restaurant</h3>
+					<p>
+						싱그러운 5월을 맞아 수드에서 3가지 빅이벤트를 진행하고<br>
+						자 합니다. 여러분의 많은 관심과 참여를 부탁 드립니다. 5<br>
+						월 한달동안 진행될 예정이니 많이 찾아주셔서 혜택을 누려<br>
+						보세요!
+					</p>
+					<a href="#">이벤트 바로가기</a>
+				</article>
+			</section><!-- main_contents -->
+		</div><!-- main_contents_wrap -->
+	</main>
+
+<script src="js/toggleBaseline.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 Flex Layout</title>
+	<link rel="stylesheet" href="../Resources/initialization/normalize.css">
+	<link rel="stylesheet" href="../Resources/common.css">
+	<style>
+		body {
+			margin: 3rem;
+		}
+		.flex-container {
+			display: flex;
+			/*display: inline-flex; float 된것 처럼 inline처럼 붙는다 */
+
+			/* main축 즉 flex-direction에 따라서 정렬 */
+			/*justify-content: flex-end; */
+			align-items: stretch;
+			flex-direction: column-reverse;
+			/*flex-flow: row 속기형의 대한 속성 */
+
+			/* float: right; 효과 */
+			/*flex-direction: row-reverse; */
+			/*flex-direction: column;*/
+
+			/* float에서 보지 못한 수직 정렬 역순 */
+			/*flex-direction: column-reverse; */
+			/*overflow: hidden;*/
+			/* nowrap 기본값 */
+			/*flex-wrap: nowrap;*/
+			flex-wrap: wrap;
+			/*flex-wrap: wrap-reverse;*/
+			height: 400px;
+			margin: 2rem 0;
+			border: 2px solid #333;
+			padding: 0.625rem;
+
+		}
+		.flex-items {
+			width: 100px;
+			/*height: 100px;*/
+			background: #333;
+			color: #fff;
+		}
+		.item-1 { height: 50px; background: #f0a518; }
+		.item-2 { height: 120px; background: #1eb1ec; }
+		.item-3 { height: 80px; background: #e90058; }
+
+	</style>
+</head>
+<body>
+
+	<img src="http://placehold.it/400x200"" alt="image">
+	<div class="flex-container">
+		<div class="flex-items item-1">Flexbox 1</div>
+		<div class="flex-items item-2">Flexbox 2</div>
+		<div class="flex-items item-3">Flexbox 3</div>
+	</div>
+
+	<div>
+	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, voluptatum, adipisci! Fugit at, sunt adipisci, officia labore repellat expedita quaerat deleniti eos libero aspernatur in ipsa numquam dolorem. Accusantium, inventore?</p>
+	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, voluptatum, adipisci! Fugit at, sunt adipisci, officia labore repellat expedita quaerat deleniti eos libero aspernatur in ipsa numquam dolorem. Accusantium, inventore?</p>
+	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, voluptatum, adipisci! Fugit at, sunt adipisci, officia labore repellat expedita quaerat deleniti eos libero aspernatur in ipsa numquam dolorem. Accusantium, inventore?</p>
+	 </div> 
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* style.css @ 2016, jyoungcode.net */
+
+/* 960px/1440px */
+/* 유동적으로 브라우저 사이즈에 따라 비율로 맞춰진다 */
+.fluid {
+	width: 100%;
+	padding-bottom: 66.6666666667%; /*960px/1440px */
+	height: auto;
+	background-image: url('../images/space_19-wallpaper-1440x900.jpg');
+	background-size: cover;
+	background-position: center; /*IE fix*/
+}
+/* 높이를 고정 값으로 */
+.cliping {
+	width: 100%;
+	height: 960px;
+	background-image: url('../images/ring_galaxy-wallpaper-1440x900.jpg');
+	background-size: cover;
+	background-position: center; /*IE fix*/
+}

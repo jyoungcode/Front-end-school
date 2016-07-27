@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>반응형 그리드 시스템</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="Resources/common.css">
+	<link rel="stylesheet" href="Resources/initialization/normalize.css">
+	<link rel="stylesheet" href="Resources/grid-system/grid-responsive.css">
+
+	<style>
+		.container section { color: #fff; padding: 1.5rem; height: 100vh; box-sizing: border-box;}
+		.container section:nth-child(1) { background: #aea28f; }
+		.container section:nth-child(2) { background: #88a07c; }
+		.container section:nth-child(3) { background: #9e807c; }
+		.container .headline { margin-top: 0; margin-bottom: 0; }
+		@media (min-width: 600px) {
+			.page section:nth-child(2),
+			.page section:nth-child(3) { height: 50vh; }
+		}
+		@media (min-width: 900px) {
+			.page section:nth-child(2),
+			.page section:nth-child(3) { height: 100vh; }
+		}
+	</style>
+</head>
+<body>
+	<div class="page container clearfix">
+		<!-- section*3>h2.headline{Headline $} -->
+		<section class="unit-m-1-2 unit-l-1-3">
+			<h2 class="headline">Headline 1</h2>
+		</section>
+		<section class="unit-m-1-2 unit-l-1-3">
+			<h2 class="headline">Headline 2</h2>
+		</section>
+		<section class="unit-m-1-2 unit-l-1-3">
+			<h2 class="headline">Headline 3</h2>
+		</section>
+	</div>
+</body>
+</html>

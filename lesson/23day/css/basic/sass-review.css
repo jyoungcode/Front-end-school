@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* CSS Comment */
+/* CSS 파일은 건드는게 아니다. SASS로 컴파일 되는 순간 CSS가 사라진다. */
+/*
+ 여러
+ 줄
+ 라인
+ 출력
+ 가능 */
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ie 조건부 주석을 부모에 참조하는 방식 */
+.row::before, .row::after {
+  content: ' ';
+  display: table;
+}
+
+.row::after {
+  clear: both;
+}
+
+.lt-ie8 .row {
+  zoom: 1;
+}
+
+.col-1 {
+  width: 80px;
+}
+
+.col-2 {
+  width: 160px;
+}
+
+/*
+ header
+ ┗ logo
+ ┗ search
+ ┗ banner
+ @import "header"
+ naviigation
+ ┗ gnb
+ ┗ lnb
+ ┗ unb
+ @import "navigation"
+ main
+ ┗ primary
+ ┗ secondary
+ ┗ etc
+ @import "main"
+ @import "aside"
+ @import "footer" */
+
+/*# sourceMappingURL=../../map/basic/sass-review.css.map */

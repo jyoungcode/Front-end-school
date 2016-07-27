@@ -1,0 +1,51 @@
+/*
+	Multi
+	line
+	comment
+	*/
+.page .page-header {
+  position: relative;
+  height: 20vh;
+}
+
+.page .brand {
+  overflow: hidden;
+  position: absolute;
+  left: 100%;
+}
+
+.page .brand a {
+  color: #fc414b;
+}
+
+.chrome .page .brand a:hover {
+  color: #6b141c;
+}
+
+.page .brand-sample {
+  background: #333;
+}
+
+.page .brand-sample a {
+  color: #6b141c;
+}
+
+.page .brand-sample a:focus {
+  color: #124c54;
+}
+
+.page .brand-sample a:active {
+  outline: none;
+}
+
+.page .brand-sample a span {
+  font-weight: 900;
+}
+
+.page {
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+}
+/*# sourceMappingURL=../map/style.css.map */

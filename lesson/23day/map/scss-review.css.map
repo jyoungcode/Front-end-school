@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "../css/scss-review.css",
+	"sources": [
+		"../sass/scss-review.scss",
+		"../sass/button.sass"
+	],
+	"mappings": ";AACA,4BAA4B;AAE5B,mIAAmI;AACnI;;;;;EAKE;AAEF,AAAA,IAAI,CAAC;EACJ,UAAU,EAAE,MAAO;CACnB;;ACRD,AAAA,OAAO,CAAC;EACP,OAAO,EDSA,IAAI;ECRX,MAAM,EAAE,IAAK;EACb,UAAU,EALE,OAAO;CAKO;;ADY3B,AAAA,QAAQ,CAAC;EAER,KAAK,EAAE,GAAI;CAEX;;AAJD,ACfA,QDeQ,CCfR,OAAO,CAAC;EACP,OAAO,EAJA,IAAI;EAKX,MAAM,EAAE,IAAK;EACb,UAAU,EALE,OAAO;CAKO",
+	"names": []
+}

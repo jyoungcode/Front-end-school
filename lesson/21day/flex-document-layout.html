@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 문서 기본 레이아웃</title>
+	<style>
+		body { margin: 0;}
+		header, footer { height: 100px; }
+		header { background: #ff0; }
+		footer { background: #feae99; }
+		main {
+			display: flex; 
+			border: 10px solid #888; 
+		}
+		section { 
+			background: #feae09; 
+			height: 500px;
+			order: 2; 
+			flex-grow: 1;
+			/*flex: 는 속기형; flex:0;은 =flex-shrink를 뜻함, flex:1;은 flex-grow: 1을 뜻함*/
+			/* 늘어나지 않았을때 기본값 300px width 같이 */ 
+			/* flex-basis를 설정하지 않으면 전체폭이 기준 */
+			/*flex-basis: 300px; */
+		}
+		/* shrink로 설정하면 더 이상 늘어나지 마라는 의미 0, 1은 반대*/
+		aside { flex-shrink: 0;  height: 200px;} 
+		.side-A { 
+			background: #b8b8b8;
+		 	order: 1; 
+		 	width: 200px;
+		 }
+		.side-B { 
+			background: #652cbc; 
+			order: 3; 
+			width: 200px;
+			align-self: flex-end;
+		}
+
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<main>
+		<section>section</section>
+		<aside class="side-A">aside</aside>
+		<aside class="side-B">aside</aside>
+	</main>
+	<footer>footer</footer>
+</body>
+</html>

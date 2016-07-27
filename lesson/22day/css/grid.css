@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 900;
+}
+
+.wrap {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.float {
+  float: left;
+}
+
+/*# sourceMappingURL=../map/grid.css.map */
