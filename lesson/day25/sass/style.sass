@@ -1,0 +1,103 @@
+@import color-custom-function
+
+body
+  color: hsla(#3d96ff, 0.3)
+  font-size: rem(22px, 10px)
+  margin-left: rem(10px)
+  // background: adjust-hue(#3d96ff, -100deg)
+  background: complement(red) // #f00 -> #0ff
+  border-color: invert(darkred)
+
+//
+ * --------------------------------
+ * @while문
+ * ※ @if문과 유사. 반복 수행
+
+// $gutter-direction: before 
+// 아래에 $gutter-direction: after !default면 컨텍스트와 관계 없이 이건 초기값 이라 위에서 선언한 before가 실행된다.
+
+// 처음에 page-width를 정하고 들어가지 않고 container를 잡고  unit 자체에서 식을 해결하면 소수점이 나와서 문제가 많다.
+
+$i: 1
+$total: 12
+$unit-width: 80px
+$gutter: 20px
+$gutter-direction: null
+$fluid: true // 유동 그리드
+$page-width: $total * $unit-width + $gutter * ($total - 1)
+// target / context * 100
+// @if fluid
+// percentage(width/context)
+
+%cf::after
+  display: block
+  clear: both
+  content: ''
+
+%col
+  $gutter-direction: split !default
+  float: left
+  @if $gutter-direction == split
+    margin:
+      left: $gutter/2
+      right: $gutter/2
+  @if $gutter-direction == before
+    margin-left: $gutter
+  @if $gutter-direction == after
+    margin-right: $gutter
+  @if $gutter-direction == inside
+    padding:
+      left: $gutter/2
+      right: $gutter/2
+
+@function width($n)
+  $w: $unit-width * $n + $gutter * ($n - 1)
+  @return if(not $fluid, $w, percentage($w/$page-width))
+
+// @while $i <= $total
+// 	.grid 
+// 		@extend %cf
+// 	.col-#{$i}
+// 		@extend %col
+// 		width: width($i)
+// 	$i: $i + 1
+
+//
+ * ---------------------------------------------
+ // 변수 전역 지역 확인은 디버깅을 하자~!!
+ // JS 와 다르게 Sass for 문은 1씩만 증가다!!!!
+ // for에서 to: 12전까지 , through: 12까지다.
+ * @for문
+
+$total: 12
+@for $k from 1 through $total
+  .grid
+    @extend %cf
+  .col-#{$k}
+    @extend %col
+    width: width($k)
+
+//
+ * -----------------------------------------
+ * @each
+
+$buttons: play pause stop prev next forward backward show hide toggle active deactive on off
+
+// @debug length($buttons) 
+
+@each $button in $buttons
+  .button-#{$button}
+    background: url("../images/button-#{$button}.png")
+
+$headings: ( h1: 3rem 1.2, h2: 2rem 1.45, h3: 1.5rem 1.6, h4: 1.25rem 1.74, h5: 1.1rem 1.8 )
+
+@each $heading, $info, $test in $headings
+  // @debug $info
+  // @debug $heading // h1 (3rem 1.2)
+  // $h: nth($heading, 1) // h1
+  // $v: nth($heading, 2) // 3rem 1.2
+  $fz: nth($info, 1) // 3rem
+  $lh: nth($info, 2) // 1.2
+  #{$heading}
+    font-size: $fz
+    line-height: $lh

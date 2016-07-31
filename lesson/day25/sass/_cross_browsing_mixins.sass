@@ -1,0 +1,34 @@
+// IE 7 핵 믹스인
+=ie7hack($selector)
+	*+html #{$selector}
+		@content
+
+// IE 8 미디어 쿼리 핵 믹스인
+// @media \0screen {}
+
+// Sass 문법
+=ie8hack
+	@media \0screen
+		@content
+
+// SCSS 문법
+@mixin ie8hack {
+	@media \0screen {
+		@content;
+	}
+}
+
+//
+	* ---------------------------------------
+	* 믹스인 호출
+
+// ()안에 ' ' 문자열로 전달해야한다.
+// +ie7hack('.demo')
+// 	color: #303030
+
+// +ie8hack
+// 	body
+// 		margin: 0 auto
+// 	.content-block
+// 		padding: 
+// 			top: 20%

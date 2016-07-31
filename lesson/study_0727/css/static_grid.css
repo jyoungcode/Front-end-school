@@ -1,0 +1,67 @@
+/* static_grid.sass @jyoungcode */
+.clearfix::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.grid * {
+  height: 72px;
+  margin-bottom: 24px;
+}
+
+.flex-img {
+  width: 100%;
+}
+
+.overlay_grid {
+  position: relative;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay_grid::before {
+  content: ' ';
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 200vh;
+  background: linear-gradient(to bottom, transparent 95%, rgba(0, 0, 0, 0.5) 95%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 90%, transparent 90%);
+  background-size: 1px 24px, 100px 1px;
+}
+
+/* static_grid */
+/* Container Module */
+.container {
+  position: relative;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Unit Module */
+[class*="unit_"] {
+  box-sizing: border-box;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+[class*="unit_"] .first, [class*="unit_"] .alpha {
+  magin-left: 0;
+}
+
+[class*="unit_"] .last, [class*="unit_"] .omega {
+  margin-right: 0;
+}
+
+/* Push, Pull Module */
+[class*="push_"], [class*="pull_"] {
+  position: relative;
+}
+
+/* fluid_grid */
+.unit_0 {
+  width: 180px;
+}

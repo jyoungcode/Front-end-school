@@ -1,0 +1,77 @@
+/* static_grid.sass @jyoungcode */
+@import _variable
+@import _common
+@import _gutter
+
+.grid *
+  height: 72px
+  margin-bottom: 24px
+
+.flex-img
+  width: 100%
+
+$base-font-size: 18px
+$base-leading-ratio: $base-font-size * 1.5
+$column-count : 8
+$unit-width: 130px
+$page-width: 1280px
+$avail-page-width: $page-width - ($gutter-width * 2)
+$gutter-width: 30px // 한쪽 
+$gutter-direction: after
+
+@function draw-column-pattern($hex, $alpha: 0.3, $location) 
+  $location: percentage($unit-width/$pattern-width)
+  @return linear-gradient(90deg, rgba($hex, $alpha) $location)
+
+.overlay_grid
+  position: relative
+  width: 1200px
+  margin-left: auto
+  margin-right: auto
+  &::before
+    content: ' '
+    position: absolute
+    z-index: 10000
+    width: 100%
+    height: 200vh
+    background: linear-gradient(to bottom, transparent 95%, rgba(0, 0, 0, 0.5) 95%), linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 90%, transparent 90%)
+    background-size: 1px 24px, 100px 1px
+
+/* static_grid */
+@import _common_grid
+
+// @for $num from 1 through $column_count
+//   .unit_#{$num}
+//     width: $unit + ($column*($num - 1))
+//   @each $handler, $value in $pos
+//     .#{$handler}_#{$num}
+//       #{$value}: $column * $num
+
+
+/* fluid_grid */
+// @for $num from 1 through ($column_count - 1)
+//   @for $s_num from 2 through $column_count
+//     @if $num > $s_num
+//       return false
+//     @each $class_name, $value in $f_map
+//         .#{$class_name}_#{$num}_#{$s_num}
+//           #{$value}: ($num/$column_count)*100%
+
+$container: 1200px !default
+$column_count: 12 !default
+$gutter: 20px !default
+$split_gutter: $gutter/2 !default
+$column: $container/$column_count
+$unit: $column - $gutter
+$num:  1 !default
+
+@function grid($container, $column_count, $gutter, $split_gutter, $num)
+  @return $unit + ($column*($num - 1))
+
+.unit_#{$num - 1}
+  width: grid(1200px, 12, 20px, 0, 2)
+
+
+
+
+

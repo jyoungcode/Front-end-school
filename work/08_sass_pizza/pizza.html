@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Pizza</title>
+	<link rel="stylesheet" href="Resources/initialization/ress.min.css">
+	<link rel="stylesheet" href="css/pizza_grid_responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- 전체wrap으로 감쌀거냐 아니면 header main 마다 wrap을 넣어서 중앙정렬 할꺼냐? -->
+	<!-- 클래스명은 전체를 기본이름을 쓰되, 세부 컨텐츠를 btn_grid 처럼 뒤에는 해당 이름을 쓴다. -->
+	<!-- header -->
+	<div class="header">
+		<div class="header_content_wrap">
+			<h1 class="header_logo">
+				<a href="#"><img src="images/main_logo.png" alt="Pizzeria and Trattoria italian restaurant"></a>
+				<strong class="header-sud">Pizzeria&amp;Trattoria <span>SUD</span></strong>
+			</h1><!-- header_logo -->
+			
+			<!-- 숨겨질 것에 대해서 hidden_info로 통일 한다. -->
+			<div class="header_menu">
+				<h2 class="hidden_info">시작 메뉴</h2><!-- 자주 쓰이는 메뉴 -->
+				<ul class="quick_menu">
+					<li><a href="#">LOGIN</a></li>
+					<li><a href="#">JOIN US</a></li>
+					<li><a href="#">SITEMAP</a></li>
+				</ul><!-- gnb -->
+			</div><!-- header_menu -->
+			
+
+			<div class="btn_wrap">
+				<button class="btn_side_menu">GRID</button>
+				<!-- <div class="hidden_menu"></div> -->
+			</div><!-- btn_wrap -->
+
+			<ul class="gnb">
+				<!-- a 안에서 읽어주고 li에 포인터 포커스를 줄 수 없냐? -->
+				<li><a href="#"></a><span>ABOUT</span></li>
+				<li><a href="#"></a><span>MENU</span></li>
+				<li><a href="#"></a><span>EVENT</span></li>
+				<li><a href="#"></a><span>COMUNITY</span></li>
+			</ul><!-- gnb -->
+		</div><!-- header_content_wrap -->
+	</div><!-- header -->
+
+	<div class="main">
+		<div class="bg_main">
+			<!-- h2 hidden 처리 -->
+			<p>dselicious! pizzeria</p>
+			<!-- 배경 이미지라서 딱히 img 안써도 될듯 -->
+			<!-- a, button의 구분을  -->
+			<!-- 컨텐츠 내용이 있는거는 a로 / 그냥 nav에 어떤 기능이 나오는건 button으로 난 쓸꺼다.  -->
+			<!-- html5에서 a요소 download 속성 있다. -->
+			<a href="#" class="btn_prev"></a>
+			<a href="#" class="btn_next"></a>
+			<div class="btn_carousel_wrap">
+				<a href="#" class="btn_carousel_1"></a>
+				<a href="#" class="btn_carousel_2"></a>
+				<a href="#" class="btn_carousel_3"></a>
+			</div><!-- btn_carousel_wrap -->
+		</div><!-- bg_main -->
+
+		<!-- 셀렉터를 줄이기 위해서 class 명을 명확하게 써준다. -->
+		<section class="main_contents_1">
+			<article>
+				<h2>Special menu open</h2>
+				<div class="main_content_img_wrap">
+					<img src="" alt="">
+					<img src="" alt="">
+					<img src="" alt="">
+				</div><!-- main_content_img_wrap -->
+			</article>
+			<article>
+				<h2>This week event news</h2>
+				<p>
+					요리에 기교보단 재료 본연의 맛을 살리는 레스토랑입니다.<br>
+					항상 신성하고 살아 있는 제철재료롤 어떠한 인공조미료를<br>
+					넣지 않은 건강한 음식을 만들겠습니다. 저희 푸드을 방문<br>
+					해 주셔서 진심으로 감사드립니다.
+				</p>
+				<span>Owner Chef: 최주영</span>
+			</article>
+			<article>
+				<h2>Welcome to our restaurant</h2>
+				<p>
+					싱그러운 5월을 맞아 푸드에서 3가지 빅이벤트를 진행하고<br>
+					자 합니다. 여러분의 많은 관심과 참여를 부탁 드립니다. 5<br>
+					월 한달동안 진행될 예정이니 많이 찾아주셔서 혜택을 누려<br>
+					보세요!
+				</p>
+				<a href="#">이벤트 바로가기</a>
+			</article>
+		</section><!-- main_contents -->
+		
+		<section class="main_content_2">
+			<h2>Restaurant Information</h2>
+			<div class="arrow"></div>
+			<article>
+				<h3>SERVICE</h3>
+					<ul>
+						<li>Pumpkin Soup</li>
+						<li>Cheese Bread</li>
+						<li>Coffee</li>
+					</ul>
+			</article>
+			<article>
+				<h3>OPEN</h3>
+				<ul>
+					<li>AM 11:00&#126;PM 10:00</li>
+					<li>(Reservation Call)</li>
+					<li>02-256-8972</li>
+				</ul>
+			</article>
+			<article>
+				<h3>EVENT</h3>
+				<ul>
+					<li>Salad 50% Discount</li>
+					<li>Free Cocacola</li>
+					<li>Lunch Set Discount</li>
+				</ul>
+			</article>
+		</section><!-- main_contents_2 -->
+
+		<section class="main_contents_3">
+			<h2>About Pizzeria &amp; Trattoria SUD</h2>
+			<p>Delicious</p>
+			<p>
+				저희 푸드은 매일 아침 들여오는 신선한 재료들로 요리를 만듭니다.<br>
+				항상 가족같은 마음으로 정성껏 준비하겠습니다.
+			</p>
+		</section><!-- main_contents_3 -->
+	</div><!-- main -->
+
+	<footer>
+		<div class="contact_wrap">
+			<div class="location_wrap">
+				<img src="" alt=""><!-- 스크린리더로 읽히지 않아야할 alt는 쓰지 않는게 접근성에 좋은 것 -->
+				<dl class="location">
+					<dt>Location</dt>
+					<dd>서울시 서초구 방배동 797-12</dd>
+				</dl>
+			</div><!-- location_wrap -->
+			<div class="footer_contents">
+				<div class="footer_menu">
+					<a href="#">Contact us</a>
+					<a href="#">Our blog</a>
+					<a href="#">The gallery</a>
+				</div>
+				<div class="footer_sns">
+					<a href="http://facebook.com"><img src="" alt="facebook"></a>
+					<a href="http://twitter.com"><img src="" alt="twitter"></a>
+				</div><!-- sns -->
+			</div><!-- footer_contents -->
+		</div><!-- contact_wrap -->
+
+		<div class="footer_copyright">
+			<p>Copyright &copy;2014피째리아푸드</p>
+		</div>
+	</footer>
+
+<script src="js/toggleBaseline.js"></script>
+</body>
+</html>
