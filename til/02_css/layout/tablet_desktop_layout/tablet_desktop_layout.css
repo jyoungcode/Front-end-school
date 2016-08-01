@@ -1,0 +1,78 @@
+/*! tablet_desktop_layout.css @jyoungcode */
+
+* { margin: 0; padding: 0; }
+body { font-family: 'Helvetica', sans-serif; min-width: 760px; }
+li { list-style: none; }
+a { text-decoration: none; }
+
+#main_header { 
+	height: 60px;
+	line-height: 60px;
+	/* 자식에게 padding을 상속 시킨다. */
+	padding-left: 10px; 
+	border-bottom: 1px solid black;
+	background: #1d4088;
+ 	color: white;
+ }
+
+#main_gnb { 
+	overflow: hidden; 
+	border-bottom: 1px solid black;
+	background: #32394a;
+}
+#main_gnb > ul.left { 
+	float: left;
+	overflow: hidden;
+}
+#main_gnb > ul.right { 
+	float: right;
+	overflow: hidden;
+}
+#main_gnb > ul.left > li { float: left; }
+#main_gnb > ul.right > li { float: left; }
+
+#main_gnb a {
+	display: block;
+	padding: 10px 20px; 
+	border-left: 1px solid #5f6673;
+	border-right: 1px solid #242a37;
+	color: #fff;
+	font-weight: bold;
+}
+
+/* 굳이 이렇게 margin-right: 음수로 댕기고 padding-right로 밀고 할 이유가 있을까? 그냥 width값을 %나눠서 가지면 안될까? 무슨차이가 있을까?*/
+/*테스트 해보니 -200px만 가능하다. 개발자도구에서 먹히질 않는다 100이..*/
+/* 왜 #main_lnb 가 아니고 #wrap에다가 background를 줬을까?
+#main_lnb에 주면 자식들이 쌓인 높이값만 bg가 적용되서 전체 길이가 안된다.
+그래서 #wrap에 적용시킨거다. */
+/* 임의로 height를 주려는 습관을 버리자. */
+/* 또한 수직정렬을 위해서 height를 임의로 지정후 line-height를 사용하려는 습관보다 그에 맞는 padding 값을 지정하고 수평정렬로 text-align:center; 사용을 하자. */
+
+#wrap { overflow: hidden; background: #71b1d1;}
+#wrap > #main_lnb { float: left; width: 200px; }
+#wrap > #content_wrap { float: left; width: 100%; margin-right: -200px;}
+#wrap > #content_wrap > #content { padding-right: 200px; }
+#main_lnb > ul > li > a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 15px;
+	border-top: 1px solid #96d6f6;
+	border-bottom: 1px solid #6298b2;
+	color: #fff;
+	font-weight: bold;
+}
+
+#content {
+	background: #fff;
+	border-left: 1px solid black;
+}
+article { padding: 10px; }
+
+#main_footer {
+	border-top: 3px solid black;
+	padding: 10px;
+	text-align: center;
+}
+
+

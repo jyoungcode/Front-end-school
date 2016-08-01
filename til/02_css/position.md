@@ -1,4 +1,4 @@
-position properties
+### position properties
 - static (Default)
 - relative (Self)  * 일반흐름(normal flow)을 꺠지 않는다.
 - absolute (offsetParent)
@@ -8,7 +8,8 @@ position properties
    * 일반흐름(normal flow)에서 벗어난다 (float와 유사)
    * display 속성 값이 block으로 변경 된다.
    * absolute 적용된 요소의 부모에 relative을 설정하는 이유!
-   (relative는 일반 흐름을 깨지 않아서)
+   (relative는 일반 흐름을 깨지 않는다. 
+  부모에 relative를 부모 위치를 기준으로 자식에게 절대 좌표가 설정 된다.)
    * float과 차이점!
    float의 경우는 부모요소가 float된 요소를 감싸게 하는 방법이 있지만,
    absolute의 경우는 별도로 height 높이를 제공해야 한다.
@@ -19,10 +20,12 @@ position properties
     z-index 속성 값은 양의 정수, 0, 음의 정수 사용이 가능. 단 설정시 10 또는 100 단위로 설정하는 것이
     유지보수 관점에서 권장된다.
     * [부모 a, [자식 c]] + [부모 b , [자식 d]]
+- html 상에서 position 속성이 적용된 가장 마지막 element가 화면 상에서 앞에 나온다. 
 
 
-    [ z-index: day16: button ]
 
+### [ z-index: day16: button ]
+- 숫자가 클수록 앞에 위치 한다.
     모두다 float된 상태.
     부모 : position:relative 상태일때 z-index: 10
     가상요소(자식) : position: absolute 일 때 z-index : -1

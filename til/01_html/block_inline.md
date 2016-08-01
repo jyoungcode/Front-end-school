@@ -10,9 +10,10 @@
 ##### inline
 - <span>
 - <a>
-- <input>
 - <글자형식태그>
+- <label>
 
 ##### inline-block
 - <img>
 - <video>
+- <input>
