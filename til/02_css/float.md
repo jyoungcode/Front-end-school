@@ -2,7 +2,7 @@
  * float: 큰틀 레이아웃 잡을 때 사용 / position: 세세한 부분들
 
  * [Float]
- ※ flaot은 가운데 정렬이 쉽지 않다. 그 부모는 높이가 생겨서 무한 float에 빠진다. ( clearfix:after로 해결(micro- clearfix:before), 예전에는 비권장: overflow: hidden)
+ ※ float은 가운데 정렬이 쉽지 않다. 그 부모는 높이가 생겨서 무한 float에 빠진다. ( clearfix:after로 해결(micro- clearfix:before), 예전에는 비권장: overflow: hidden)
 
  1. <img> 요소를 좌/우로 부유시켜 텍스트가 이미지를 둘러싸도록 설정하기 위해 고안된 기술이나, 오늘 날 그리드 시스템(멀티 컬럼 레이아웃)에 활용됩니다.
 

@@ -7,4 +7,45 @@ a { text-decoration: none; }
 img { border: 0; }
 ul { list-style-type: none; }
 
-body { width: 980px; margin: 0 auto; }
+body { width: 980px; margin: 0 auto; position: relative; border: 1px solid black;}
+
+#main_header {
+	position: relative;
+	height: 75px;
+}
+#main_header > h1.logo {
+	position: absolute;
+	left: 15px; top: 10px;
+}
+#main_header > div.login_menu {
+	position: absolute;
+	top: 10px; right: 0px;
+}
+
+/*aside는 body(부모)에 relative를 주고 자기 자신을 absolute한다 */
+/* 왜 absolute와 fixed의 위치가 달라지는가? 부모 기준인데 */
+/* absolute는 relative된 body 기준이고, 
+fixed는 브라우저 기준이기 때문이다. */
+/* 그러면 fixed는 디바이스 사이즈 마다 브라우저 해상도가 달라질텐데 계속 그에 맞게 변경 해줘야 하는가? */
+#global_aside {
+	/*position: fixed;*/
+	position: absolute;
+	/* body width 980을 벗어나 10px 여백을 두고 left 990px을 적용 */
+	left: 990px; 
+	top: 75px;
+	/*top: 75px;*/
+	/* 내 모니터사이즈 1366 - width: 90px - 스크롤바 사이즈(18~20px 정도) */
+	/*left: 1256px;*/
+	width: 90px;
+}
+#global_aside > a {
+	display: block; 
+	margin-bottom: 5px;
+}
+
+/* img가 inline 이어서 html에서 띄어쓰기를 다 지웠는데 왜 사진끼리 붙지 않는가? */
+/*#global_aside > a > img { 
+	vertical-align: bottom; 
+}*/
+
+
