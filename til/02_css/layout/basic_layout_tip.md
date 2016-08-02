@@ -1,8 +1,8 @@
-### 기본적인 모바일 layout tip
+# 기본적인 모바일 layout tip
 
 - 1. 배경 이미지 설정
 
-```html
+```css
 	#main_header {
 		..
 		/* 1px 이미지를 이용해서 background의 기본 값인 repeat을 활용하여 배경 이미지를 넣는다. */

@@ -1,24 +1,30 @@
-### nav 작성 tip
+# Navigation 작성 tip.
+###### UI에 따른 여러가지 방법을 분석 해보자.
 
-##### nav > ul > li > a 에서 a를 어떻게 처리해야 하는가?
-
-```html
-	#main_gnb > ul { <!-- overflow: hidden 보다 clearfix --> }
-	#main_gnb > ul > li{ float: left}
+### 보편적으로 ul, li, a에 어떤 속성을 적용 시키는게 적합할까?
+```css
+	/* overflow: hidden 보다 clearfix */ 
+	/* ul에 margin:0, padding:0로 초기화 시키는 별도 파일을 만들어두자. */
+	#main_gnb > ul { list-style-type: none; width: 200px; background-color: #f1f1f1;}
+	#main_gnb > ul > li{ float: left; }
 	#main_gnb > ul > li > a {
 		display: block;
-		padding: 10px 20px
+		padding: 10px 20px;
+		color: #fff;
+		text-decoration: none;
 	}
 ```
-- 우리는 버튼 하나의 영역을 클릭 하기를 원한다.
-- a는 inline 속성이므로 텍스트 크기만큼만 지정 되어있다.
-- a를 block 요소로 바꾸고 padding으로 여백을 버튼 하나 크기 만큼 늘려줘야 한다.
+##### 우리의 요구사항
+- 수평으로 나열된 Navigation을 만드려고 한다.
+- 텍스트 뿐만 아니라 여백까지 버튼 하나의 영역을 클릭 하기를 원한다.
 
-### ul 에는 기본적으로 margin, padding이 존재한다.
-- margin-top: 16px, margin-bottom: 16px
-- padding-left: 40px; 
+##### 해결하기 위한 방법
+- `<a>`는 `inline` 속성이므로 텍스트 크기만큼만 지정 되어있다. 그래서 `<a>`를 `block` 요소로 바꾸고 `padding`으로 여백을 버튼 하나 크기 만큼 늘려줘야 한다.
+- `<ul>` 에는 기본적으로 아래 만큼에 `margin`, `padding`이 존재한다. 그래서 이 값을 0으로 초기화 시킨다.
+	- `margin-top: 16px;`, `margin-bottom: 16px;`
+	- `padding-left: 40px;` 
 
-### header를 만들때  자식, 자손의 중앙 위치 지정
+### `header` 부분을 만들때  자식, 자손의 중앙 위치 지정
 ```html 
 	#main_header { 
 		/* 배경 지정 */

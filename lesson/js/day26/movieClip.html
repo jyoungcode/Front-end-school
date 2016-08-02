@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Box nimation - </title>
+  <link rel="stylesheet" href="css/box-anim.css">
+</head>
+<body>
+	<!-- inline 은 가급적 쓰지 말아야 한다. -->
+	<div id="box" style="left:100px;"></div>
+
+<script>
+	// moveBox 함수 정의
+	// .box 객체를 화면에서 위치 이동 시킨다.
+	function moveBox() {
+		//문서에서 .box요소를 찾는다.
+		// DOM API(사용설명서)
+		// 문서의 객체에 접근하는 방법을 제공
+		// 문서 객체의 id 속성 값으로 접근하는 방법 제공: document.getElementById(id_name); 이걸 변수로 담지 않으면 매번 기입하고 성능 저하가 된다.
+		var box = document.getElementById('box');
+		// console.log('box');
+		box.style.left = parseInt(box.style.left) + 20 + 'px';
+		// 가로 방향(left)으로 이동하도록 설정한다.
+		// tranform: translateX()를 권장!!
+		// position left는 CPU를 써서 성능저하 하지만 tranform은 GPU를 사용. 모바일에서는 차이가 크다.
+		// left = left + 20;
+	}
+
+	// setInterval()
+	// 주기(일정한 시간)마다 할 일 (함수)을 수행시킨다.
+	// 1000밀리초(ms) === 1초(s)
+	setInterval(moveBox, 200);
+
+	// setInterval 보다 setTimeout은 1회만 실행이다. 더 많이 사용 한다. 
+
+	// clearInterval 멈출때 사용.
+	// setInterval CPU 사용 이라 보완하기 위한 GPU사용 하는것
+	// requestAnimationFrame() , canselAnimationFrame()
+
+	// Location Object
+	window.location.href;
+
+	// Location History 
+
+	//Navigator 많이 사용함.
+	// window.
+
+	window.navigator.cookieEnabled
+	localstorage
+	window.navigator.
+
+	DOCUMENT Object
+	
+
+</script>
+</body>
+</html>

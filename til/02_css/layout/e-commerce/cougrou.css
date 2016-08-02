@@ -7,7 +7,7 @@ a { text-decoration: none; }
 img { border: 0; }
 ul { list-style-type: none; }
 
-body { width: 980px; margin: 0 auto; position: relative; border: 1px solid black;}
+body { width: 980px; margin: 0 auto; position: relative; }
 
 #main_header {
 	position: relative;
@@ -48,4 +48,45 @@ fixed는 브라우저 기준이기 때문이다. */
 	vertical-align: bottom; 
 }*/
 
+#top_gnb {
+	overflow: hidden;
+}
 
+#top_gnb > div.menu {
+	float: left;
+	width: 140px;
+	height: 50px;
+	background: url('Images/top_gnb.png');
+}
+
+/* navigation 좌표 지정 및 hover 했을 때 */
+#top_gnb > div.item_1 { background-position: 0px 0px; }
+#top_gnb > div.item_2 { background-position: 0px -50px; }
+#top_gnb > div.item_3 { background-position: 0px -100px; }
+#top_gnb > div.item_4 { background-position: 0px -150px; }
+#top_gnb > div.item_5 { background-position: 0px -200px; }
+#top_gnb > div.item_6 { background-position: 0px -250px; }
+#top_gnb > div.item_7 { background-position: 0px -300px; }
+
+#top_gnb > div.item_1:hover { background-position: 0px -350px; }
+#top_gnb > div.item_2:hover { background-position: 0px -400px; }
+#top_gnb > div.item_3:hover { background-position: 0px -450px; }
+#top_gnb > div.item_4:hover { background-position: 0px -500px; }
+#top_gnb > div.item_5:hover { background-position: 0px -550px; }
+#top_gnb > div.item_6:hover { background-position: 0px -600px; }
+#top_gnb > div.item_7:hover { background-position: 0px -650px; }
+
+#top_gnb > div.item_1.active { background-position: 0px -350px; }
+#top_gnb > div.item_2.active { background-position: 0px -400px; }
+#top_gnb > div.item_3.active { background-position: 0px -450px; }
+#top_gnb > div.item_4.active { background-position: 0px -500px; }
+#top_gnb > div.item_5.active { background-position: 0px -550px; }
+#top_gnb > div.item_6.active { background-position: 0px -600px; }
+#top_gnb > div.item_7.active { background-position: 0px -650px; }
+
+#bottom_gnb { overflow: hidden; }
+#bottom_gnb > div.menu {
+	float: left;
+	width: 98px; height: 80px;
+	background: url('Images/bottom_gnb.png');
+}
