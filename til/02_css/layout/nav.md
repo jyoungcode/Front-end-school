@@ -40,7 +40,7 @@
 
 -----
 ##### 실제 사이트들의 Navigation은 어떻게 구성했는지 파악해보자.
-### Case01. 배달의 민족
+### Case01. [배달의 민족](http://www.baemin.com/?gclid=CISfuM-epc4CFU0AvAodV3YEXQ)
 
 ##### My Code
 ```html
