@@ -4,9 +4,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta charset="UTF-8">
   <title>test</title>
-  
+  <style>
+      .gnb_wrap { width: 200px; margin: 50px auto; }
+  	.gnb { list-style-type: none; font-family: Dotum, "Droid serif", Helvetica, Arial;}
+  	.gnb li { float: left; border-right: 1px solid #e5e4e3; font-size: 11.2px;}
+  	.gnb a { text-decoration: none; color: #e5e4e3;}
+
+      /*.reset_list { margin: 0; padding: 0; }*/
+  	.clearfix::after,
+  	.cf::after { 
+  		content: ' ';
+		display: block;
+		clear: both;
+  	 }
+  </style>
 </head>
 <body>
-	
+	<div class="gnb_wrap cf">
+		<ul class="gnb cf reset_list">
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div><!-- gnb_wrap -->
 </body>
 </html>

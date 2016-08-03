@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>DOM Script Basic</title>
+   <style>
+    #button-group { display: flex; flex-flow: wrap; position: fixed; top: 0; left: 0; width: 100%; }
+    #button-group button { cursor: pointer; flex: 1; border: none; padding: 1em; color: #fff; text-shadow: 0 0 3px rgba(0,0,0,0.36);}
+    #button-group button:focus {outline: none;}
+    #button-group button:nth-child(1) { background: #f50054; }
+    #button-group button:nth-child(2) { background: #8800f3; }
+    #button-group button:nth-child(3) { background: #139df3; }
+    #button-group button:nth-child(4) { background: #20f97d; }
+    #button-group button:nth-child(5) { background: #f2ce09; }
+    #button-group button:nth-child(1):hover,
+    #button-group button:nth-child(1):focus { background: #99002c; }
+    #button-group button:nth-child(2):hover,
+    #button-group button:nth-child(2):focus { background: #5400ae; }
+    #button-group button:nth-child(3):hover,
+    #button-group button:nth-child(3):focus { background: #115fa5; }
+    #button-group button:nth-child(4):hover,
+    #button-group button:nth-child(4):focus { background: #1b9841; }
+    #button-group button:nth-child(5):hover,
+    #button-group button:nth-child(5):focus { background: #ab8e0a; }
+  </style>
+</head>
+<body>
+	<div id="button-group" role="group">
+		<button type="button">#f50054</button>
+		<button type="button">#8800f3</button>
+		<button type="button">#139df3</button>
+		<button type="button">#20f97d</button>
+		<button type="button">#f2ce09</button>
+	</div>
+<script>
+	// DOM Legacy (Lv. 0), HTML, DOM
+	var body = document.body; 
+	
+	// console.log( body.onmouseover ); // 이벤트 속성의 초기 상태는 비어 있다. 
+	//<body> 요소에 사용자가 마우스를 올리면 배경 색이 붉은 색으로 변경된다.
+	// onmouseover 사용 안함 이벤트 계속 발생해서.. 
+	// body.onmouseenter = function() {
+	// 	// 어떤 일을 수행 ( 할일 )
+	// 	// console.log('mouse enter on body');
+	// 	body.style.backgroundColor = "#dc0018";
+	// }
+
+	//<body> 요소에 사용자가 마우스를 내리면 배경 색이 하얀 색으로 변경된다.
+	// body.onmouseleave = function() {
+	// 	body.style.backgroundColor = '#fff';
+	// }
+
+	// inline 방식으로 js를 붙여서 받아올게 아니라 dom level3를 알면 방법이 있다.
+
+	var doc = document.body;
+	var btn_group = document.getElementById('button-group');
+	var btns = btn_group.getElementsByTagName("button");
+	var btn_1 = btns[0];
+	var btn_2 = btns[1];
+	var btn_3 = btns[2];
+	var btn_4 = btns[3];
+	var btn_5 = btns[4];
+
+	function changeColor() {
+		// firstChild.nodeValue 대신 실무 textContent 사용
+		var ch_color = this.firstChild.nodeValue;
+		doc.style.backgroundColor = ch_color;
+	}
+
+	// 이것도 가능.
+	/*btn_1.onclick = btn_2.onclick = btn_3.onclick = btn_4.onclick = btn_5.onclick = changeColor;*/
+
+	btn_1.onclick = 
+	btn_2.onclick =
+	btn_3.onclick =
+	btn_4.onclick =
+	btn_5.onclick = changeColor;
+
+	// 익명함수
+	// 익명함수를 변수나 이벤트에 담으면 오류가 안생긴다.
+	// 고정된 값을 담는걸(표현) 리터럴이라 한다.
+	// 메모리에 링크가 걸려있지 않으면 자바스크립트에서 알아서 메모리 관리 해준다.
+
+	var changeBGColor = function() {
+		body.style.backgroundColor = this.firstChild.nodeValue;
+		// return이 없는 이유는 아래에서 changeBGColor가 아닌
+		// changeBGColor()가 붙어 있으면 즉시 실행되서 undefined가 된다.
+		// mouseenter가 됬을때 실행되야 하기 때문에
+	}
+	//btn_1.onmouseenter = changeBGColor; 
+	onmouseenter의 function context에 담기고 이 안에서 내부 함수에 return이 되는 것인가?
+
+	// 메서드란 어떤객체에 정의된 함수를 메서드.
+	// JS도 전역객체의 메서드 또는 그냥 함수라고도 하며 
+	// 특정 객체에 정의되어있다면 그건 메서드라고 명확히 말함.
+	// 함수는 특정 객체가 아닌 그냥 정의 되어 있는 함수.
+
+	// 이런 경우. 
+	// 핸들러란 ? 이벤트에 연결된 함수를 말함. 
+	// onclick = fucntion() {}
+	// ondblclick 거의 안씀
+
+	// 함수와 요소를 이벤트(핸들러)에 연결(바인드)
+
+	// DOM 레벨 0 
+</script>
+
+	<p title="time is gold.">오늘 잠시 좋은 시간은 더 이상 오지 않는다.</p>
+	 <p id="notification">보충은 다음 주부터 다시 시작합니다.</p>
+
+	 <div class="note-01">
+	 	<h2 id="heading-01">headline</h2>
+	 	<ul>
+	 		<li><a href="">item-01</a></li>
+	 		<li><a href="">item-02</a></li>
+	 		<li><a href="">item-03</a></li>
+	 	</ul>
+	 </div>
+	 <div class="note-02">
+	 	<h2 id="heading-02">headline</h2>
+	 	<ul>
+	 		<li><a href="">item-01</a></li>
+	 		<li><a href="">item-02</a></li>
+	 		<li><a href="">item-03</a></li>
+	 	</ul>
+	 </div>
+	 <div class="note-03">
+	 	<h2 id="heading-03">headline</h2>
+	 	<ul>
+	 		<li><a href="">item-01</a></li>
+	 		<li><a href="">item-02</a></li>
+	 		<li><a href="">item-03</a></li>
+	 	</ul>
+	 </div>
+	 <div class="note-04">
+	 	<h2 id="heading-04">headline</h2>
+	 	<ul>
+	 		<li><a href="">item-01</a></li>
+	 		<li><a href="">item-02</a></li>
+	 		<li><a href="">item-03</a></li>
+	 	</ul>
+	 </div>
+
+<script>
+	// 문서에서 단락 요소에 접근한다.
+	// 아래 length값은 배열은 아니고 유사배열
+	// 유사배열(Like Array) : NodeList or HTMLCollection
+	// console.log(document.getElementsByTagName('p').length);
+	// console.log('문서에서 단락 요소의 개수:', document.getElementsByTagName('p').item(0)); //p중 첫번째 time is gold
+	// console.log('수집된 문서의 단락 요소 중 첫번째 요소', document.getElementsByTagName('p')[0] );
+	// console.log('수집된 문서의 단락 요소 중 첫번째 요소', document.getElementsByTagName('p')[1] );
+	// console.log('단락 요소의 노드 유형', document.getElementsByTagName('p')[0].nodeType ); 
+	//jquery
+	// console.log(document.getElementsByTagName('p').eq(0));
+	// 접근한 단락 요소의 노드 유형을 콘솔(Console) 패널에 기록(Log)한다.
+
+	// 문서에서 이미 찾은 대상 요소를 다시금 또 찾는 바보 같은 짓을 안하고 싶다.
+	// 우리에게 필요한 것은 메모리(기억)할 수 있는 공간(Variable)이 필요하다.
+
+	// 변수선언
+	// 선언된 메모리 공간(변수)에 레이블(이름 주기표)을 달다.
+	 // 변수 = 데이터(값);
+
+	 function tag(name) {
+	// 테스트 1. return 이 없는 함수의 경우
+	// document.getElementsByTagName(name);
+	// 테스트 2. return 이 있는 함수의 경우
+	 	return document.getElementsByTagName(name);
+	 }
+	 // function id(name){
+	 // 	return document.getElementsById(name);
+	 // }
+
+	var paras, divs, uls, lis, headings, links;
+
+	// 레이블이 달린 메모리 공간(변수)에 사물(데이터)를 담는다.
+	// 대입 연산자 ( = )
+	// 변수 = 데이터(값);
+	var paras = tag('p');
+	var divs = tag('div');
+	var uls = tag('ul');
+	var lis = tag('li');
+	var headings = tag('h2');
+	var links = tag('a');
+	// var h2_1= id('heading-01');
+	// var h2_2 = id('heading-02'); 
+	// var h2_3 = id('heading-03');
+	// var h2_4 = id('heading-04');
+
+	function print(message) {
+		console.log(message);
+	}
+
+	print(paras);
+	print(divs);
+	print(uls);
+	print(lis);
+	print(headings);
+	print(links);
+
+	// // sass 함수
+	// @function log($msg) { @return $mas;
+	// }
+	// function log(msg) { console.log(msg); }
+	// console.log('문서에서 단락 요소의 개수:', paras.length); //p중 첫번째 time is gold
+	// console.log('수집된 문서의 단락 요소 중 첫번째 요소', paras.item(0) );
+	// console.log('수집된 문서의 단락 요소 중 첫번째 요소', paras[1] );
+	// console.log('단락 요소의 노드 유형', paras[0].nodeType ); 
+</script>
+
+	 <div id="button-group">
+	 	<button type="button">#f50054</button>
+	 	<button type="button">#49F10D</button>
+	 	<button type="button">#10ECEE</button>
+	 	<button type="button">#E7EA14</button>
+	 	<button type="button">#F94405</button>
+	 </div>
+
+</body>
+</html>

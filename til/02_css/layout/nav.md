@@ -4,7 +4,7 @@
 ### 보편적으로 ul, li, a에 어떤 속성을 적용 시키는게 적합할까?
 ```css
 	/* overflow: hidden 보다 clearfix */ 
-	/* ul에 margin:0, padding:0로 초기화 시키는 별도 파일을 만들어두자. */
+	/* ul에 margin:0, padding:0로 초기화 시키는 별도 파일을 만들거나 reset에서 적용하자. ex. common.css */
 	#main_gnb > ul { list-style-type: none; width: 200px; background-color: #f1f1f1;}
 	#main_gnb > ul > li{ float: left; }
 	#main_gnb > ul > li > a {
@@ -21,22 +21,52 @@
 ##### 해결하기 위한 방법
 - `<a>`는 `inline` 속성이므로 텍스트 크기만큼만 지정 되어있다. 그래서 `<a>`를 `block` 요소로 바꾸고 `padding`으로 여백을 버튼 하나 크기 만큼 늘려줘야 한다.
 - `<ul>` 에는 기본적으로 아래 만큼에 `margin`, `padding`이 존재한다. 그래서 이 값을 0으로 초기화 시킨다.
+- **my-research** `<ul>`의 margin 값은 자식 `<ul>`의 `font-size`값에 영향을 받는다. `<body>`의 기본인 16px에 영향을 받지만 `<ul>`에 font-size가 적용된다면 그 값에 영향을 받는다.
 	- `margin-top: 16px;`, `margin-bottom: 16px;`
 	- `padding-left: 40px;` 
 
 ### `header` 부분을 만들때  자식, 자손의 중앙 위치 지정
-```html 
+```css
 	#main_header { 
 		/* 배경 지정 */
 		height: 45px;
 		background: url('');
-
 		/* 자손 위치 지정 */
 		position: relative;
 		text-align: center;
 		line-height: 45px;
 	}
 ```
+
+-----
+###### 실제 사이트들의 Navigation은 어떻게 구성했는지 파악해봐.
+### Case01. 배달의 민족
+
+###### My Code
+```html
+	<div class="gnb_wrap">
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</div><!-- gnb_wrap -->
+```
+
+###### Present Code
+```html
+	<div class="gnb-wrap">
+		<span class="navigation visibleicon" onclick="toggleLayer('gnb','navigation');return false;">네비게이션</span>
+		<ul class="list-inline gnb visible" style="display: none;">
+			<li><a href="javascript:;" onclick="openLayer('gnb-mem');return false;">로그인</a> <em>|</em></li>
+			<li><a href="https://www.baemin.com/member/signup">회원가입</a> <em>|</em></li>
+			<li><a href="http://www.baemin.com/service/faq">고객센터</a></li>
+		</ul>
+	</div>
+```
+
+### Case02. Naver
+
 
 ### 각 페이지마다 해당 기능을 어떻게 구성했는지 분석해보자.
 
