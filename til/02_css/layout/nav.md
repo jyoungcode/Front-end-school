@@ -41,6 +41,8 @@
 -----
 ##### 실제 사이트들의 Navigation은 어떻게 구성했는지 파악해보자.
 ### Case01. [배달의 민족](http://www.baemin.com/?gclid=CISfuM-epc4CFU0AvAodV3YEXQ)
+- ![배달의민족 네비게이션](../images/research/bamin_nav.png)
+- ![배달의민족 모바일 네비게이션](../images/research/bamin_mobile_nav.png)
 
 ##### My Code
 ```html
@@ -84,7 +86,23 @@
 - pc화면에서는 텍스트로 `gnb`를 만들고 숨겨진 반응형 웹에 따라 모바일에서는 숨겨놓은 아이콘`<span>네비게이션</span>`을 사용한다.
 
 ----
-### Case02. Naver
+### Case02. [Naver](http://www.naver.com/)
+
+##### My Code
+```html
+
+```
+##### Present Code
+```html
+
+```
+
+##### 코드 분석 
+###### HTML
+
+###### CSS
+
+##### 놓쳤던 부분
 
 
 ### 좀 더 탐구 해야 할 부분
