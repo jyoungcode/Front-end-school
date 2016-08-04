@@ -1,19 +1,21 @@
 ### block 요소 , inline 요소
-##### block
+
+#### block
 - <div>
 - <h1>~<h6>
 - <p>
-- <ol>,<ul>
+- <ol>
+- <ul>
 - <table>
 - <form>
 
-##### inline
+#### inline
 - <span>
 - <a>
 - <글자형식태그>
 - <label>
 
-##### inline-block
+#### inline-block
 - <img>
 - <video>
 - <input>
