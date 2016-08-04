@@ -39,3 +39,20 @@
 
     position 설정시에만 z-index 사용가능하고
     텍스트는 nodetype이 요소가 아니라 z-index는 요소만 설정가능
+
+### position에서 부모(relative)와 자식(absolute)의 관계
+```css
+a[class*="underline-"] {
+  position: relative;
+  border-bottom: none;
+}
+a[class*="underline-"]::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  border-bottom: 2px solid currentColor;
+}
+```
+
+- 부모에 relative 안주면 화면까지 부모를 찾아간다.

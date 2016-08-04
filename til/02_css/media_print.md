@@ -12,24 +12,5 @@
 }
 인쇄하기 화면 ctrl+p 하면 이 값들이 나온다.
 
-/
 
 
-4.
-
-
-
-<!-- 족구왕 -->
-a[class*="underline-"] {
-  position: relative;
-  border-bottom: none;
-}
-a[class*="underline-"]::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  border-bottom: 2px solid currentColor;
-}
-여기서 before ,after 상관없음
-그리고 부모에 relative 안주면 화면까지 부모를 찾아감..블로그하자

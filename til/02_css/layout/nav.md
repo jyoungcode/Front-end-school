@@ -39,10 +39,15 @@
 ```
 
 -----
-##### 실제 사이트들의 Navigation은 어떻게 구성했는지 파악해보자.
+### 실제 사이트 분석 
+
+##### 실제 사이트들의 Navigation은 어떻게 구성했는지 분석해보자.
+##### 문제점은 무엇인가?
+##### 내가 만들었다면 어떻게 했을 것 인가?
+
 ### Case01. [배달의 민족](http://www.baemin.com/?gclid=CISfuM-epc4CFU0AvAodV3YEXQ)
-- ![배달의민족 네비게이션](../../images/research/bamin_nav.png)
-- ![배달의민족 모바일 네비게이션](../../images/research/bamin_mobile_nav.png)
+![배달의민족 네비게이션](../../images/research/bamin_gnb.png)
+![배달의민족 모바일 네비게이션](../../images/research/bamin_mobile_gnb.png)
 
 ##### My Code
 ```html
@@ -87,6 +92,8 @@
 
 ----
 ### Case02. [Naver](http://www.naver.com/)
+![네이버 네비게이션](../../images/research/naver_gnb.png)
+<!-- ![네이버 모바일 네비게이션](../../images/research/bamin_mobile_nav.png) -->
 
 ##### My Code
 ```html
@@ -100,6 +107,8 @@
 ##### 코드 분석 
 ###### HTML
 
+
+
 ###### CSS
 
 ##### 놓쳤던 부분
@@ -109,7 +118,17 @@
 - `float: left`와 `display: inline-block` 중 어떤 처리가 더 적합한지 테스트 해봐야 되겠다.
 - 접근성 관점에서 전체 목록에 대한 제목을 스크린리더로 읽어줘야 할까? 고민 해보자.
 
-### 각 페이지마다 해당 기능을 어떻게 구성했는지 분석해보자.
 
-##### 문제점은 무엇인가?
-##### 내가 만들었다면 어떻게 했을 것 인가?
+Q. 왜 select_font에는 cursor: pointer가 상속 받지 않는가? 
+
+``` 
+<button class="font_style"><span>시스템글꼴</span></button>
+<button class="arrow"></button>
+
+<button class="font_style"><span>시스템글꼴</span></button><button class="arrow"></button>
+```
+이럴 경우에 빈칸 때문에 공백이 생긴다. css로 처리할게 아니라 그냥 html에서 붙여주자.
+
+왜 .font_style에 outline-color가 안먹히지?
+
+naver는 x같은 버튼 또한 `<a>`로 처리 했는데 의미상 맞지 않는 것 같다. 그래서 난 `<button>`으로 처리 했는데 background만 주니까 width와 height 값을 갖지 못해서 background가 들어 가지 않는다. 그렇다면 난 a로 해야 할까?
