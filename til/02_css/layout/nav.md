@@ -95,26 +95,44 @@
 ![네이버 네비게이션](../../images/research/naver_gnb.png)
 <!-- ![네이버 모바일 네비게이션](../../images/research/bamin_mobile_nav.png) -->
 
+#### 부분별 코드 
+
+###### 숨겨진 제목 처리방법
 ##### My Code
 ```html
-
+<div class="gnb_wrap clearfix">
+	<h2 class="hidden_title readable-hidden">네비게이션</h2>
+	<div class="gnb_left_wrap clearfix">
+	.....
 ```
 ##### Present Code
 ```html
-
+<div class="gnb" queryid="C1470310817015616182">
+    <h2 class="blind">홈 유형 선택</h2>
+    <ul class="nav_hm">
+	.....
 ```
+
+###### 숨겨진 제목 처리방법
+##### 
 
 ##### 코드 분석 
 ###### HTML
-
+- 
 
 
 ###### CSS
 
 ##### 놓쳤던 부분
+- **important** 네이버홈,검색,me
+	- 아이콘 시각적으로 중앙에 위치. 
+	- 그러나 마크업으로는 가장 먼저 하였다. 
+	- html 해석에서 의미상 어느것이 더 중요한가를 고민하는게 중요하다.
+- **important** 숨겨진 제목
+	- 여러가지 기능이 있으면 그걸 통합하는 하나의 제목이 필요하다. 접근성 관점.
+- 
 
-
-### 좀 더 탐구 해야 할 부분
+### 총 정리: 좀 더 탐구 해야 할 부분
 - `float: left`와 `display: inline-block` 중 어떤 처리가 더 적합한지 테스트 해봐야 되겠다.
 - 접근성 관점에서 전체 목록에 대한 제목을 스크린리더로 읽어줘야 할까? 고민 해보자.
 
@@ -132,3 +150,25 @@ Q. 왜 select_font에는 cursor: pointer가 상속 받지 않는가?
 왜 .font_style에 outline-color가 안먹히지?
 
 naver는 x같은 버튼 또한 `<a>`로 처리 했는데 의미상 맞지 않는 것 같다. 그래서 난 `<button>`으로 처리 했는데 background만 주니까 width와 height 값을 갖지 못해서 background가 들어 가지 않는다. 그렇다면 난 a로 해야 할까?
+
+text-indent는 block container에만 지정가능하다.
+css 주요 속성 
+background
+text
+등... applies to를 찾아보자.
+
+`<a>`요소에 images를 적용시키고 text-indent를 적용하니
+텍스트의 자리가 날라가면서 이미지 공간이 줄어서 인지 이동을 했다.
+
+`padding: 0px 20px` 속기형 처리 했는데 `padding: vertical horizetal`이 아닌 20px이 left값으로 적용됐다. 왜이렇까?
+
+inline 요소에 background를 선택시 반드시 block요소로 처리하고 
+width, height 값을 넣어야 한다.
+
+padding : vertical horizotal
+padding : top horizontal bottom
+padding: top right bottom left
+
+navigation에서 사이 여백+실선 일때는
+li { border를 넣고}
+a { margin 또는 padding으로 처리 해야한다.}

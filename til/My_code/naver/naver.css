@@ -1,0 +1,157 @@
+.gnb_wrap {
+    width: 100%;
+    height: 30px;
+    background-color: #FBFBFB;
+    border-bottom: 1px solid #C1C1C1;
+    padding: 0px 20px;
+    position: relative;
+}
+.gnb_left_wrap { float: left; margin: 6px 0;}
+
+/* gnb_left */
+.app_download {
+    float: left;
+    cursor: pointer;
+}
+
+.app_download:hover {
+    text-decoration: underline;
+    color: #777;
+}
+
+.app_icon {
+    background: url(../../images/research/naver_sp_img.png) no-repeat -420px -540px;
+    border: 0;
+    display: block;
+    /*margin: 6px 0px;*/
+}
+
+.app_icon > span {
+    padding-left: 18px;
+    font-size: 11px;
+    color: #777;
+}
+
+.select_font {
+    float: left;
+    position: relative;
+}
+
+.font_style {
+    border: 1px solid #c6c6c6;
+    background: url(../../images/research/naver_sp_img_vertical.png) no-repeat 7px 4px;
+    /*margin-top: 6px;*/
+    cursor: pointer;
+    width: 85px;
+}
+
+.font_style:hover {
+    outline-color: #999;
+}
+
+.font_style > span {
+    padding-left: 16px;
+    font-size: 11px;
+    color: #555;
+}
+
+.font_style > span::after {
+    width: 10px;
+    height: 10px;
+    background: url(../../images/research/naver_sp_img_vertical.png) no-repeat 62px -22px;
+}
+
+.hidden_menu {}
+
+.hidden_font_style {
+    border: 1px solid #c6c6c6;
+    background: url(../../images/research/naver_sp_img_vertical.png) no-repeat 7px 4px;
+    background-color: #c6c6c6;
+    width: 85px;
+}
+
+.hidden_font_style > span {
+    padding-left: 16px;
+    font-size: 11px;
+    color: #555;
+}
+
+.arrow {
+    background: url(../../images/research/naver_sp_img_vertical.png) no-repeat 0 -90px;
+    background-size: 80%;
+    border: 1px solid #c6c6c6;
+    width: 25px;
+    height: 25px;
+}
+
+.help_wrap {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    border: 1px solid #c6c6c6;
+    z-index: 100;
+    /*box-sizing: border-box;*/
+    padding: 8px 0px 8px 3px;
+}
+
+.help_list a {
+    text-decoration: none;
+    font-size: 10.5px;
+    color: #555;
+}
+
+.help_list_arrow {
+    background: url(../../images/research/naver_sp_img_vertical.png) no-repeat 100% -146px;
+}
+
+.hidden_menu_close {
+    background: url(../../images/research/naver_sp_img_vertical.png) no-repeat -7px -176px;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+}
+
+
+/* gnb_ center */
+.gnb_center_wrap { 
+    position: absolute; 
+    top:0; 
+    left: 50%; 
+    
+    margin-left: -72px;
+}
+
+/*.gnb_center_wrap ul { width: 90px; height: 30px; }*/
+.gnb_center_wrap > ul li { float: left; }
+
+.gnb_center_wrap > ul li a {
+    width: 48px;
+    height: 31px;
+    display: block;
+    text-indent: -9999px;
+}
+.gnb_center_wrap ul .home {
+    background: url(../../images/research/naver_sp_img.png) no-repeat;
+    background-position: 0 0;
+}
+.gnb_center_wrap ul .se {
+    background: url(../../images/research/naver_sp_img.png) no-repeat;
+    background-position: -48px 0;
+}
+.gnb_center_wrap ul .me {
+    background: url(../../images/research/naver_sp_img.png) no-repeat;
+    background-position: -95px 0;
+}
+
+/* gnb_right */
+
+.gnb_right_wrap { float: right; }
+.gnb_right_wrap > ul li { float: left; border-right: 1px solid #c6c6c6;}
+.gnb_right_wrap > ul li a { text-decoration: none; display: block; text-indent: -9999px; height: 17px; margin: 0px 5px; }
+
+.right_item_01 { background: url(../../images/research/naver_sp_img.png) -340px -40px; width: 30px;}
+.right_item_02 { background: url(../../images/research/naver_sp_img.png) -50px -70px; width: 52px;}
+.right_item_03 { background: url(../../images/research/naver_sp_img.png) -110px -70px; width: 61px; }

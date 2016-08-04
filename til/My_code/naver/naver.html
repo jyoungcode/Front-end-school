@@ -4,12 +4,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta charset="UTF-8">
   <title>naver</title>
-  <link rel="stylesheet" href="../../lesson/Resources/common.css">
-  <link rel="stylesheet" href="../../lesson/Resources/initialization/reset.css">
-  <link rel="stylesheet" href="css/naver.css">
+  <link rel="stylesheet" href="../../../lesson/Resources/common.css">
+  <link rel="stylesheet" href="../../../lesson/Resources/initialization/reset.css">
+  <!-- <link rel="stylesheet" href="naver.css"> -->
 </head>
 <body>
-	<div class="gnb_wrap">
+	<div class="gnb_wrap clearfix">
 		<h2 class="hidden_title readable-hidden">네비게이션</h2>
 		<div class="gnb_left_wrap clearfix">
 			<div class="app_download">
@@ -40,16 +40,22 @@
 		</div>
 		<div class="gnb_center_wrap clearfix">
 			<ul>
-				<li><a href="" class="home" title="네이버홈"></a></li>
-				<li><a href="" class="se" title="가볍고 빠른 검색 홈, 네이버 SE"></a></li>
-				<li><a href="" class="me" title="나만의 네이버 홈, 네이버me"></a></li>
+				<li class="home">
+					<a href=""  title="네이버홈">네이버홈</a>
+				</li>
+				<li class="se">
+					<a href=""  title="가볍고 빠른 검색 홈, 네이버 SE">빠른 검색</a>
+				</li>
+				<li class="me">
+					<a href=""  title="나만의 네이버 홈, 네이버me">네이버me</a>
+				</li>
 			</ul>
 		</div>
 		<div class="gnb_right_wrap">
-			<ul>
-				<li><a href="">해피빈</a></li>
-				<li><a href="">쥬니어네이버</a></li>
-				<li><a href="">한게임</a></li>
+			<ul class="clearfix">
+				<li><a href="" class="right_item_01">해피빈</a></li>
+				<li><a href="" class="right_item_02">쥬니어네이버</a></li>
+				<li><a href="" class="right_item_03">한게임</a></li>
 			</ul>
 		</div><!-- gnb_right_wrap -->
 	</div><!-- gnb_wrap -->

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>네이버 nav 원본</title>
+</head>
+<body>
+<div class="gnb" queryid="C1470310817015616182">
+    <h2 class="blind">홈 유형 선택</h2>
+    <ul class="nav_hm">
+        <li id="nav_hm" class="m"><a href="http://www.naver.com/" onclick="clickcr(this,'HNB.cast','','',event);" accesskey="1"><span class="nav_hm2_ly nav_hm2_ly1">네이버 홈</span></a></li>
+        <li id="nav_hm2" class="m2"><a href="http://se.naver.com/" onclick="clickcr(this,'HNB.search','','',event);" accesskey="2"><span class="nav_hm2_ly nav_hm2_ly2">가볍고 빠른 검색홈, <span>네이버SE</span></span></a></li>
+        <li id="nav_hm3" class="m3"><a href="http://me.naver.com/" onclick="clickcr(this,'HNB.desk','','',event);" accesskey="3"><span class="nav_hm2_ly nav_hm2_ly3">나만의 네이버 홈, <span>네이버me</span></span></a></li>
+    </ul>
+    <h2 class="blind">네이버 설정</h2>
+    <ul class="naver_set">
+        <li class="makeHomePage hide"><a href="#mkhome" id="mkhome" onclick="clickcr(this,'top.mkhome','','',event);this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.naver.com');ToolBar.popup();return false;">네이버를 시작페이지로</a></li>
+        <li class="naverapp">
+            <a href="#" class="btn" onclick="clickcr(this,'top.app','','',event);Andro_MSG.toggle();return false;" queryid="C1470311338658565822">네이버 앱 다운로드</a>
+            <div id="naverapply" class="ly_hnb hide">
+                <p class="tit">네이버 앱을 설치하세요!</p>
+                <fieldset>
+                    <legend>다운로드URL 문자받기</legend>
+                    <span class="txtsm">다운로드URL 문자받기</span>
+                    <label class="blind" for="app_phone">휴대폰번호 입력</label>
+                    <input class="empty" type="text" value="" id="app_phone">
+                    <button type="button" class="btnsm"><span class="blind">보내기</span></button>
+                </fieldset>
+                <p class="desc">입력하신 번호는 저장되지 않고, 전송은 무료입니다.</p>
+                <p class="qr"><img width="68" height="84" alt="네이버 앱 QR코드" src="http://img.naver.net/static/www/dl_qr_naver.png"></p>
+                <ul class="app">
+                    <li class="f"><a href="#naver"><strong>네이버 앱</strong></a></li>
+                    <li><a href="#map">지도</a></li>
+                    <li><a href="#n_drive">N드라이브</a></li>
+                    <li><a href="#books">북스</a></li>
+                    <li><a href="#music">뮤직</a></li>
+                    <li><a href="#line">라인</a></li>
+                    <li><a href="#appstore">앱스토어</a><span class="new">new</span></li>
+                </ul>
+                <div class="cls"><a href="#close" title="네이버 앱 다운로드 레이어 닫기" onclick="clickcr(this,'top*m.close','','',event);Andro_MSG.close();return false;"><span class="blind">네이버 앱 다운로드 레이어 닫기</span></a></div>
+            </div>
+        </li>
+        <!-- 글꼴설정 -->
+        <li class="set_font">
+            <!-- [d] : 열렸을경우 setf_open 추가 -->
+            <ul class="setf">
+                <li class="first"><span class="blind">현재</span><a href="#" onclick="return false;">시스템글꼴</a></li>
+                <li class="second"><a href="#" onclick="return false;">나눔글꼴</a></li>
+            </ul>
+            <!-- [d] : 열렸을경우 setf_help_open 추가 -->
+            <div class="setf_help">
+                <a href="#" onclick="return false;" title="글꼴설정 도움말" class="setf_help_toggle">글꼴설정 도움말</a>
+                <div class="ly_setf_help">
+                    <ul>
+                        <li><a href="#" onclick="return false;" id="font_preview">나눔글꼴 미리보기</a></li>
+                        <li><a href="http://hangeul.naver.com/" onclick="clickcr( this, 'top.fontcampaign', '', '', event );">네이버 한글캠페인</a></li>
+                        <li><a href="https://help.naver.com/support/service/main.nhn?serviceNo=1074&amp;categoryNo=3484" onclick="clickcr( this, 'top.fontfaq', '', '', event );">도움말</a></li>
+                    </ul>
+                    <a href="#" class="ly_setf_close" title="글꼴설정 도움말 닫기" onclick="return false;">글꼴설정 도움말 닫기</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <h2 class="blind">패밀리 사이트</h2>
+    <div id="fms" class="fms">
+        <a href="http://happybean.naver.com/main/SectionMain.nhn" id="top.happybean" class="hb"><span class="ir">해피빈</span></a><span>|</span><a href="http://jr.naver.com" id="top.jrnaver" class="ju"><span class="ir">쥬니버</span></a><span>|</span><a href="http://www.hangame.com" id="top.hangame" class="han"><span class="ir">한게임</span></a>
+    </div>
+    <div id="promotion8" style="display:none;height:41px;">
+        <img width="880" height="31" alt="시작페이지" usemap="#sliding" src="http://img.naver.net/static/www/up/2012/naver_homepage.png">
+        <map id="promo_sliding" name="sliding">
+            <area shape="rect" coords="533,5,575,24" href="http://www.naver.com/" onclick="clickcr(this,'tsb.set','','',event);return HomePageSet.setHomePage();" alt="시작페이지 설정">
+            <area shape="rect" coords="580,5,622,24" href="http://www.naver.com/" onclick="clickcr(this,'tsb.no','','',event);return HomePageSet.cancel();" alt="시작페이지 안하기">
+            <area id="sethomepage_close" shape="rect" coords="855,5,875,23" href="#" alt="배너 닫기" onclick="clickcr(this,'tsb.close','','',event);return HomePageSet.cancel();">
+        </map>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    var slidingCookieName = "naverSetHomepage";
+    var slidingCookieExpDate = 1;
+    var slidingOneTimeLink = 1;
+    //]]>
+    </script>
+</div>
+
+</body>
+</html>
