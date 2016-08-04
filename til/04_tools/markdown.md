@@ -21,10 +21,9 @@
 - 굵게: `**굵게**`
 - 참조:
 > [링크1][1] 과 [링크2][2]
-
 > [1]: http://example.com/ "링크제목1"
-	> [2]: http://example.org/ "링크제목2"
-		> 한줄에 한칸씩 띄어야 한다.
+> [2]: http://example.org/ "링크제목2"
+> 한줄에 한칸씩 띄어야 한다.
 
 - link: `[대체텍스트](http://www.example.com)`
 - 수평선: '---' or '***' (3개이상 사용시 적용)
@@ -36,10 +35,10 @@
 
 - dl,dt,dd:
 > wordpress
-	> : 오픈소스
+> : 오픈소스
 
 - 축약어:
 > HTML
-	> *[HTML]: HyperText...
+> *[HTML]: HyperText...
 
 
