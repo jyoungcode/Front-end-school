@@ -35,10 +35,10 @@
 
 - dl,dt,dd:
 > wordpress
-> : 오픈소스
+>> : 오픈소스
 
 - 축약어:
 > HTML
-> *[HTML]: HyperText...
+>> *[HTML]: HyperText...
 
 

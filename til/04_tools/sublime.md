@@ -1,25 +1,25 @@
 # Sublime Text. Tip.
 
 ### 기본 사용 
-- 1. 파일생성저장 : File > save 
-- 1. syntax변경 : View > systax > HTML, JS 등 변경
-- 1. 화면 확대/축소 : Ctrl + +,-
-- 1. 사이드바 토글: View > Sidebar : Ctrl+k, Ctrl+b 
-- 1. 프로젝트추가: 프로젝트 폴더 drag
-- 1. 단축키,에디터 설정 변경: 
+- 파일생성저장 : File > save 
+- syntax변경 : View > systax > HTML, JS 등 변경
+- 화면 확대/축소 : Ctrl + +,-
+- 사이드바 토글: View > Sidebar : Ctrl+k, Ctrl+b 
+- 프로젝트추가: 프로젝트 폴더 drag
+- 단축키,에디터 설정 변경: 
 > preference > key binding default(건들지 말기), key binding user>해당 키 복사 고치기
-- 1. 여러가지 설정가능 : 
+- 여러가지 설정가능 : 
 > setting default, setting user 복사 사용
 > ( font, tab_size, word_wrap 등 변경 )
-- 1. edit>line>duplicate/delete line :
+- edit>line>duplicate/delete line :
 	- ctrl+shift+d
 	- ctrl+shift+k
 
-- 1. 한글입력문제(window사용자만)
+- 한글입력문제(window사용자만)
 > IMESupport-github 다운
 > C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Packages 에 파일폴더 복사
 
-- 1. package controller 순서: 
+- package controller 순서: 
 	- https://packagecontrol.io/installation
 	- install now 에서 복사후
 	- view>show console 에 붙여넣기 
@@ -31,9 +31,9 @@
 	- side_bar_move
 	- side_bar_delete
 
-- 1. edit>line>join lines: ctrl + j 
-- 1. package: converttoutf8
-- 1. 테마변경: 
+- edit>line>join lines: ctrl + j 
+- package: converttoutf8
+- 테마변경: 
 	- package control
 	- theme 
 	- flatland
