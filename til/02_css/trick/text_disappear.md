@@ -1,6 +1,6 @@
 # text를 처리 하는 기법.
 
-|| text-indent  | visibility: hidden | display: none| opacity: 0||
+|     | text-indent  | visibility: hidden | display: none| opacity: 0|
 | :----------- | :------------: | :-----------: | :----------------: | --------------: |
 |스크린리더 | O          | X         |  X          | O               |
 | 적용 후 공간여부 | O     | O               | X               | O               |
