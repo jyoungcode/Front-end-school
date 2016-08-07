@@ -97,7 +97,7 @@
 
 #### 부분별 코드 
 
-###### 숨겨진 제목 처리방법
+###### 1. 숨겨진 제목 처리방법
 ##### My Code
 ```html
 <div class="gnb_wrap clearfix">
@@ -105,6 +105,7 @@
 	<div class="gnb_left_wrap clearfix">
 	.....
 ```
+
 ##### Present Code
 ```html
 <div class="gnb" queryid="C1470310817015616182">
@@ -113,8 +114,18 @@
 	.....
 ```
 
-###### 숨겨진 제목 처리방법
-##### 
+##### 코드 분석 
+###### HTML
+- blind라는 클래스를 통해서 
+
+
+###### CSS
+
+###### 2.
+##### My Code
+
+##### Present Code
+
 
 ##### 코드 분석 
 ###### HTML

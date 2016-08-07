@@ -1,8 +1,11 @@
 ### 자주 사용하는 CSS Property
+
 - border-radius: 왼쪽위 오른쪽위 오른쪽아래 왼쪽아래
 (border-radius: 50px 40px 20px 10px)
 
 #### background
+- `background: color image repeat position attachment`
+
 ###### background-image 
 - url, linear-gradient, radial-gradient
 
