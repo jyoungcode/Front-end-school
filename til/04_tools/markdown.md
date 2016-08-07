@@ -48,8 +48,7 @@
 | First row     | Data          | Very long data entry |
 | Second row    | **Cell**      | *Cell*               |
 | Third row     | Cell that spans across two columns  ||
-[Table caption, works as a reference][section-mmd-tables-table1] 
+[Table caption, works as a reference][section-mmd-tables-table1]
 
-[참고1][1]
-[1]: https://productivityarchive.wordpress.com/2013/08/10/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%96%B8%EC%96%B4%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%ED%91%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0%EC%98%81%EB%AC%B8-2/ 마크다운 테이블 생성
+[마크다운 테이블 생성][1]: https://productivityarchive.wordpress.com/2013/08/10/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%96%B8%EC%96%B4%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%ED%91%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0%EC%98%81%EB%AC%B8-2/ 
 
