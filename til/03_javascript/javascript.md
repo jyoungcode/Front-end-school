@@ -1,4 +1,6 @@
-### 인터프리터(interpreter, 문화어: 해석기)는 프로그래밍 언어의 소스 코드를 바로 실행하는 컴퓨터 프로그램 또는 환경을 말한다. 원시 코드를 기계어로 번역하는 컴파일러와 대비된다.
+### 인터프리터(interpreter, 문화어: 해석기)는 프로그래밍 언어의 소스 코드를 바로 실행하는 컴퓨터 프로그램 또는 환경을 말한다. 원시 코드를 기계어로
+
+
 
 ### DOM( Document Object Model )
 - html parser 
@@ -14,6 +16,8 @@
 - `.getElementsByClassName('.head')`: [<div class="head"]
 - `.getElementById('main')`: <div id="main">
 
+# 변수란? 
+- '변할 수 있는 수', 프로그래밍에서 '시스템이 동작하는 동안 데이터가 담기는 공간'
 텍스트 노드란???
 
 ##### node 프로퍼티

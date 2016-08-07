@@ -21,3 +21,8 @@ height= height속성+2*(margin) )
 [box-sizing](http://www.w3schools.com/cssref/tryit.asp?filename=trycss3_box-sizing)
 
 [css-tricks](https://css-tricks.com/box-sizing/) 
+
+
+### border-radius
+- border-radius: 왼쪽위 오른쪽위 오른쪽아래 왼쪽아래
+(border-radius: 50px 40px 20px 10px)

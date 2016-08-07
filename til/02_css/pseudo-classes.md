@@ -1,8 +1,18 @@
-##### :nth-child, :nth-of-type 차이 
+# 가상클래스(유사클래스, pseudo-classes)
+- 가상으로 클래스를 설정한 것 처럼 작동하는 클래스.
+
+### 상태디자인 관련 클래스
+- `:link` : `<a>`에 href 속성이 설정된 경우의 초기 상태. 기본값이다.
+- `:visited`:방문 상태 식별. 
+- `:hover` : 마우스 포인터를 올려놓은 상태 식별
+- `:active` : 클릭한 상태를 식별
+- `:focus` : 포커스된 상태를 식별(포커스요소 input, a, area 등)에 적용
+
+### :nth-child, :nth-of-type 차이 
 - body > *:first-child = body의 모든 자식 중 첫번째만 선택
 - body > *:first-of-type = body의 자손 중 첫번째로 등장하는 모든 형태 태그 
 
-##### 일반, 형태 구조 선택자 간의 모든 경우의 수 비교 
+### 일반, 형태 구조 선택자 간의 모든 경우의 수 비교 
 - first-child, first-of-type 비교 
 
 ```html
