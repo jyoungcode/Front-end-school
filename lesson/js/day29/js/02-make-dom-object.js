@@ -81,12 +81,14 @@ function myPrepend(this){
 }
 
 
-function myFunction(newItem, textnode) {
+function myFunction(mytag, newItem, textnode) {
+	var mytag;
 	var tag = mytag.toString();
 	var newItem = document.createElement(tag);
 var textnode = document.createTextNode("testcode");
     newItem.appendChild(textnode);
 
-    var mychild = document.querySelector(this);
+    var selector = mySelector.toString(); 
+    var mychild = document.querySelector(my_selector);
     mychild.insertBefore(newItem, mychild.childNodes[0]);
 }

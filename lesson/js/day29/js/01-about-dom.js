@@ -197,40 +197,6 @@ console.log('수집된 parent_el의 자식 노드의 개수:', parent_el_child_n
  * .querySelector() === .querySelectorAll()[0]
  * -----------------------------------------------------------------*/
 
-// test
-// 2
-// var parent2 = document.getElementById('parent2');
-// var parent_childs = parent2.getElementsByTagName('div');
-
-// for(var child2, i=0; i<parent_childs.length; i++){
-// 	child2 = parent_childs[i];
-// 	if( !child2.hasChildNodes()) {
-// 		console.log(child2);
-// 	}
-// }
-
-// // 3
-// var parent3 = document.getElementById('parent3');
-// var parent_childs = parent3.getElementsByTagName('div');
-
-// for(var child3, i=0; i<parent_childs.length; i++){
-// 	child3 = parent_childs[i];
-// 	if( !child3.hasChildNodes()) {
-// 		console.log(child3);
-// 	}
-// }
-
-// // 4
-// var parent4 = document.getElementById('parent4');
-// // var parent_childs = parent.getElementsByTagName('div');
-
-// for(var child4, i=0; i<parent_childs.length; i++){
-// 	child4 = parent_childs[i];
-// 	if( !child4.hasChildNodes()) {
-// 		console.log(child4);
-// 	}
-// }
-
 // parent.childNodes
 // parent.getElementsByClassName('children').childNodes
 

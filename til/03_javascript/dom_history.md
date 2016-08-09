@@ -1,11 +1,3 @@
-### 바닐라 JS
-
-
-###메소드
-- 객체에 정의된 함수를 말한다. 
-- createElement
-- 매개변수(parameter) 
-
 ###클래스가 느린가?
 - dom lv1에서는 id또는 dom tagname 밖에 찾을 수 없었는데
 class 등장 후 사용

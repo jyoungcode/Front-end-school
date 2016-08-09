@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>이미지 슬라이드</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+	window.onload = function(){
+		var img_box = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg"];
+
+		var imgs_wrap = document.querySelector('.imgs_wrap');
+		for (var i=0;  i<img_box.length; i++) {
+			var img_items = document.createElement('div');
+			img_items.setAttribute('class','image');
+			var img = document.createElement('img');
+
+			img.src = img_box[i];
+			img_items.appendChild(img);
+			imgs_wrap.appendChild(img_items);
+		}
+	}
+	function selectAll(btn) {
+		var images = document.querySelectorAll('.image');
+		for(var i=0; i<images.length; i++){
+			images[i].classList.add('image-selected');
+		}
+		btn.value =  "Unselect All";
+	}
+
+	
+	</script>
+</head>
+<body>
+	<input type="button" value="Select All" onclick="selectAll(this)">
+	<!-- <input type="button" value="Play Slide Show" onclick="slideShow(this, event);"> -->
+	<hr>
+	<div class="imgs_wrap clearfix">
+
+	</div>
+</body>
+</html>

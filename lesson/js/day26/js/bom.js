@@ -5,15 +5,6 @@
 // 이러한 관계들을 말한다.
 // DOM = html root가 있고 HTMLach
 
-// JS 특징
-// 함수는 동사형태이며 ()를 사용한다.
-// 객체.함수() 이런식으로 . 으로 연결
-// 브라우저에서 JS엔진을 가지고 있다.
-
-
-// 자바스크립트 변수는 변수 이름 앞에 
-// var 키워드를 붙인다.
-
 // var device_pixel_density;
 // [카멜 케이스(camelCase) 표기식]
 // 음절+음절 맡다을 때 뒷 음절의 첫글자가 대문자가 되는 것을 말한다.
@@ -24,7 +15,7 @@ var dp = window.devicePixelRatio;
 // 웹 브라우저의 콘솔(Console) 패널에 기록(Log)을 남긴다.
 // console.log('기기의 픽셀 농도:', dp);
 
-// 조건문
+// Sass 조건문
 // @if dp == 1 {
 // 	@debug "고해상도 디스플레이의 픽셀 농도를 가집니다.";
 // } @else {
@@ -65,22 +56,14 @@ var window_h = window.innerHeight;
 // 브라우저마다 하나씩만 지원할 수도 있어서 잘 알고 사용.  크롬은 둘다 지원.
 // 그래서 크로스브라우징을 위해서 함수를 만들어 둔다.
 
-
 var window_scrollX = window.scrollX;
 var window_scrollY = window.scrollY;
 
 // console.log('window_scrollX:', window_scrollX);
 // console.log('window_scrollY:', window_scrollY);
 
-// 변수 선언만 하는 경우. 즉, 값이 대입(할당)되지 않은 경우
-// undefined 값이 기본으로 할당되어 있다.
-
 // 이 값은 0이 나올 수 밖에 없다. 문서가 완료 event를 써서 문서가 완료 됬을때 scrollY 값을 불러와야 실시간으로 받아올 수 있다. 
 var scroll_Y; // undefined
-
-// * 이미 객체의 속성이 정해진 값을 사용자가 덮어쓰게 된다면,
-// 덮어쓴 값이 출력된다. (자바스크립트의 약점. 태생적 한계)
-// 초창기 자바스크립트 환경에서는 문법이 엄격할 수가 없었다.
 
 // window 전역 객체의 속성 중에 scrollTop이 있는가 확인?
 // scrollTop을 지원 한다는 것은 구형 IE를 감지하는 것이다.
