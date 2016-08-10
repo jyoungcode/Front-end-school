@@ -92,22 +92,22 @@
 `var numORstring1 = "3"+"3" //"33"`
 `var numORstring2 = "3"*"3" //9`
 
-> "a" - 5 // NaN
-> "" -5 // -5
-> null - 5 // -5 
+`"a" - 5 // NaN`
+`"" -5 // -5`
+`null - 5 // -5`
 
 ####0만 false다!
-> !10 // false
-> !0 // true
+`!10 // false`
+`!0 // true`
 
 ####문자열 중에 딱 하나만 false다
-> !"" // true
-> !"a" // fasle (안에 뭔가 넣으면 무조껀 false)
+`!"" // true`
+`!"a" // fasle (안에 뭔가 넣으면 무조껀 false)`
 
 ####변수에 값을 모를때 boolean을 뽑아내는법
-> var guess="hello" // true
-> !guess // false 
-> !!guess // true  ( 한번 더 되돌리는것. )
+`var guess="hello" // true`
+`!guess // false `
+`!!guess // true  ( 한번 더 되돌리는것. )`
 
 #### length 줄이기 ( 배열에 적용, 원시타입 리터럴 X)
 `var arr = [10,20,30];`
