@@ -20,12 +20,28 @@
 			imgs_wrap.appendChild(img_items);
 		}
 	}
+	var num = 0;
 	function selectAll(btn) {
 		var images = document.querySelectorAll('.image');
-		for(var i=0; i<images.length; i++){
-			images[i].classList.add('image-selected');
-		}
-		btn.value =  "Unselect All";
+		// var class_list = images[i].classList;
+		// var set_attri = images.setAttribute('class','image-selected');
+		// console.log(set_attri);
+		// if( set_attri ){
+			for(var i=0; i<images.length; i++){
+				images[i].classList.add('image-selected');
+			}
+			btn.value =  "Unselect All";
+		// }else{
+			// for(var i=0; i<images.length; i++){
+			// 	images[i].classList.remove('image-selected');
+			// }
+			// btn.value = "Select All";
+		// }
+
+
+		// toggle 보니 true false가 있다. 그걸 어떻게 출력력해서 받아오냐?
+		// if( btn.value === ) { }
+		
 	}
 
 	
