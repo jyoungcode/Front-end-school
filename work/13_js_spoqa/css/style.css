@@ -1,0 +1,50 @@
+/*! spoqa @jyoungcode, 2016 */
+body {
+  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", Gothic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4d5256;
+  word-break: keep-all;
+  background-color: #fff;
+}
+
+.topnav {
+  position: relative;
+  height: 60px;
+}
+
+.fixed-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toplogo {
+  margin-top: 17px;
+  display: inline-block;
+  background-size: 100%;
+  font-size: 16px;
+}
+
+.nav {
+  display: block;
+  float: right;
+}
+
+.topnav-tabsmenu {
+  padding-left: 30px;
+  list-style-type: none;
+}
+
+.topnav-tabsmenu li {
+  float: left;
+  position: relative;
+  display: inline-block;
+  margin-bottom: -1px;
+}
+
+.topnav-tabsmenu li a {
+  display: block;
+  font-size: 14px;
+  color: inherit;
+}

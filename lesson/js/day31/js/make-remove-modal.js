@@ -47,4 +47,4 @@ function removeModal() {
   // make_btn.removeAttribute('disabled');
 }
 
-make_btn.onclick = makeModal;
+// make_btn.onclick = makeModal;
