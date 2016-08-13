@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>test</title>
+  <script>
+
+  	// 동적 생성 노드는 빈 배열로 생성이 된다. 
+  	var test_el = document.createElement('div');
+  	var test_node = document.createTextNode('testing');
+  	var test_child = document.createElement('p');
+  	var test_child_text = document.createTextNode('child txt');
+  	test_el.appendChild(test_node);
+  	test_child.appendChild(test_child_text);
+  	test_el.appendChild(test_child);
+
+  	var parent = document.querySelector('.pa');
+  	var child = document.querySelector('.ch');
+  	console.log(parent);
+  	function te_prependChild(c_node, p_node){
+  		console.log(p_node,c_node);
+  		p_node.insertBefore(c_node, p_node.firstElementChild);
+  	}
+  	console.log(te_prependChild(child, parent));
+
+
+
+  </script>
+</head>
+<body>
+	<div class="pa">parent
+		<div class="ch">child</div>
+	</div>
+	<script src="../js/day29/js/02-make-dom-object.js"></script>
+</body>
+</html>

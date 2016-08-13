@@ -1,6 +1,31 @@
 
 /*! DOMHelper.js © jyoungcode 2016 */
 
+// JQuery와 type() 같다.
+//  자바스크립트의 모든 데이터 유형을 올바르게 감지할 수 있는 헬퍼 함수
+function isType(data){
+	return Object.prototype.toString.call(data).slice(8, -1).toLowerCase();
+}
+
+// 데이터 간 동등한지 유무 파악 헬퍼 함수
+function equal(data1, data2){
+	return data1 == data2;
+}
+
+// 데이터 간 완전하게 동등한지 유무 파악 헬퍼 함수
+function strictEqual(data1, data2){
+	return data1 === data2;
+}
+
+function throwError(type1, type2, err_msg){
+	err_msg = err_msg || '기본 오류 메시지';
+	if( isType(type1) !== type2) { throw new Error(err_msg)}
+}
+
+function validDate(data, type){
+	return strictEqual( isType(data), type );
+}
+
 // <body> 요소 맨 앞에 삽입(추가) 방법
 // 방법 1. 표준 DOM API 방법인 insertBefore() 메소드를 활용
 // target_node.parentNode.insertBefore(insert_node, target_node)
@@ -156,3 +181,4 @@ function camelCase(css_prop) {
 }
 
 // camelCase('border-top');
+

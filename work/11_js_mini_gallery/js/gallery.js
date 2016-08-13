@@ -1,5 +1,6 @@
 /*! gallery @jyoungcode */
 
+// create Node 
 var box = createNode('div');
 box.setAttribute('class','box_wrap');
 
@@ -17,8 +18,8 @@ box.appendChild(box_item2);
 
 body.appendChild(box);
 
-///////////////////////////////////////////////////
 
+// DOM select 
 var box_wrap = document.querySelector('.box_wrap');
 
 // var item = box_wrap.children;
@@ -34,41 +35,22 @@ item0.addEventListener("click", myFn);
 item1.addEventListener("click", myFn);
 item2.addEventListener("click", myFn);
 
-
-// 'images/content-img-thumbnail.jpg'.replace('-thumbnail', ' ');로
-// 이미지 바꿔치기.
-
 function myFn() {
-	// var box_wrap_img = getStyle(box_wrap,'backgroud');
-	// var click_img = this;
-	// console.log(getStyle(this, 'background'));
-	var box_item_img = getStyle(this, 'background');
-	var box_input = box_item_img.toString();
-	console.log(box_input);
+	var box_item_img = getStyle(this, 'background-image');
+	var image_path = 'images';
+	var bg_img_path = box_item_img.split(image_path)[1].slice(0,-2);
+	var path = image_path + bg_img_path;
 	if( box_item_img !== null) {
-		box_wrap["background"] = box_input;
+		box_wrap.style["background"] = "url(" + path + ')';
+		box_wrap.style["background-size"]="cover";
+		// box_wrap.style[""]
 	}
 }
 
-var obj = {
-	background: #fff,
-	
-}
-
-	// var item_all=[item_0,item_1,item_2];
-	// var box_item = ['box_item_0', 'box_item_1', 'box_item_2'];
-	// for(var i=0; i<3; i++){
-	// 	var item = item_all[i].classList.add(box_item[i]);
-	// }
-	// box_wrap.setAttribute('class', item);
-
-	// box_wrap.style.backgroundImage = "url('images/img1.jpg')";
-	// box_wrap.style.backgroundSize = "100% 100%";
-	// box_wrap.style.backgroundPosition = "center";
-	// box_wrap.style.backgroudRepeat = "no-repeat";
-	// box_wrap.style.transition ="all 2s";
+// 정규 표현식을 이용한 이미지 문자열 가져오기 
+// var myRe = /\".+\"/g;
+// var box_input = box_item_img.match(myRe);
 
 
-// `backgroud: url('bg.png') center / 100% no-repeat fixed, url('bg2.png') bottom / 100% no-repeat fixed #E7E7E8;
 
 

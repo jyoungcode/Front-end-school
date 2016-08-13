@@ -71,14 +71,14 @@ function prependChild(child_node, parent_node) {
 
 prependChild(target_container, body);
 
-function myPrepend(this){
-	var newItem = document.createElement("li");
-    var textnode = document.createTextNode("Water");
-    newItem.appendChild(textnode);
+// function myPrepend(this){
+// 	var newItem = document.createElement("li");
+//     var textnode = document.createTextNode("Water");
+//     newItem.appendChild(textnode);
 	
-	var parent_node = mychild.parentNode
+// 	var parent_node = mychild.parentNode
 	
-}
+// }
 
 
 function myFunction(mytag, newItem, textnode) {

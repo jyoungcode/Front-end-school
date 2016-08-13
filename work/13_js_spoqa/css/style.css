@@ -1,16 +1,31 @@
 /*! spoqa @jyoungcode, 2016 */
+.clearfix::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
 body {
   font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", Gothic;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
   color: #4d5256;
   word-break: keep-all;
   background-color: #fff;
 }
 
+body * {
+  box-sizing: border-box;
+}
+
 .topnav {
   position: relative;
   height: 60px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  z-index: 1030;
 }
 
 .fixed-container {
@@ -43,8 +58,55 @@ body {
   margin-bottom: -1px;
 }
 
-.topnav-tabsmenu li a {
+a.topnav-tab {
   display: block;
   font-size: 14px;
   color: inherit;
+  line-height: 21px;
+  padding: 17.5px 20px;
+  text-decoration: none;
+  trasition: border 0.3s;
+  transition-timing-function: ease-out;
+}
+
+a.topnav-tab:last-child {
+  color: #4c80f1;
+}
+
+a.topnav-tab:hover {
+  border-bottom: 4px solid #337ab7;
+}
+
+.main-text h1 {
+  font-size: 48px;
+  font-weight: 100;
+  margin-top: 1em;
+  margin-bottom: 0.6em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-text p {
+  margin-bottom: 46px;
+  font-size: 14px;
+}
+
+.main-text p dfn {
+  font-style: normal;
+}
+
+.download {
+  width: 200px;
+  padding: 11px 0 0 0;
+  height: 46px;
+}
+
+.btn {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4c80f1;
+  background-color: transparent;
+  border: 2px solid #4c80f1;
+  transition: 0.2s ease-in background-color;
 }
