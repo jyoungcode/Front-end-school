@@ -66,3 +66,6 @@ p {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+### word-wrap 
+- 텍스트가 박스를 넘어가면 밑줄로 떨어진다.

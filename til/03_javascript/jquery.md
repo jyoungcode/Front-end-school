@@ -12,3 +12,21 @@ $h1.text('내용 변경');
 그래서 2, 3 버전을 쓰자 .
 
 - jquery는 문자 하나 하나 쪼개고 나서 찾기 때문에 느리다.
+
+
+### 자주 쓰는 method
+- css()
+- addClass()
+- removeClass()
+- hasClass()
+- toggleClass()
+- attr()
+- prop()
+- show()
+- hide()
+- toggle()
+- width : content-box 까지  
+- height: content-box 까지 
+- innerWidth, innerHeight : padding-box 까지 
+- outerWidth, outerHeight : border-box 
+- outerWidth(true), outerHeight(true) : margin-box

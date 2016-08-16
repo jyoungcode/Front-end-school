@@ -1,9 +1,30 @@
-
 /*! DOMHelper.js © jyoungcode 2016 */
+
+// ECMAScript 2015 Syntax
+// var cleanWhiteSpace = ( el=document ) => {
+// ECMAScript 3rd Edition
+//   // \s : 공백문자 , \S: 공백문자가 아닌 나머지 문자, \w: 알파벳이나 숫자, \W: 알파벳이나 숫자를 제외한 나머지 문자
+//   // test() : 정규표현식 문자를 검사하는 메서드
+
+// ES6 : Arrow function
+// var cleanWhiteSpace = (el=document) => {
+// 	// 기존의 ES5의 초기화
+//     // el = el || document;
+//     var current_node = el.firstChild;
+//     while( current_node ! == null ) {
+//       if ( current_node.nodeType === 3 && !/\S/.test(current_node.nodeValue) ) {
+//           removeNode(current_node);
+//       } else if ( current_node.nodeType === 1 ) {
+//           cleanWhiteSpace(current_node);
+//       }
+//       current_node = current_node.nextSibling;
+//     }
+// };
 
 // JQuery와 type() 같다.
 //  자바스크립트의 모든 데이터 유형을 올바르게 감지할 수 있는 헬퍼 함수
 function isType(data){
+	// "[object Number]"
 	return Object.prototype.toString.call(data).slice(8, -1).toLowerCase();
 }
 
@@ -23,6 +44,7 @@ function throwError(type1, type2, err_msg){
 }
 
 function validDate(data, type){
+	throwError(type, 'string'); // 오류 발생 시 멈추고 화면에 오류 메시지 출력
 	return strictEqual( isType(data), type );
 }
 
@@ -75,7 +97,7 @@ function queryAll(selector_str, context) {
 	// 사용자가 올바른 데이터를 전달하였는가?
 	if( typeof selector_str !== 'string' ){
 		// 조건이 참이 되면 오류 발생
-		throw new Error ("문자열로 입력해");
+		throw new Error ('첫번째 전달인자는 문자 유형이어야 합니다.');
 	}
 	// context 인자 값을 사용자가 전달하였는가?
 	// 사용자가 context 값을 전달하지 않았을 경우는 undefined 이다.
@@ -84,18 +106,8 @@ function queryAll(selector_str, context) {
 	return context.querySelectorAll(selector_str);
 }
 
-function queryAll(selector, context){
-	// 유효성검사
-	// 문자 데이터인지 확인
-
-	if(typeof selector !== 'string'){throw new Error('전달인자는 문자열만 가능하다')}
-	if(!context){context= document;}
-
-	return context.querySelectorAll(selector);
-}
-
-function query(selector, context){
-	return queryAll(selector, context)[0];
+function query(selector, parent){
+	return queryAll(selector, parent)[0];
 }
 
 function $qOne(selector, context, num){
@@ -108,7 +120,7 @@ function $qOne(selector, context, num){
 
 function $qTwo(selector, hook, context){
 	var method;
-	if (hook) {
+	if (hook === 1) {
 		method = 'query';
 	}else{
 		method = 'queryAll';
@@ -154,7 +166,7 @@ function getStyle(el, property, pseudo) {
   if ( typeof property !== 'string' ) {
     console.error('두번째 인자 property는 문자열이야 합니다.');
   }
-  if ( typeof pseudo !== 'string' && pseudo ) {
+  if ( pseudo && typeof pseudo !== 'string' ) {
     console.error('세번째 인자 pseudo는 문자열이야 합니다.');
   }
 
@@ -174,11 +186,178 @@ function getStyle(el, property, pseudo) {
 }
 
 // 카멜케이스 // font-size -> fontSize
-function camelCase(css_prop) {
-   return css_prop.replace(/-./g, function($1){
-      return $1.replace('-','').toUpperCase();
+// function camelCase(css_prop) {
+//    return css_prop.replace(/-./g, function($1){
+//       return $1.replace('-','').toUpperCase();
+//    });
+// }
+
+// ------------------------------------------------
+// 전달된 텍스트를 카멜케이스화하여 반환하는 헬퍼 함수
+function camelCase(text) {
+   return text.replace(/(\s|-|_)./g, function($1){
+      return $1.replace(/(\s|-|_)/g,'').toUpperCase();
    });
 }
 
-// camelCase('border-top');
+// ------------------------------------------------
+// 오류 메시지를 출력하는 헬퍼 함수
+function errorMsg(message) {
+  if ( isType(message) !== 'string' ) {
+    // 함수 자신을 다시 호출: 재귀함수
+    errorMsg('오류 메시지는 문자 데이터 유형이어야 합니다.');
+  } else if( isType(message) === 'string') {
+  	return message;
+  }
+  throw new Error(message);
+}
 
+// ------------------------------------------------
+// 요소노드인지 아닌지를 체크하여 참/거짓을 반환하는 헬퍼함수
+function isElNode(node) {
+  return node.nodeType === 1;
+}
+function isntElNode(node) {
+	// isElNode(node)가 #text 일때 true 반환 
+  return !isElNode(node);
+  // return node.nodeType !== 1;
+}
+
+// ------------------------------------------------
+// 이전 형제요소 노드를 찾는 헬퍼 함수
+function prevEl(node) {
+  // 검증: 유효성 검사
+  if ( isntElNode(node) ) {
+    errorMsg('전달된 인자는 요소노드여야 합니다.');
+  }
+  // 구형 IE 9+, 신형 웹 브라우저
+  if ( node.previousElementSibling ) {
+    return node.previousElementSibling;
+  }
+  // 구형 IE 6-8
+  else {
+    do { node = node.previousSibling; }
+    while(node && !isElNode(node) );
+    return node;
+  }
+}
+
+// ------------------------------------------------
+// 다음 형제요소 노드를 찾는 헬퍼 함수
+function nextEl(node) {
+  // 검증: 유효성 검사
+  // if ( isntElNode(node) ) {
+  //   errorMsg('전달된 인자는 요소노드여야 합니다.');
+  // }
+  // 구형 IE 9+, 신형 웹 브라우저
+  if ( node.nextElementSibling ) {
+    return node.nextElementSibling;
+  }
+  // 구형 IE 6-8
+  else {
+    do { node = node.nextSibling; }
+    while(node && !isElNode(node) );
+    return node;
+  }
+}
+
+// ------------------------------------------------
+// 첫번째 자식요소 노드를 찾는 헬퍼 함수
+function _firstEl(node) {
+  return node.children[0];
+}
+
+function _lastEl(node) {
+  var children = node.children;
+  return children[children.length - 1];
+}
+
+
+function firstEl(node) {
+	// errorMsg에서 throw error 해버리면 에러메시지 출력 후 함수종료됨.
+  if ( isntElNode(node) ) { errorMsg('요소노드를 전달해야 합니다.'); }
+  // firstElementChild, lastElementChild :  IE9부터 지원 
+  if ( node.firstElementChild ) {
+    return node.firstElementChild;
+  } else {
+    // IE 6-8
+    // node 찾고자 하는 자식 노드의 부모이다.
+    // 제일 먼저 부모 노드인 node의 첫번째 자식 노드를 찾는다.
+    node = node.firstChild;
+    // return;
+    // 만약 찾은 자식 노드가 요소 노드가 아니라면 다음 형제 노드를 찾는다.
+    // 다음 형제 노드가 요소 노드라면 반환하고, 아니라면 다시 다음 형제 노드를 요소노드인지 확인한다.
+    // console.log(node && isntElNode(node));
+    // return;
+    return ( node && isntElNode(node) ) ? nextEl(node) : node;
+  }
+  // 함수는 명시적으로 어떤 값도 반환하지 않을 경우 undefined를 반환한다.
+  // return undefined;
+}
+
+// 마지막 자식요소 노드를 찾는 헬퍼 함수
+function lastEl(node) {
+	if( isntElNode(node) ) { errorMsg('요소노드를 전달해야 합니다.'); }
+	if( node.lastElementChild) {
+		return node.lastElementChild;
+	} else {
+		node = node.lastChild;
+		// true : retrun문에서 node와 isntElNode에서 node가 아닌거라면 next로 다음 node를 찾자.
+		// false : node를 출력하자. 
+		return ( node && isntElNode(node) ) ? nextEl(node) : node;
+	}
+}
+
+// ---------------------------------------------------------
+// 단위 제거 / 가져오기 / 소유하고 있는지 확인
+function getUnit(value){
+  var i=0, l=getUnit.units.length, unit;
+  // var reg;
+  // if( errorMsg(value)) return errorMsg();
+
+  for( ; i<l; i++){
+    unit = getUnit.units[i];
+    // 방법1
+    if( value.indexOf(unit) > -1 ){
+      // 이 문제에 경우 units에서 'px rem em ...' 이런식으로 em 보다 rem을 먼저 선언하면 된다.
+      break; 
+    }
+
+    // 방법2
+    // reg = new RegExp('\\d+' + unit, 'i');
+    // if( reg.test(value) ){
+    //   break;
+    // }
+  }
+  console.log(unit);
+  return unit;
+}
+getUnit.units = 'px rem em % vw vh vmin vmax'.split(' ');
+
+function removeUnit(value){
+	removeUnit.unit = getUnit(value);
+	return parseFloat(value, 10);
+}
+removeUnit.unit = null;
+
+function isElName(node, name){
+	if( isntElNode(node) ){ errorMsg('첫번째 인자로 요소노드가 전달되어야 합니다.') }
+	if( isType(name) !== 'string' ){ 
+		errorMsg('두번째 인자로 텍스트 데이터 유형이 전달되어야 합니다.')
+	}
+	return (node.localName || node.nodeName.toLowerCase()) === name;
+}
+
+// ------------------------------------------------------------
+
+// ------------------------------------------------
+// 텍스트노드의 유형인지 체크하는 함수
+function isTextNode(node) {
+  return node.nodeType === 3;
+}
+// ------------------------------------------------
+// 텍스트노드의 유형이 아닌지 체크하는 함수
+function isntTextNode(node) {
+  // return !isTextNode(node);
+  return node.nodeType !== 3;
+}

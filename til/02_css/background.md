@@ -25,8 +25,8 @@
 }
 ```
 
-- contain : width를 100% 적용한 것과 같은 효과
-- cover: height를 100% 적용한 것과 같은 효과
+- contain : width를 100% 적용한 것과 같은 효과 ( 요소에 width 크기에 기준이 되어 맞춰진다. )
+- cover: height를 100% 적용한 것과 같은 효과 ( 요소에 height 크기에 기준이 되어 맞춰진다. )
 
 ### background-attachment
 - 배경 이미지를 어떠한 방식으로 화면에 붙일 것인지 지정
@@ -47,3 +47,8 @@
 ### Gradient
 - [Gradient Generator](http://www.colorzilla.com/gradient-editor/)
 - linear-gradient(각도, 색상 %, 색상 %)
+
+### background-origin
+- border-box : border라인에 기준이 된다.
+- content-box : content영역에 기준이됨.
+- padding-box : 파이어폭스만 적용된다. padding에 맞춰진다.
