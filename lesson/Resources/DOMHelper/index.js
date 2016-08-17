@@ -209,7 +209,7 @@ function errorMsg(message) {
   } else if( isType(message) === 'string') {
   	return message;
   }
-  throw new Error(message);
+  // throw new Error(message);
 }
 
 // ------------------------------------------------
@@ -360,4 +360,31 @@ function isTextNode(node) {
 function isntTextNode(node) {
   // return !isTextNode(node);
   return node.nodeType !== 3;
+}
+
+// -------------------------------------------------
+// 주석노드의 유형인지 체크하는 함수
+function isCommentNode(node){
+	return node.nodeType === 8;
+}
+
+//-------------------------------------------------------
+// 해당 요소의 자식 요소만 모아서 출력하는 함수
+// 그냥 querySellectorAll랑 같은 역할
+function elementsCollection(parent_node) {
+	var parent_node = document.querySelector(parent_node);
+	var collection = parent_node.childNodes;
+	if( isType(parent_node) !== 'string' ) { 
+		errorMsg('인자값으로 문자 데이터 유형이어야 합니다.'); 
+	}
+	for( var el_collection=[], i=collection.length-1; collection[i]; i--){
+		let node = collection[i];
+		if( isTextNode(node) || isElName(node, 'script') || isCommentNode(node)){
+			continue;
+		}
+		el_collection.push(node);
+		// var array_like_ec = el_collection.push(node);
+		// Array.prototype.slice.call(array_like_ec).toString();
+	}
+	return el_collection;
 }

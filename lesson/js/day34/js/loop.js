@@ -134,7 +134,7 @@ var get_value = getStyle(demo_container, 'margin-bottom');
 function hasUnit(){}
 
 // getUnit은 함수 또한 object다 그래서 property를 가질 수 있고 
-// memorial 패턴? 
+// memorial 패턴?
 // getUnit.units 를 하면 접근 가능 하나 units를 전역객체로 선언시 누구도 접근 할 수 없다. 값을 변경 할 수 없다.
 // function getUnit(value){
 //   for ( lef unit of getUnit.units){
@@ -187,9 +187,8 @@ getUnit.units = 'px em rem % vw vh vmin vmax'.split(' ');
 // }
 // console.log('for 밖:', unit); // 마지막에 unit is not defined 왜냐면 let이 지역객체라서
 
-
 // for in 문
-// for in문이 배열에는 성능상 느려서 사용하면 안된다!!!( 배열은 for, for each, es6 사용 권장, 왜냐면 cross type chain에 걸려서 ) 객체는 사용 가능!!!!
+// for in문이 배열에는 성능상 느려서 사용하면 안된다!!!( 배열은 for, for each, es6 사용 권장, 왜냐면  method chain에 걸려서 ) 객체는 사용 가능!!!!
 // javascript garden FDS에 있음
 // https://github.com/yamoo9/FDS/blob/master/References/B__Advanced/README.md
 
