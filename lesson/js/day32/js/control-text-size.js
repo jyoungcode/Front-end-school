@@ -1,11 +1,35 @@
 // 크롬은 text를 감소 시키는데 제한이 있다. 일정 크기보다 작아지면 더이상 적용안된다.
 
+// 1번 방법
+var page_header = query('.page-header');
+var increase_btn = query('.btn-increase-text');
+var decrease_btn = query('.btn-decrease-text');
+
+//page_header 요소 객체의 글자 크기 초기화
+page_header.style.fontSize = '16px';
+
+increase_btn.onclick = function(){
+    //page-header의 글자 크기를 키운다
+
+    var current_font_size = parseInt(page_header.style.fontSize);
+    page_header.style.fontSize = current_font_size + 4 + 'px';
+}
+
+decrease_btn.onclick = function(){
+    //page-header의 글자 크기를 줄인다
+
+    var current_font_size = parseInt(page_header.style.fontSize);
+    page_header.style.fontSize = current_font_size + -4 + 'px';
+}
+
+
+// 2번 방법
 // 문서에서 선택한 요소노드(객체) 참조
 var page_header  = query('.page-header');
 var increase_btn = query('.btn-increase-text');
 var decrease_btn = query('.btn-decrease-text');
-var change_text = 10;
-var limit_up = 46;
+var change_text = 5;
+var limit_up = 100;
 var limit_down = 12;
 
 

@@ -45,14 +45,14 @@ function showMeIndexWrapper(index){
 // 	};
 // }())
 
-for(; i<l; i++) {
-  // 클로저 사용 예시
-  demo_nav_links[i].onclick = (function(count){
-    return function() {
-      console.log(count);
-    };
-  }(i));
-}
+// for(; i<l; i++) {
+//   // 클로저 사용 예시
+//   demo_nav_links[i].onclick = (function(count){
+//     return function() {
+//       console.log(count);
+//     };
+//   }(i));
+// }
 
 
 for(; i<l; i++){

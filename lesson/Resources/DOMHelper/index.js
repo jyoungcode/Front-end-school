@@ -21,6 +21,17 @@
 //     }
 // };
 
+// 자주쓰는 간단한 함수
+function log(msg){
+  console.log(msg);
+}
+function tag(name){
+  return document.getElementsByTagName(name);
+}
+function id(name){
+  return document.getElementById(name);
+}
+
 // JQuery와 type() 같다.
 //  자바스크립트의 모든 데이터 유형을 올바르게 감지할 수 있는 헬퍼 함수
 function isType(data){
@@ -185,6 +196,24 @@ function getStyle(el, property, pseudo) {
   return value;
 }
 
+ function setStyle(elNode, property, value) {
+    if ( isntElNode(elNode) ) {
+      errorMsg('요소노드가 전달되어야 합니다.');
+    }
+    if (isType(property) !== 'string') {
+      errorMsg('두번째 전달인자는 문자열이어야 합니다.');
+    }
+    elNode.style[property] = value;
+  }
+
+  function css(elNode, prop, value) {
+    if ( !value ) {
+      return getStyle(elNode, prop);
+    } else {
+      setStyle(elNode, prop, value);
+    }
+  }
+
 // 카멜케이스 // font-size -> fontSize
 // function camelCase(css_prop) {
 //    return css_prop.replace(/-./g, function($1){
@@ -206,10 +235,8 @@ function errorMsg(message) {
   if ( isType(message) !== 'string' ) {
     // 함수 자신을 다시 호출: 재귀함수
     errorMsg('오류 메시지는 문자 데이터 유형이어야 합니다.');
-  } else if( isType(message) === 'string') {
-  	return message;
   }
-  // throw new Error(message);
+  throw new Error(message);
 }
 
 // ------------------------------------------------
@@ -388,3 +415,87 @@ function elementsCollection(parent_node) {
 	}
 	return el_collection;
 }
+
+
+// 함수를 작성하는 이유
+// 재사용할 것 같은 코드들...
+// 매번 짜는 것은 비 효율적이다 보니
+// 능률적으로 코드를 처리하기 위해 코드 묶음을
+// 재사용/확장할 수 있도록 처리
+// 유사 배열을 배열화
+// data = array_like_obj 
+
+function makeArray(data){
+  // 전달된 객체는 배열 또는 유사 배열인가?
+  var check_data = isType(data), result_arr = [], len=data.length;
+  // 실제 배열
+  if(check_data === 'array'){
+    return data;
+  }
+  //유사배열
+  if( len && check_data !== 'string' ){
+    while( len-- ){
+      result_arr.push( data[len] );
+    }
+  }
+  return result_arr.reverse();
+}
+
+
+// ES6 standard 
+// // Array.from() 메소드는 유사 배열 혹은 반복가능한 객체로부터 새 Array 인스턴스를 만듭니다.
+// Array.from()은 다음으로부터 Array를 만듭니다:
+// 유사 배열 객체 (length 속성과 인덱싱된 요소를 가진 객체)
+// 반복 가능한 객체 (Map과 Set와 같이 객체의 요소를 얻을 수 있는 객체).
+
+// slice() 메소드는 어떤 배열의 일부에 대한 얇은 복사본 배열을 반환합니다.
+
+
+function convertArray( data ){
+  if(Array.from) {
+    return Array.from(data);
+  } else {
+    return Array.prototype.slice.call(data);
+  }
+}
+
+// 1. 정식으로 클로저를 사용하는 방법으로 문제 해결방법
+// 왜? array.from을 한번만 물어보려고~
+function convertArray_wrapper(){
+  // 내부에서 클로저 함수를 반환
+  var closureFn;
+
+  // 실행순서
+  // 1번: closureFn 함수리터럴값은 전역 var closureFn에 담긴다.
+  // 2번: var closureFn이 return으로 반환되고 
+  // 3번: converArray_wrapper()의 반환값이 var covertArray에 담긴다. 
+  // 4번: convertArray(인자)로 실행 (인자담아서) 
+  if( Array.from ){
+    // Array.from이 지원되는가?
+    closureFn = function(data){
+      return Array.from(data);
+    };
+  } else {
+    // 지원되지 않는가?
+    closureFn = function(data){
+      return Array.prototype.slice.call(data);
+    }
+  }
+  return closureFn;
+}
+
+var convertArray = convertArray_wrapper();
+
+// 권장 방법 // 위에는 wrapper 실행해야하지만, IIFE는 즉각실행으로 단계를 줄인다. 
+// 2. 약식(IIFE 패턴)을 사용하여 클로저 처리하는 문제 해결 방법
+var convertArray = (function(){
+  if(Array.from) {
+    return function(data) {
+      return Array.from(data);
+    }
+  } else {
+    return function(data) {
+      return Array.prototype.slice.call(data);
+    }
+  }
+})();

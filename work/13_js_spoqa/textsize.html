@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>testsize</title>
+  <style>
+  	.btn-group span { display: inline-block; width: 60px; height: 20px; border: 1px solid black; }
+  </style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="btn-group" role="group">
+			<button
+			type="button"
+			class="btn-increase-text"
+			aria-label="텍스트 크게">+</button>
+			<input type="text" value="22px" class="text-input" />
+			<button
+			type="button"
+			class="btn-decrease-text"
+			aria-label="텍스트 작게">-</button>
+		</div><!-- btn-group -->
+		<textarea class="text-box" cols="100" rows="20"  placeholder="국문, 영문, 일문을 혼합하여 차별없는 어울림을 경험하세요." ></textarea>
+	</div><!-- wrap -->
+
+<!-- http://www.w3schools.com/css/css_form.asp -->
+
+<script src="../../lesson/Resources/DOMHelper/index.js"></script>
+<!-- <script src="js/control-text-size.js"></script> -->
+<script>
+	// DOM traversings
+	var wrap = query('.wrap');
+	var text_input = query('.text-input');
+	var increase_btn = query('.btn-increase-text');
+	var decrease_btn = query('.btn-decrease-text');
+	var text_box = query('.text-box');
+	// variables
+	var font_value = text_input.value;
+	var limit_up = 100;
+	var limit_down = 12;
+	var change_text = 1;
+
+	function changeTextSize(){
+		var current_font_size = parseInt(font_value);
+		// var current_size_up = current_font_size + 1 + 'px';
+		// var current_size_down = current_font_size + -1 + 'px';
+		var operator = this.firstChild.nodeValue;
+		var _change_text = change_text;
+
+		if( operator === "+" ){
+			_current_text = current_font_size + _change_text;
+			text_input += _current_text;
+		}else if( operator === "-" ){
+			_current_text = current_font_size - _change_text;
+			text_input += _current_text;
+		}
+		text_box.style.fontSize = _current_text + 'px';
+	}
+
+	increase_btn.onclick = changeTextSize;
+	decrease_btn.onclick = changeTextSize;
+
+</script>
+</body>
+</html>

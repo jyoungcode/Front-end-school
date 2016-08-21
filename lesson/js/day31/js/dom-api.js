@@ -51,13 +51,3 @@ function changePositionNodes(moving_node, target_node) {
     return removed_node;
   }
 }
-
-function mychangeNodes(m_node, t_node){
-
-}
-
- function myFunction() {
-    var textnode = document.createTextNode("changed!!");
-    var item = document.querySelector("#test").childNodes[0];
-    item.replaceChild(textnode, item.childNodes[0]);
-}

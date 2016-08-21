@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>jQuery 시작</title>
+	<!-- CDN -->
+	<!-- <script src="https://jquery.com/jquery.min.js"></script> -->
+	<!-- 구글 jquery가 더 빠르다 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- 자바스크립트 DOM 조작에 최적화된 라이브러리: jQuery  -->
+</head>
+<body>
+	<!-- https://plugins.jquery.com/tag/carousel/ -->
+	<!-- http://learn.jquery.com/ -->
+	<!-- http://try.jquery.com/ -->
+	<!-- jQuery ver 1 만 모든 브라우저 지원  -->
+	<!-- ver 2부터는 ie9부터다  -->
+	<!-- 선생님 사이트에 영상보자. -->
+	<!-- 책 : pro javascript techniques -->
+	<!-- sourcemap : 분기된 여러파일을 하나로 묶었을때 지도 -->
+	<!-- jquery에서 sourceamp 에러 발생 그래서 지워주면 된다 -->
+	<!-- migrate 파일 ? -->
+	<!-- npm으로 다운받을 수 있다. -->
+	<!-- jquery dir : dist 배포용 src: 작업용 -->
+	<!-- src 폴더 보면 모듈단위로 개발이다 -->
+	<!-- bower로 다운받을 수 있다. -->
+	<!-- jQuery selector는  sizzle 이라는 엔진 안에서 가져온다, css보다 강력하다 -->
+
+<script>
+	// CDN jQuery 로드가 실패했다면..  로컬 jQuery 파일을 로드.
+	if(!this.jQuery){
+		document.write('<script src="../../Resources/library/jquery-3.1.0.min.js"></script>')
+	}
+</script>
+
+<script>
+	(function(global, $){
+		'use strict';
+		// 자바스크립트 지원환경 유무 파악 class 식별자 처리
+		$('html').removeClass('no-js').addClass('js');
+
+		function init() {
+			// 문서에 이 코드가 처리될 시기에는 아직 완성되지 않은 
+		}
+	})(this, this.jQuery);
+</script>
+
+<script>
+	// ready, 보다 더 빠르다?
+	// domcontentloaded는 </html>이 끝날때 실행됨 
+</script>
+
+</body>
+</html>
