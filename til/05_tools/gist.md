@@ -19,7 +19,7 @@
 - (webpage) Github Setting에서 token 생성. ( repo, publick_repo, user, gist 선택 )
 - preferences - Package Settings - Gist - setting Default - "token" 복사 > setting User 붙여넣기 > "token": "생성한 token 붙여넣기"
 
-##### SublimeText 연동 완료 
+#### SublimeText 연동 완료 
 - Tools > Gist 에서 create, open, insert, update를 사용 할 수 있다.
 - undefined 파일을 열고 코드를 입력 > create private, public gist를 선택 > desc, filename output 기입 후 > gist에서 확인 가능하다.
 

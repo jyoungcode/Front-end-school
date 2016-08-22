@@ -6,6 +6,8 @@
   <title> javascript core</title>
 </head>
 <body>
+
+	<input type="text" id="u_input">
 	<div role="group" class="button-set">
 		<!-- button[type=button].button{Button X-$$$@12}*5 -->
 		<button type="button" class="button">Button X-012</button>
@@ -16,5 +18,13 @@
 	</div>
 <script src="../../Resources/DOMHelper/index.js"></script>
 <script src="js/javascript-core.js"></script>
+<script>
+(function(){
+  for ( var star='', i=0, l=10; i<l; i++ ) {
+      star += '*';
+      console.log(star);
+  }
+})();
+</script>
 </body>
 </html>

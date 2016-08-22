@@ -52,19 +52,21 @@ function movingBox(box, position, callback) {
   }, 200);
 }
 
-// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 // 스크롤과 상관 없이 브라우저 뷰포트의 좌측 상단에서의 위치
-// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 // MouseEvent.clientX은 event가 발생한 지점의 클라이언트에서의 X 좌표를 참조 할 수있는 읽기 전용 속성입니다.
 // 화면의 왼쪽에서 클릭하면 페이지의 가로 스크롤 위치에 관계없이 그 값은 0입니다.
 // MouseEvent.clientX
 // MouseEvent.clientY
 
 demo_box.onclick = function(event) {
+  // event는 mouseEvent 이다.
   // console.log('clicked demo box.');
+  // this.style.left = '300px';
   movingBox(this, { // this = demo_box
-    'x': event.clientX,
-    'y': event.clientY
+    'x': event.clientX, // clientX, clientY는 mouseEvent 속성
+    'y': event.clientY 
   }, function() {
     alert('애니메이션 끝났다구!!!');
   });
