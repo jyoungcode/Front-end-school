@@ -82,13 +82,13 @@ a.topnav-tab:hover {
   font-size: 48px;
   font-weight: 100;
   margin-top: 1em;
-  margin-bottom: 0.67em 0;
+  margin-bottom: 0.6em;
   line-height: 1.3;
 }
 
 .main-text p {
-  margin-bottom: 46px;
   margin: 0 0 0.5em;
+  margin-bottom: 46px;
   font-size: 14px;
 }
 
@@ -132,7 +132,7 @@ a {
 
 .preview-controls {
   display: block;
-  /*float: none;*/
+  float: right;
 }
 
 .preview-font-weight {
@@ -145,6 +145,7 @@ a {
   transition: 0.2s height, 0.2s box-shadow, 0.2s background-color;
   z-index: 1000;
   margin-top: 10px;
+  float: left;
 }
 
 .preview-controls .preview-font-weight, .preview-controls .preview-font-size {

@@ -303,6 +303,16 @@ var new_movielist = movielist.map(function(item, index, arr) {
 
 ### callback 함수
 
+### %나머지 연산자 응용 방법 ( 배열 )
+
+```javascript
+var message = ['hi', 'hello', 'come on', 'bye'];
+for (var count = 0, messages = message.length; count < messages; count++) {
+    console.log(message[ count % messages ]);
+}
+```
+
+
 
 ---------------------------------------
 # Helper Function
@@ -330,6 +340,7 @@ var new_movielist = movielist.map(function(item, index, arr) {
 - lastElement()
 - isElName()
 - isTextNode()
+
 
 
 -----------------------------------------------------------
