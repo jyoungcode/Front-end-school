@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>AngularJS</title>
+  <!-- 실제 서비스는 CDN 사용이 좋다. 사용자가 캐쉬되어 있을 거라서. 로컬테스트시에 로컬 파일  -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.1.0.js"></script> -->
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script>
+  // (function(global, $){
+  // 	'use strict';
+  // 	$ || document.write('<script src="frameworks/angular.min.js"><\/script>');
+  // 	// console.log('Angular 버전: ', window.angular.version.full);
+  // })(this, this.angular);
+
+// jQuery를 실행시키기 위해서는 document ready와 같은 역할 이 필요하다.
+  function init($) {
+  	var $twb = $('#twb'),
+  		$twb_binding = $('#twb-binding');
+
+  		$twb.on('keyup', function(event) {
+  			$twb_binding.text( event.target.value );
+  		});
+  }
+  // jQuery.noConflict는 $를 포기
+  // jQuery.noConflict(true)는 jQuery 까지 포기 그러나 죽으면서 반환값은 함수인데
+  // 그안에 $가 있고 init 바로 실행 하면서 $를 사용할 수 있게 한다.
+  jQuery.noConflict(true)(init);
+  // jQuery(document).ready(init); 위와 같은거다. = $(init);
+
+  </script>
+</head>
+<body data-ng-init="application_name='MyApp using AngularJS Framework.'">
+<!-- https://angularjs.org/ -->
+<!-- http://code.jquery.com/jquery-3.1.0.min.js -->
+<!-- https://bower.io/ -->
+<!-- https://egghead.io/ -->
+
+<!--
+	data-ng-app : ng는 angular를 뜻한다. ngapp이라는 디렉티브(지시자)를 추가하고 표준을 준수하게 하는 것이다.
+-->
+	<!-- Two-Way Data Binding: data-ng-model이 data-ng-bind에 바인딩 되서 input text에 실시간 처리가 된다 -->
+
+	<input type="text" id="twb">
+	<p id="twb-binding"></p>
+
+	<!-- <input type="text" data-ng-model="application_name"> -->
+	<!-- 더 많이 사용 그러나 아래 bind가 더 빠르다 -->
+	<!-- <h1 lang="en">{{application_name}}</h1> -->
+	<!-- <h1 lang="en" data-ng-bind="application_name"></h1> -->
+
+	<div data-ng-controller="divController"></div>
+<script>
+	angular.controller('divController', ['$scope', '$http', function($scope,$http){
+		$http // 가서 서버에서 모델 가지고 와
+		$scope // 가서 템플릿에 뷰 업데이트 하고 와
+	}])
+</script>
+</body>
+</html>

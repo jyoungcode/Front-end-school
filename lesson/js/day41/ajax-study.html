@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>비동기 통신을 위한 AJAX</title>
+  <style>
+  	body { margin: 6rem; }
+  	h1 {
+      font-size: 4rem;
+      font-weight: 200;
+      font-family: "Spoqa Han Sans";
+      color: #704bdb;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+	.call-ajax-data-btn { 
+		cursor: pointer;
+		padding: 0.75rem 1rem;
+		border-radius: 0.25rem;
+		border: none;
+		background: #d2d2d2;
+		color: #1d1d1d;
+		font-size: 0.875rem;
+		font-weight: 200;
+  	 }
+  	 .call-ajax-data-btn:hover {
+  	 	background: #868686;
+  	 }
+  	 .call-ajax-data-btn:active {
+  	 	position: relative;
+  	 	top: 2px;
+  	 }
+  	.ajax-result { 
+  		margin-top: 3rem; 
+  		border: 3px solid currentColor; 
+  		padding: 1rem; 
+  		color: #704bdb;
+  	}
+
+	.call-ajax-data-btn-2 { 
+		cursor: pointer;
+		padding: 0.75rem 1rem;
+		border-radius: 0.25rem;
+		border: none;
+		background: #F52009;
+		color: #1d1d1d;
+		font-size: 0.875rem;
+		font-weight: 200;
+  	 }
+  	 .call-ajax-data-btn-2:hover {
+  	 	background: #868686;
+  	 }
+  	 .call-ajax-data-btn-2:active {
+  	 	position: relative;
+  	 	top: 2px;
+  	 }
+	
+	.call-ajax-data-btn-3 { 
+		cursor: pointer;
+		padding: 0.75rem 1rem;
+		border-radius: 0.25rem;
+		border: none;
+		background: #3225D9;
+		color: #1d1d1d;
+		font-size: 0.875rem;
+		font-weight: 200;
+  	 }
+  	 .call-ajax-data-btn-3:hover {
+  	 	background: #868686;
+  	 }
+  	 .call-ajax-data-btn-3:active {
+  	 	position: relative;
+  	 	top: 2px;
+  	 }
+     
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th { 
+        background-color: #dddddd;
+      }
+  </style>
+</head>
+<body>
+<!-- $ http-server -0 -a localhost -p 8081 -->
+<!-- $npm list -g http-server -->
+	 <h1><abbr title="Asyncronous JavaScript And XML">AJAX</abbr></h1>
+	<button type="button" class="call-ajax-data-btn">view update</button>
+	<button type="button" class="call-ajax-data-btn-2">view update-2</button>
+	<button type="button" class="call-ajax-data-btn-3">view update-3</button>
+
+	<div class="ajax-result">
+		Stand ready...
+	</div>
+
+
+<script src="js/ajax-communication.js"></script>
+</body>
+</html>

@@ -138,7 +138,9 @@ body.이벤트 = function (){}
 - 객체가 아닌 것에 부정확
 
 # prototype
-- Objectㅇ
+- 객체에 같은 메서드로인해 메모리 낭비를 해결하기 위해 프로토타입 공간을 사용
+- 프로토타입 : 생성자 함수로 생성된 객체가 공통으로 가지는 공간, 객체이며, 모든 함수는 prototype을 갖음
+- 생성자 함수로 객체를 만들 때는 내부에 속성만 넣고, 메서드는 모두 프로토타입안에 넣음
 
 
 
@@ -299,10 +301,6 @@ var new_movielist = movielist.map(function(item, index, arr) {
 });
 ```
 
-### this
-
-### callback 함수
-
 ### %나머지 연산자 응용 방법 ( 배열 )
 
 ```javascript
@@ -312,7 +310,68 @@ for (var count = 0, messages = message.length; count < messages; count++) {
 }
 ```
 
+### IIFE 
+```javascript
+(function(global){
+    'use strict';
+    var jyoungcode = 'h1';
 
+    console.log(global.jyoungcode) // global === window 
+})(this); // 
+console.log(jyoungcode) // error
+
+
+### this
+
+### callback 함수
+
+### closure를 이용하자
+```javascript
+
+// 방법 1
+button.index = i;
+
+        // button.onclick = (function(){
+        //  // this 키워드 컨텍스트를 참조하는 변수
+        //  // this를 사용하여 각 버튼 객체의 index 속성 값에 접근하여 출력한다.
+        //  console.log(this.index);
+        // });
+
+// 방법 2
+    button.onclick = (function(index){
+        return function() {
+            console.log(index);
+        };
+        })(i);
+
+```
+
+### arguments
+- 함수 내부에서만 접근 가능한 매개변수(전달인자들을 묶어 놓은 집합 객체)
+
+### 생성자함수
+```javascript
+// 생성자 함수에서 함수호출시 new를 붙이면 객체를 만들고 리턴한다.
+// p1에 return
+
+
+    function Person(name){
+    this.name = name;
+    this.introduce = function(){
+        return 'My name is '+this.name; 
+    }   
+    }
+
+// 생성자 내에서 프로퍼티를 정의 하는 것을 초기화 과정이라 한다.
+// 그로 인해서 아래 코드들은 재사용이 용이해졌다.
+    var p1 = new Person('egoing');
+    document.write(p1.introduce()+"<br />");
+     
+    var p2 = new Person('leezche');
+    document.write(p2.introduce());
+
+  
+```
 
 ---------------------------------------
 # Helper Function

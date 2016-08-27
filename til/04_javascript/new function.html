@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>생성자 함수</title>
+</head>
+<body>
+<!-- http://gangzzang.tistory.com/entry/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8JavaScript-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98 -->
+
+<script>
+	function Student(name, kor, math, eng, sci) {
+		this.name = name;
+		this.kor = kor;
+		this.math = math;
+		this.eng = eng;
+		this.sci = sci;
+		
+		this.getSum = function() {
+			return this.kor + this.math + this.eng + this.sci;
+		};
+		
+		this.getAverage = function() {
+			return this.getSum() / 4;
+		};
+		
+		this.toString = function() {
+			return this.name + ' ---------- ' + this.getSum() + ' ---------- ' + this.getAverage();
+		};
+	}
+	
+	var students = [];
+	students.push(new Student('student1', 99, 99, 99, 99));
+	students.push(new Student('student2', 88, 88, 88, 88));
+	students.push(new Student('student3', 77, 77, 77, 77));
+	students.push(new Student('student4', 66, 66, 66, 66));
+	students.push(new Student('student5', 55, 55, 55, 55));
+	students.push(new Student('student6', 44, 44, 44, 44));
+
+	var output = 'name ---------- sum ---------- avg\n';
+	for (var i in students) {
+		output += students[i].toString() + '\n';
+	}
+	
+	alert(output);
+
+</script>
+</body>
+</html>
