@@ -9,11 +9,13 @@
   height: 20vh;
 }
 [class*="page-"]::before {
+  content: attr(class);
   display: block;
+  font-size: 1.8rem;
+  font-weight: 100;
+  text-align: center; /* display: block 해야 가능 */
   line-height: 20vh;
   color: #fff;
-  font-size: 1.5em;
-  text-align: center; /* display: block 해야 가능 */
 }
 
 /*개별 모듈*/
@@ -24,19 +26,22 @@
   background: #388dc4;
 }
 .page-main {
-  background: #3cc880;
-  /*width: 80;*/
+  float: left;
+  /*float: right;*/
+  width: 50%;
   /*height: 50vh;*/
-  float: right;
+  background: #3cc880;
 }
 .page-sidebar {
-  background: #78c935;
+  width: 50%;
   float: left;
+  /*height: 30vh;*/
+  background: #78c935;
 }
+
 .page-footer {
+  clear: both;
   background: #c38b36;
-  float: right;
-  /*clear: both;*/
 }
 .page-header::before {content: 'page-header';}
 .page-navigation::before {content: 'page-navigation';}

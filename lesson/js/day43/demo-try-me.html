@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>onepiece</title>
+  <style>
+  	table, tr, th, td { border: 1px solid black; border-collapse: collapse; width: 400px; height: 30px;}
+  	th { background: #E5E5E5; text-align: center;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body data-ng-init="
+	sortBy = 'name';
+	reverse = true;
+	info = true;
+	desc = true;
+">
+	<table>
+		<caption class="a11y-hidden">One Piece Character List</caption>
+		<tr>
+			<th>
+				정보
+				<button type="button" data-ng-click="sortBy='name'; reverse=!reverse; info=!info" >
+					<span data-ng-show="info">△</span>
+					<span data-ng-hide="info">▽</span>
+				</button>
+			</th>
+			<th>
+				내용
+				<button type="button" data-ng-click="sortBy='description'; reverse=!reverse; desc=!desc">
+					<span data-ng-show="desc">△</span>
+					<span data-ng-hide="desc">▽</span>
+				</button>
+			</th>
+		</tr>
+		<tr  data-ng-repeat="character in onepiece | orderBy:sortBy:reverse">
+			<td>FullName</td>
+			<td>{{character.name}}</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>{{character.shortname}}</td>
+		</tr>
+		<tr>
+			<td>NickName</td>
+			<td>{{character.nickname}}</td>
+		</tr>
+		<tr>
+			<td>Image</td>
+			<td>{{character.image}}</td>
+		</tr>
+		<tr>
+			<td>Regiment</td>
+			<td>{{character.regiment}}</td>
+		</tr>
+		<tr>
+			<td>DevilFruit</td>
+			<td>{{character.devil_fruit}}</td>
+		</tr>
+		<tr>
+			<td>Position</td>
+			<td>{{character.position}}</td>
+		</tr>
+		<tr>
+			<td>Wanted</td>
+			<td>{{character.wanted}}</td>
+		</tr>
+		<tr>
+			<td>Bio</td>
+			<td>{{character.bio}}</td>
+		</tr>
+	</table>
+</body>
+</html>

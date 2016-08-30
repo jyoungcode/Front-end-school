@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>앵귤러 이해를 위한 실습 Part 1</title>
+  <style>
+  	body {
+		margin: 0;
+		min-height: 100vh;
+		/*background: #ebebeb;*/
+		/*background: {{view_color}};*/
+	}
+	.color-place-view {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1000px;
+		height: 300px;
+		/*background: #ececec;*/
+		background: {{view_color}};
+	}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<!-- 순서  -->
+<!-- script 앵귤러 불러온다 > data-ng-app > {{더블 콜리 브레이스}} 모델값을 뷰에 붙인다 > data-ng-init을 사용  -->
+
+<!-- https://docs.angularjs.org/api -->
+<!-- ng-app이 상단에 있어야 bootstrap 앵귤러 작동한다 -->
+<!-- 백엔드에서 할걸 프론트에서 하니까 느리다 -->
+<!-- 속성 모델 데이터가 바뀌면서 간편하게 조작가능 하다 -->
+
+<!-- init 초기화 -->
+<body data-ng-init="
+  my_color   = '#fc414b';
+  hidden     = true;
+  colors     = {
+    'pink'   : '#f97580',
+    'purple' : '#8958f8',
+    'green'  : '#68fd91',
+    'yellow' : '#f7d662',
+    'cyan'   : '#52f6dd'
+  };
+  view_color = colors.pink;
+  my_style = {
+    'width': '400px',
+    'height': '400px'
+  };
+">
+	<!-- {{my_color}}, {{is_hidden}} -->
+
+	<!--
+	Directives & Expressions
+	⊙ ng-init
+	⊙ ng-show
+	⊙ ng-hide
+	⊙ ng-model
+	⊙ ng-click
+-->
+
+
+<button 
+	type="button" 
+	class="toggle-palette-btn" 
+	data-ng-click="hidden = !hidden">
+	<!-- {{hidden}} -->
+
+	<!-- show, hide 가 각각 false일때 안보이는거 알겠는데 왜 hide 속성이 움직이나 -->
+	<!-- 팔레트<span data-ng-show="hidden">감추기</span><span data-ng-hide="hidden">보이기</span> -->
+	<!-- 팔레트 {{hidden ? '감추기' : '보이기'}} -->
+	팔레트 <span data-ng-bind="hidden ? '감추기' : '보이기'"></span>
+</button>
+
+<!-- 팔레트 -->
+<div class="color-palette" data-ng-show="hidden">
+	<!-- color palette -->
+	<label><input type="radio" value="{{ colors.pink }}" data-ng-model="view_color">pink</input></label>
+	<label><input type="radio" value="{{ colors.purple }}" data-ng-model="view_color">purple</input></label>
+	<label><input type="radio" value="{{ colors.green }}" data-ng-model="view_color">green</input></label>
+	<label><input type="radio" value="{{ colors.yellow }}" data-ng-model="view_color">yellow</input></label>
+	<label><input type="radio" value="{{ colors.cyan }}" data-ng-model="view_color">cyan</input></label>
+</div>
+
+<!-- 팔레트 제어에 따른 뷰  -->
+<!-- {{view_color}} -->
+<div class="color-place-view" data-ng-style="my_style" style="background: {{view_color}}">
+	{{view_color}}
+</div>
+<div class="color-place-view">{{view_color}}</div>
+
+</body>
+</html>
